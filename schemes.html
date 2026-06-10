@@ -1,0 +1,768 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Krishi Sahayak - Schemes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              secondary: "#3b6934",
+              "tertiary-fixed-dim": "#dec1af",
+              "surface-dim": "#dddad1",
+              "primary-fixed-dim": "#f0c052",
+              "secondary-container": "#b9eeab",
+              error: "#ba1a1a",
+              "secondary-fixed": "#bcf0ae",
+              "secondary-fixed-dim": "#a1d494",
+              "inverse-primary": "#f0c052",
+              "surface-container": "#f1eee5",
+              tertiary: "#705a4c",
+              "tertiary-fixed": "#fbddca",
+              "surface-tint": "#795900",
+              surface: "#fdf9f0",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#f4f0e8",
+              "on-tertiary-container": "#5b4639",
+              "on-surface-variant": "#4e4636",
+              primary: "#795900",
+              "on-secondary-fixed": "#002201",
+              "surface-variant": "#e6e2d9",
+              "on-primary": "#ffffff",
+              "surface-container-low": "#f7f3ea",
+              "on-background": "#1c1c17",
+              "on-tertiary-fixed-variant": "#574335",
+              "on-primary-fixed": "#261a00",
+              "on-secondary-fixed-variant": "#23501e",
+              "on-error-container": "#93000a",
+              "primary-container": "#e3b448",
+              "surface-container-highest": "#e6e2d9",
+              "on-tertiary-fixed": "#28180d",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#31312b",
+              "on-secondary-container": "#3f6d38",
+              "on-primary-container": "#604600",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#ffdf9f",
+              "on-error": "#ffffff",
+              "tertiary-container": "#d2b5a4",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#ece8df",
+              outline: "#807664",
+              "on-primary-fixed-variant": "#5b4300",
+              "surface-bright": "#fdf9f0",
+              "on-surface": "#1c1c17",
+              background: "#fdf9f0",
+              "outline-variant": "#d2c5b0",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "20px",
+              md: "16px",
+              xl: "32px",
+              "margin-desktop": "64px",
+              lg: "24px",
+              "margin-mobile": "16px",
+              sm: "8px",
+              base: "4px",
+              xs: "4px",
+            },
+            fontFamily: {
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "headline-lg": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .ticker-wrap {
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      .ticker {
+        display: inline-block;
+        white-space: nowrap;
+        padding-right: 100%;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-name: ticker;
+        animation-duration: 30s;
+      }
+      @keyframes ticker {
+        0% {
+          transform: translate3d(0, 0, 0);
+        }
+        100% {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      /* Dark theme override based on prompt requirement */
+      .page-bg {
+        background-color: #1b4332;
+        color: #ffffff;
+      }
+      .card-bg {
+        background-color: #1c1c1e;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .text-lime {
+        color: #a3e635;
+      }
+      .bg-lime {
+        background-color: #a3e635;
+        color: #1b4332;
+      }
+      .text-gold {
+        color: #e3b448;
+      }
+      .bg-gold {
+        background-color: #e3b448;
+        color: #3d2b1f;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface antialiased min-h-screen flex">
+    <!-- SideNavBar -->
+    <nav
+      class="hidden md:flex fixed left-0 top-0 h-full w-64 flex-col p-md z-40 bg-surface-container border-r border-outline-variant"
+    >
+      <div class="mb-xl flex flex-col items-center">
+        <div
+          class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center mb-sm text-on-primary-container font-headline-md"
+        >
+          KS
+        </div>
+        <h1
+          class="font-headline-md text-headline-md font-extrabold text-primary"
+        >
+          Krishi Sahayak
+        </h1>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">
+          Premium Agri Services
+        </p>
+      </div>
+      <ul class="flex flex-col gap-sm flex-grow">
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 0"
+              >home</span
+            >Home</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 0"
+              >psychology</span
+            >AI Expert</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 0"
+              >storefront</span
+            >Mandi</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 0"
+              >wb_sunny</span
+            >Weather</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold font-label-lg transform scale-95 transition-transform duration-150"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >science</span
+            >Pesticides</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 0"
+              >menu_book</span
+            >Ledger</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+            href="#"
+            ><span
+              class="material-symbols-outlined"
+              style="font-variation-settings: &quot;FILL&quot; 0"
+              >groups</span
+            >Community</a
+          >
+        </li>
+      </ul>
+      <div
+        class="mt-auto pt-lg border-t border-outline-variant flex flex-col gap-sm"
+      >
+        <button
+          class="w-full py-sm px-md bg-primary text-on-primary rounded-full font-label-lg shadow-sm hover:opacity-90 transition-opacity"
+        >
+          Apply for New Scheme
+        </button>
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+          href="#"
+          ><span class="material-symbols-outlined">settings</span>Settings</a
+        >
+        <a
+          class="flex items-center gap-sm p-sm text-on-surface-variant hover:bg-surface-variant rounded-lg font-label-lg"
+          href="#"
+          ><span class="material-symbols-outlined">contact_support</span
+          >Support</a
+        >
+      </div>
+    </nav>
+    <!-- Main Content Area -->
+    <main class="flex-1 md:ml-64 flex flex-col min-h-screen page-bg">
+      <!-- TopNavBar Context -->
+      <header
+        class="flex justify-between items-center w-full px-lg py-md max-w-full z-50 bg-[#1B4332] sticky top-0 shadow-sm border-b border-white/10"
+      >
+        <div class="flex items-center gap-sm">
+          <span
+            class="material-symbols-outlined text-white cursor-pointer hidden md:block"
+            >menu</span
+          >
+          <span class="font-headline-md text-headline-md font-bold text-white"
+            >AgriTech Portal</span
+          >
+          <div
+            class="ml-xl flex bg-white/10 rounded-full px-sm py-xs items-center cursor-pointer hover:bg-white/20 transition-colors"
+          >
+            <span class="material-symbols-outlined text-sm text-white mr-xs"
+              >location_on</span
+            >
+            <span class="font-label-sm text-white">Madhya Pradesh ▾</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-lg">
+          <div class="relative hidden sm:block">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50"
+              >search</span
+            >
+            <input
+              class="bg-white/10 border border-white/20 rounded-full py-2 pl-10 pr-4 text-white placeholder-white/50 focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime font-body-md w-64"
+              placeholder="Search schemes..."
+              type="text"
+            />
+          </div>
+          <div class="flex gap-sm">
+            <button class="text-white hover:text-lime transition-colors">
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <button class="text-white hover:text-lime transition-colors">
+              <span class="material-symbols-outlined">help</span>
+            </button>
+          </div>
+          <div
+            class="w-10 h-10 rounded-full bg-white/20 overflow-hidden border-2 border-lime"
+          >
+            <img
+              alt="User Profile"
+              class="w-full h-full object-cover"
+              data-alt="A close up, well-lit studio portrait of a proud Indian farmer wearing traditional simple clothing, looking optimistic. The background is a soft, blurred deep green, matching a premium, modern agricultural app aesthetic. Soft, natural lighting."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiDlJi-eYzpS1RpnVdjGBdOcIJj4UJDO0d3GWckkur6m3jCoh9iaFzmB85At4neEuQRCan8_I72x95_R_uAJz5CSaKQ9xtygvNq5Z0A1DnyRWe3vtsWKLGE53gLX3_3-EEGMiHVojoTUA20hUkRGOwrNG3Iv3jRLuhx5yiUpicd_C7QFNYCVb3E-eqvV_Pai3wBXlc4H2NOIXoKi6sZ04P9uVTkOgNPgDid5VYEh_vBWh4nXO28wKGMIY3C0kRGPVGUqIL_xQdQojc"
+            />
+          </div>
+        </div>
+      </header>
+      <!-- TopAppBar (Scheme Tabs) -->
+      <div
+        class="flex flex-col w-full px-lg pt-lg pb-0 bg-[#1B4332] border-b border-white/10"
+      >
+        <div class="flex items-center gap-md mb-md">
+          <span class="material-symbols-outlined text-white cursor-pointer"
+            >arrow_back</span
+          >
+          <h2 class="font-display-md text-display-md font-bold text-white">
+            Government Schemes
+          </h2>
+        </div>
+        <div class="flex gap-lg overflow-x-auto no-scrollbar">
+          <button
+            class="text-lime border-b-2 border-lime pb-sm font-bold font-headline-md whitespace-nowrap"
+          >
+            Financial Aid
+          </button>
+          <button
+            class="text-white/70 font-medium pb-sm font-headline-md hover:text-white transition-colors whitespace-nowrap"
+          >
+            Insurance
+          </button>
+          <button
+            class="text-white/70 font-medium pb-sm font-headline-md hover:text-white transition-colors whitespace-nowrap"
+          >
+            Machinery
+          </button>
+          <button
+            class="text-white/70 font-medium pb-sm font-headline-md hover:text-white transition-colors whitespace-nowrap"
+          >
+            Organic
+          </button>
+          <button
+            class="text-white/70 font-medium pb-sm font-headline-md hover:text-white transition-colors whitespace-nowrap"
+          >
+            Irrigation
+          </button>
+        </div>
+      </div>
+      <!-- Scrollable Content -->
+      <div class="p-lg flex flex-col gap-xl overflow-y-auto">
+        <!-- Banner & Ticker -->
+        <div
+          class="flex flex-col gap-xs rounded-xl overflow-hidden shadow-lg border border-lime/20"
+        >
+          <div
+            class="bg-lime py-xs px-md flex items-center justify-center text-center font-label-lg cursor-pointer hover:bg-[#b0f244] transition-colors"
+          >
+            💡 New: PM-KISAN 19th installment released! Check your status →
+          </div>
+          <div class="bg-black/40 text-white/80 py-xs text-sm ticker-wrap">
+            <div class="ticker font-label-sm">
+              ✅ PM-KISAN: ₹6000/year · 📋 PMFBY: Kharif deadline 31 July · 🚜
+              SMAM: 50–80% subsidy open · 💧 PMKSY: Drip irrigation grants
+              available
+            </div>
+          </div>
+        </div>
+        <!-- Stats Bar -->
+        <div class="flex gap-md overflow-x-auto no-scrollbar py-sm">
+          <div
+            class="bg-white/10 border border-white/20 rounded-full px-md py-sm flex items-center gap-sm whitespace-nowrap"
+          >
+            <span class="text-xl">🏛️</span>
+            <span class="font-label-lg text-white">24 Active Schemes</span>
+          </div>
+          <div
+            class="bg-white/10 border border-white/20 rounded-full px-md py-sm flex items-center gap-sm whitespace-nowrap"
+          >
+            <span class="text-xl">👨‍🌾</span>
+            <span class="font-label-lg text-white">12Cr+ Beneficiaries</span>
+          </div>
+          <div
+            class="bg-white/10 border border-white/20 rounded-full px-md py-sm flex items-center gap-sm whitespace-nowrap"
+          >
+            <span class="text-xl">💰</span>
+            <span class="font-label-lg text-white">₹2.4L Cr Disbursed</span>
+          </div>
+          <div
+            class="bg-error/20 border border-error/50 rounded-full px-md py-sm flex items-center gap-sm whitespace-nowrap"
+          >
+            <span class="text-xl">⏰</span>
+            <span class="font-label-lg text-error-container"
+              >3 Deadlines This Month</span
+            >
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+          <!-- Main Content Left (2 cols) -->
+          <div class="lg:col-span-2 flex flex-col gap-xl">
+            <!-- Eligibility Check -->
+            <div
+              class="card-bg rounded-2xl p-xl flex flex-col sm:flex-row items-center justify-between gap-lg relative overflow-hidden"
+            >
+              <div class="absolute -right-10 -bottom-10 opacity-10">
+                <span class="material-symbols-outlined text-[120px]"
+                  >assignment_turned_in</span
+                >
+              </div>
+              <div class="flex-1 relative z-10">
+                <h3
+                  class="font-headline-lg text-headline-lg font-bold text-white mb-sm flex items-center gap-sm"
+                >
+                  🎯 Know Your Schemes in 60 Seconds
+                </h3>
+                <p class="font-body-md text-white/70">
+                  Answer 3 simple questions about your land and crops to find
+                  guaranteed matching schemes.
+                </p>
+              </div>
+              <button
+                class="bg-gold text-tertiary-fixed font-bold font-label-lg px-xl py-md rounded-full shadow-lg hover:shadow-xl hover:opacity-90 transition-all whitespace-nowrap z-10"
+              >
+                Check My Eligibility
+              </button>
+            </div>
+            <!-- PM KISAN Hero Card -->
+            <div class="card-bg rounded-2xl p-0 overflow-hidden relative group">
+              <div
+                class="h-32 bg-gradient-to-r from-secondary to-[#1B4332] p-lg flex justify-between items-start"
+              >
+                <div>
+                  <span
+                    class="inline-block bg-white/20 text-white font-label-sm px-sm py-xs rounded mb-sm backdrop-blur-sm"
+                    >Central Sector Scheme</span
+                  >
+                  <h3
+                    class="font-display-md text-display-md font-bold text-white leading-tight"
+                  >
+                    PM-KISAN
+                  </h3>
+                  <p class="font-body-md text-white/80">
+                    Pradhan Mantri Kisan Samman Nidhi
+                  </p>
+                </div>
+                <div class="text-right">
+                  <div class="font-display-md text-lime font-extrabold">
+                    ₹6,000
+                  </div>
+                  <div class="font-label-sm text-white/70">per year</div>
+                </div>
+              </div>
+              <div class="p-lg">
+                <div
+                  class="flex items-center gap-sm mb-lg bg-lime/10 text-lime px-md py-sm rounded-lg border border-lime/20 inline-flex"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >check_circle</span
+                  >
+                  <span class="font-label-lg"
+                    >19th Installment Released (Feb 2024)</span
+                  >
+                </div>
+                <div class="flex flex-wrap gap-sm mb-lg">
+                  <span
+                    class="font-label-sm bg-white/5 border border-white/10 rounded-full px-sm py-xs text-white/80"
+                    >All Farmers</span
+                  >
+                  <span
+                    class="font-label-sm bg-white/5 border border-white/10 rounded-full px-sm py-xs text-white/80"
+                    >Direct Benefit Transfer</span
+                  >
+                  <span
+                    class="font-label-sm bg-white/5 border border-white/10 rounded-full px-sm py-xs text-white/80"
+                    >Requires Aadhaar</span
+                  >
+                </div>
+                <div class="mb-xl">
+                  <div
+                    class="flex justify-between text-label-sm text-white/70 mb-xs"
+                  >
+                    <span class="">Next Installment Progress</span>
+                    <span class="">Estimated: Jun 2024</span>
+                  </div>
+                  <div class="w-full bg-white/10 rounded-full h-2">
+                    <div
+                      class="bg-gradient-to-r from-lime to-green-500 h-2 rounded-full"
+                      style="width: 35%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-md">
+                  <button
+                    class="flex-1 bg-lime text-[#1B4332] font-bold font-label-lg py-sm px-md rounded-lg hover:bg-[#b0f244] transition-colors flex justify-center items-center gap-sm"
+                  >
+                    Check Status
+                    <span class="material-symbols-outlined text-sm"
+                      >arrow_forward</span
+                    >
+                  </button>
+                  <button
+                    class="flex-1 border border-white/20 text-white font-label-lg py-sm px-md rounded-lg hover:bg-white/10 transition-colors"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Grid of other schemes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+              <!-- PMFBY -->
+              <div
+                class="card-bg rounded-2xl p-lg flex flex-col justify-between hover:border-lime/50 transition-colors cursor-pointer group"
+              >
+                <div>
+                  <div class="flex justify-between items-start mb-md">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined">shield</span>
+                    </div>
+                    <span
+                      class="bg-error/20 text-error-container font-label-sm px-sm py-xs rounded border border-error/30"
+                      >Ends July 31</span
+                    >
+                  </div>
+                  <h4
+                    class="font-headline-md text-white font-bold mb-xs group-hover:text-lime transition-colors"
+                  >
+                    PM Fasal Bima Yojana
+                  </h4>
+                  <p class="font-body-md text-white/60 mb-md line-clamp-2">
+                    Comprehensive crop insurance against non-preventable natural
+                    risks.
+                  </p>
+                </div>
+                <div
+                  class="flex justify-between items-center border-t border-white/10 pt-sm mt-auto"
+                >
+                  <span class="font-label-lg text-white">Premium: 1.5-2%</span>
+                  <span class="material-symbols-outlined text-white/50"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- KCC -->
+              <div
+                class="card-bg rounded-2xl p-lg flex flex-col justify-between hover:border-lime/50 transition-colors cursor-pointer group"
+              >
+                <div>
+                  <div class="flex justify-between items-start mb-md">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-gold/20 text-gold flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined">credit_card</span>
+                    </div>
+                    <span
+                      class="bg-white/10 text-white/80 font-label-sm px-sm py-xs rounded"
+                      >Bank Linkage</span
+                    >
+                  </div>
+                  <h4
+                    class="font-headline-md text-white font-bold mb-xs group-hover:text-lime transition-colors"
+                  >
+                    Kisan Credit Card
+                  </h4>
+                  <p class="font-body-md text-white/60 mb-md line-clamp-2">
+                    Credit support for agricultural and allied activities.
+                  </p>
+                </div>
+                <div
+                  class="flex justify-between items-center border-t border-white/10 pt-sm mt-auto"
+                >
+                  <span class="font-label-lg text-gold">Up to ₹3L @ 4%</span>
+                  <span class="material-symbols-outlined text-white/50"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Right Sidebar Dashboard -->
+          <div class="lg:col-span-1 flex flex-col gap-lg">
+            <div class="card-bg rounded-2xl p-lg sticky top-[100px]">
+              <h3
+                class="font-headline-md text-white font-bold mb-lg flex items-center gap-sm border-b border-white/10 pb-sm"
+              >
+                <span class="material-symbols-outlined">list_alt</span> Your
+                Scheme Status
+              </h3>
+              <div class="flex flex-col gap-md">
+                <!-- Applied Item -->
+                <div
+                  class="flex items-start gap-md p-sm hover:bg-white/5 rounded-lg transition-colors cursor-pointer"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-lime/20 flex items-center justify-center text-lime shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >pending_actions</span
+                    >
+                  </div>
+                  <div>
+                    <h5 class="font-label-lg text-white">PM-KISAN Update</h5>
+                    <p class="font-label-sm text-white/60">
+                      Aadhaar verification pending
+                    </p>
+                    <button
+                      class="text-lime font-label-sm mt-xs hover:underline"
+                    >
+                      Complete Now
+                    </button>
+                  </div>
+                </div>
+                <!-- Saved Item -->
+                <div
+                  class="flex items-start gap-md p-sm hover:bg-white/5 rounded-lg transition-colors cursor-pointer"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white/70 shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >bookmark</span
+                    >
+                  </div>
+                  <div>
+                    <h5 class="font-label-lg text-white">SMAM Subsidy</h5>
+                    <p class="font-label-sm text-white/60">
+                      Saved for Tractor purchase
+                    </p>
+                  </div>
+                </div>
+                <!-- Match Item -->
+                <div
+                  class="flex items-start gap-md p-sm hover:bg-white/5 rounded-lg transition-colors cursor-pointer"
+                >
+                  <div
+                    class="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold shrink-0"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >magic_button</span
+                    >
+                  </div>
+                  <div>
+                    <h5 class="font-label-lg text-white">Soil Health Card</h5>
+                    <p class="font-label-sm text-white/60">
+                      90% Match based on profile
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-lg pt-md border-t border-white/10">
+                <button
+                  class="w-full py-sm border border-white/20 rounded-lg text-white font-label-lg hover:bg-white/10 transition-colors"
+                >
+                  View Full Dashboard
+                </button>
+              </div>
+            </div>
+            <!-- Help / Footer Section inside sidebar for compact view -->
+            <div
+              class="card-bg rounded-2xl p-md bg-gradient-to-br from-[#1C1C1E] to-[#2a3028]"
+            >
+              <h4 class="font-label-lg text-white/80 mb-sm">Need Help?</h4>
+              <div class="flex flex-col gap-sm">
+                <a
+                  class="flex items-center gap-sm text-white hover:text-lime transition-colors"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >support_agent</span
+                  >
+                  <span class="font-body-md">PM-KISAN Helpline: 155261</span>
+                </a>
+                <a
+                  class="flex items-center gap-sm text-white hover:text-lime transition-colors"
+                  href="#"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >location_city</span
+                  >
+                  <span class="font-body-md">Find nearby CSC</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Floating Compare FAB -->
+      <button
+        class="fixed bottom-lg right-lg w-14 h-14 bg-gold rounded-full shadow-xl flex items-center justify-center text-[#3D2B1F] hover:scale-105 transition-transform z-50"
+      >
+        <span class="material-symbols-outlined text-3xl">compare_arrows</span>
+      </button>
+    </main>
+  </body>
+</html>

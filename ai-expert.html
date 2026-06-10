@@ -1,0 +1,589 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KrishiSetu AI Expert</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#e3b448",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-fixed": "#28180d",
+              "tertiary-container": "#d2b5a4",
+              surface: "#fdf9f0",
+              "on-primary": "#ffffff",
+              "secondary-fixed": "#bcf0ae",
+              "surface-bright": "#fdf9f0",
+              "surface-dim": "#dddad1",
+              "on-primary-container": "#604600",
+              "inverse-on-surface": "#f4f0e8",
+              "secondary-fixed-dim": "#a1d494",
+              "secondary-container": "#b9eeab",
+              "on-background": "#1c1c17",
+              "on-surface": "#1c1c17",
+              "surface-container-highest": "#e6e2d9",
+              "primary-fixed": "#ffdf9f",
+              "on-surface-variant": "#4e4636",
+              "surface-container": "#f1eee5",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f7f3ea",
+              "on-tertiary-container": "#5b4639",
+              "outline-variant": "#d2c5b0",
+              "inverse-primary": "#f0c052",
+              "tertiary-fixed-dim": "#dec1af",
+              "primary-fixed-dim": "#f0c052",
+              background: "#fdf9f0",
+              primary: "#795900",
+              "on-secondary": "#ffffff",
+              "surface-tint": "#795900",
+              outline: "#807664",
+              "on-secondary-fixed-variant": "#23501e",
+              "on-primary-fixed-variant": "#5b4300",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#fbddca",
+              "on-secondary-fixed": "#002201",
+              "on-error": "#ffffff",
+              secondary: "#3b6934",
+              "inverse-surface": "#31312b",
+              error: "#ba1a1a",
+              "on-secondary-container": "#3f6d38",
+              "on-primary-fixed": "#261a00",
+              tertiary: "#705a4c",
+              "surface-container-high": "#ece8df",
+              "surface-variant": "#e6e2d9",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#574335",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              md: "16px",
+              sm: "8px",
+              "margin-desktop": "64px",
+              "margin-mobile": "16px",
+              xs: "4px",
+              lg: "24px",
+              base: "4px",
+              xl: "32px",
+              gutter: "20px",
+            },
+            fontFamily: {
+              "body-md": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #fdf9f0;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .chat-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .chat-scroll::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .chat-scroll::-webkit-scrollbar-thumb {
+        background: #d2c5b0;
+        border-radius: 10px;
+      }
+      .harvest-gradient {
+        background: linear-gradient(135deg, #3b6934 0%, #e3b448 100%);
+      }
+      .soft-elevation {
+        box-shadow: 0 12px 32px -4px rgba(61, 43, 31, 0.08);
+      }
+    </style>
+  </head>
+  <body class="bg-surface">
+    <!-- SideNavBar Shell -->
+    <aside
+      class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col py-lg px-md z-50"
+    >
+      <div class="mb-xl px-sm">
+        <h1 class="font-display-md text-display-md text-primary leading-tight">
+          KrishiSetu
+        </h1>
+        <p class="font-body-md text-on-surface-variant text-sm">
+          Mitti Ki Baat, Digital Saath
+        </p>
+      </div>
+      <nav class="flex-1 space-y-base">
+        <!-- Home -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="home.html"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="font-body-md">Home</span>
+        </a>
+        <!-- AI Expert (Active) -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-bold text-primary border-r-4 border-primary bg-primary-container/20 transition-transform duration-150 active:scale-[0.98]"
+          href="ai-expert.html"
+        >
+          <span
+            class="material-symbols-outlined"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >smart_toy</span
+          >
+          <span class="font-body-md">AI Expert</span>
+        </a>
+        <!-- Mandi -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="mandi.html"
+        >
+          <span class="material-symbols-outlined">storefront</span>
+          <span class="font-body-md">Mandi</span>
+        </a>
+        <!-- Weather -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="weather.html"
+        >
+          <span class="material-symbols-outlined">wb_sunny</span>
+          <span class="font-body-md">Weather</span>
+        </a>
+        <!-- Ledger -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="ledger.html"
+        >
+          <span class="material-symbols-outlined">account_balance_wallet</span>
+          <span class="font-body-md">Ledger</span>
+        </a>
+        <!-- Community -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="community.html"
+        >
+          <span class="material-symbols-outlined">groups</span>
+          <span class="font-body-md">Community</span>
+        </a>
+        <!-- Settings -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="setting.html"
+        >
+          <span class="material-symbols-outlined">settings</span>
+          <span class="font-body-md">Settings</span>
+        </a>
+        <!-- Language (file list mein nahi hai, isliye # rakha) -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="#"
+        >
+          <span class="material-symbols-outlined">language</span>
+          <span class="font-body-md">Language</span>
+        </a>
+        <!-- Sign In -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="signin.html"
+        >
+          <span class="material-symbols-outlined">login</span>
+          <span class="font-body-md">Sign In</span>
+        </a>
+        <!-- Create Account -->
+        <a
+          class="flex items-center gap-md px-md py-sm rounded-xl font-medium text-on-surface-variant hover:bg-primary-container/10 hover:text-primary transition-colors transition-transform duration-150 active:scale-[0.98]"
+          href="create-account.html"
+        >
+          <span class="material-symbols-outlined">person_add</span>
+          <span class="font-body-md">Create Account</span>
+        </a>
+      </nav>
+      <div
+        class="mt-auto pt-md border-t border-outline-variant flex items-center gap-sm"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center"
+        >
+          <span class="material-symbols-outlined text-on-primary-container"
+            >person</span
+          >
+        </div>
+        <div>
+          <p class="font-label-lg text-on-surface leading-none">Ramesh Kumar</p>
+          <p class="text-[10px] text-on-surface-variant">Verified Farmer</p>
+        </div>
+      </div>
+    </aside>
+    <!-- TopNavBar Shell -->
+    <header
+      class="fixed top-0 right-0 w-[calc(100%-16rem)] h-16 z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant flex justify-between items-center px-margin-desktop"
+    >
+      <div class="flex items-center gap-md">
+        <div class="relative w-96">
+          <span
+            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
+            >search</span
+          >
+          <input
+            class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-primary-container text-body-md"
+            placeholder="Search for crops, seeds, or techniques..."
+            type="text"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-lg">
+        <button
+          class="flex items-center gap-xs font-label-lg text-on-surface-variant hover:text-primary transition-colors active:opacity-80"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button
+          class="flex items-center gap-xs font-label-lg text-on-surface-variant hover:text-primary transition-colors active:opacity-80"
+        >
+          <span class="material-symbols-outlined">help</span>
+        </button>
+        <div class="w-px h-6 bg-outline-variant"></div>
+        <img
+          alt="User Profile Avatar"
+          class="w-8 h-8 rounded-full border border-primary-container"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJYhbboKn-sP5DVew9NzO2MOq3lOM6BBGaZX702jFY48nfH3QeKf7qIWb4enQo43LXvYpjoQPkRkuwTNgGNejVOut892UOQAr7J81u1gEITK_7tBHkBoNMuaSZ9lOpnTvtSnRv2JZg5t95JoDoUsoO8g-jq9aI6nVL8X6UO9QZ699K15eSlsU35xmhzpbH5Gl9uYl5u0iAqKqNj-E4JO7ilgmIcuItEpzbouArX7oitSxGNMqn0zjStxiU4VdeN3tTgI2elgHpObfh"
+        />
+      </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main
+      class="ml-64 pt-16 h-screen flex flex-col bg-surface overflow-hidden relative"
+    >
+      <!-- Subtle Animated Background Component -->
+      <div class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
+      <div
+        class="flex-1 overflow-y-auto chat-scroll flex flex-col items-center px-margin-desktop py-lg z-10"
+      >
+        <!-- Welcome Card -->
+        <div
+          class="w-full max-w-4xl bg-white border border-outline-variant/5 rounded-3xl p-xl flex flex-col items-center text-center soft-elevation mb-xl"
+        >
+          <div
+            class="w-16 h-16 rounded-full bg-primary-container/20 flex items-center justify-center mb-md"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-4xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >eco</span
+            >
+          </div>
+          <h2 class="font-display-md text-headline-lg text-on-surface mb-sm">
+            Main hoon Krishi AI
+          </h2>
+          <p class="font-body-md text-on-surface-variant max-w-md mb-lg">
+            Ask me anything about your farm, pests, soil health, or government
+            subsidies.
+          </p>
+          <div class="flex gap-sm">
+            <span
+              class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-lg border border-outline-variant flex items-center gap-xs cursor-pointer hover:bg-primary-container/10"
+            >
+              <span class="material-symbols-outlined text-[18px]">mic</span>
+              Voice
+            </span>
+            <span
+              class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-lg border border-outline-variant flex items-center gap-xs cursor-pointer hover:bg-primary-container/10"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >camera_alt</span
+              >
+              Photo
+            </span>
+            <span
+              class="px-md py-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-lg border border-outline-variant flex items-center gap-xs cursor-pointer hover:bg-primary-container/10"
+            >
+              <span class="material-symbols-outlined text-[18px]"
+                >translate</span
+              >
+              Language
+            </span>
+          </div>
+        </div>
+        <!-- Chat History -->
+        <div class="w-full max-w-4xl space-y-lg pb-40">
+          <!-- AI Message -->
+          <div class="flex gap-md max-w-[85%]">
+            <div
+              class="w-8 h-8 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center mt-1"
+            >
+              <span
+                class="material-symbols-outlined text-white text-[18px]"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >smart_toy</span
+              >
+            </div>
+            <div
+              class="bg-secondary text-white px-lg py-md rounded-2xl rounded-tl-none font-body-md leading-relaxed shadow-sm"
+            >
+              Namaste Ramesh ji! Aapki fasal ki koi bhi samasya batayein. Main
+              aapki madad karne ke liye taiyaar hoon.
+            </div>
+          </div>
+          <!-- User Message -->
+          <div class="flex gap-md justify-end">
+            <div
+              class="bg-primary-container text-on-primary-container px-lg py-md rounded-2xl rounded-tr-none font-body-md max-w-[85%] shadow-sm border-b-2 border-primary/20"
+            >
+              Mere soyabean ke patton pe peelay aur bhoore daag aa rahe hain 3
+              din se.
+            </div>
+            <img
+              alt="User Profile"
+              class="w-8 h-8 rounded-full mt-1 border border-primary-container"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu5LMwUXgi70luzpVixWtF2VCociMprfy365u6HUHKH5wlLziu7qCG0J5RljLU0QzEcwrJERk1f-iMhL0u3Um-zrrOx-bD9BAkvMZgJplbD7gLjT-zyZ0F1T1dLlE8sVAod4zUWkLJid_l9QBZhD_sUK9VH0OleIXWlDOFRMSRM2qe_RijbjynsmUhUm8ktWmtXD1DVaev5b3Q43_Izq4i4oOqf36eGbaa0ae9IqqV08vevjxgWPlESg5DjJGv3Ge4dA2tuAVadl4m"
+            />
+          </div>
+          <!-- User Photo Upload -->
+          <div class="flex gap-md justify-end">
+            <div
+              class="p-xs bg-white rounded-2xl border border-outline-variant soft-elevation"
+            >
+              <img
+                class="w-64 h-48 object-cover rounded-xl"
+                data-alt="A macro high-resolution close-up photograph of a diseased soybean leaf with yellow and brown pustules from soybean rust. The lighting is bright, natural daylight, emphasizing the texture of the leaf. The background is softly blurred to keep focus on the agricultural diagnosis. The visual style is professional, grounded, and high-fidelity, matching the premium KrishiSetu brand aesthetic."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNQjuogXijC2ykqBoJZtJCyT8i18WE3gMucXBD_xM9CN7c10oEe--fB29WCLmNP-hQPCokd3ukSeaSo85vkSvMsv_GOMPKyVNxFwvHez_W9Gr3TJW6dMc8QFqCgMbNbjpPIc865Mg9exfwN4nobT1bwl8x8EuAxQTzKaSKhf0EyEkSTmfxRF8BuxJAt_AwzXN3C8BEAIiYEQEgrMIelJ7zvBoZoL5LRhgcfA4TJXmIkaGYNv9NAUG4taBT0IW5lVf7d6jgpB3pG7n7"
+              />
+              <div class="px-md py-sm flex items-center justify-between">
+                <span class="text-xs font-label-lg text-on-surface-variant"
+                  >soybean_leaf_rust.jpg</span
+                >
+                <span class="material-symbols-outlined text-primary"
+                  >check_circle</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- AI Diagnosis Card -->
+          <div class="flex gap-md max-w-[90%]">
+            <div
+              class="w-8 h-8 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center mt-1"
+            >
+              <span
+                class="material-symbols-outlined text-white text-[18px]"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >smart_toy</span
+              >
+            </div>
+            <div
+              class="bg-white border border-outline-variant/10 p-lg rounded-3xl rounded-tl-none soft-elevation w-full"
+            >
+              <div class="flex items-start justify-between mb-md">
+                <div>
+                  <span
+                    class="bg-error-container text-on-error-container text-[10px] px-sm py-1 rounded-full font-bold uppercase tracking-wider"
+                    >Alert</span
+                  >
+                  <h3 class="font-headline-md text-on-surface mt-sm">
+                    Soyabean Rust detected
+                  </h3>
+                  <p class="font-body-md text-on-surface-variant">
+                    Based on your photo, your crop has a fungal infection. This
+                    needs immediate attention to prevent yield loss.
+                  </p>
+                </div>
+                <div
+                  class="bg-surface-container-high p-md rounded-2xl border border-outline-variant text-center"
+                >
+                  <p
+                    class="text-[10px] font-bold text-on-surface-variant uppercase"
+                  >
+                    Severity
+                  </p>
+                  <p class="text-headline-md text-error font-bold">High</p>
+                </div>
+              </div>
+              <!-- Progress/Severity Bar -->
+              <div
+                class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden mb-lg"
+              >
+                <div class="h-full harvest-gradient" style="width: 75%"></div>
+              </div>
+              <div class="flex gap-md">
+                <button
+                  class="flex-1 bg-primary-container text-on-primary-container py-sm rounded-xl font-label-lg hover:brightness-95 transition-all border-b-2 border-primary/20 flex items-center justify-center gap-xs"
+                >
+                  <span class="material-symbols-outlined text-sm">science</span>
+                  View Pesticides
+                </button>
+                <button
+                  class="flex-1 border border-secondary text-secondary py-sm rounded-xl font-label-lg hover:bg-secondary/5 transition-all flex items-center justify-center gap-xs"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >account_balance</span
+                  >
+                  Govt Schemes
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- AI Schedule Card -->
+          <div class="flex gap-md max-w-[90%]">
+            <div
+              class="w-8 h-8 rounded-full bg-secondary flex-shrink-0 flex items-center justify-center mt-1"
+            >
+              <span
+                class="material-symbols-outlined text-white text-[18px]"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >smart_toy</span
+              >
+            </div>
+            <div
+              class="bg-white border border-outline-variant/10 p-lg rounded-3xl rounded-tl-none soft-elevation w-full"
+            >
+              <div class="flex items-center gap-sm mb-lg">
+                <span class="material-symbols-outlined text-primary"
+                  >calendar_today</span
+                >
+                <h3 class="font-headline-md text-on-surface">
+                  Spray schedule — Soyabean Rust
+                </h3>
+              </div>
+              <!-- Timeline -->
+              <div class="space-y-md">
+                <div class="flex gap-md">
+                  <div class="flex flex-col items-center">
+                    <div class="w-3 h-3 rounded-full bg-primary"></div>
+                    <div class="w-0.5 h-full bg-outline-variant"></div>
+                  </div>
+                  <div class="pb-md">
+                    <p class="font-label-lg text-primary">Today (24 Oct)</p>
+                    <p class="font-body-md text-on-surface">
+                      First spray of Propiconazole (25% EC) at sunset.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-md">
+                  <div class="flex flex-col items-center">
+                    <div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+                    <div class="w-0.5 h-full bg-outline-variant"></div>
+                  </div>
+                  <div class="pb-md">
+                    <p class="font-label-lg text-on-surface-variant">
+                      Day 7 (31 Oct)
+                    </p>
+                    <p class="font-body-md text-on-surface-variant">
+                      Follow up inspection. Look for new yellow pustules.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-md">
+                  <div class="flex flex-col items-center">
+                    <div class="w-3 h-3 rounded-full bg-outline-variant"></div>
+                  </div>
+                  <div>
+                    <p class="font-label-lg text-on-surface-variant">
+                      Day 14 (7 Nov)
+                    </p>
+                    <p class="font-body-md text-on-surface-variant">
+                      Second spray if humidity remains high (&gt;80%).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sticky Input Area -->
+      <div
+        class="absolute bottom-0 right-0 w-[calc(100%-16rem)] p-lg bg-surface/90 backdrop-blur-md z-30"
+      >
+        <div
+          class="max-w-4xl mx-auto flex items-center gap-md bg-white rounded-full p-2 border border-outline-variant/50 soft-elevation focus-within:ring-2 focus-within:ring-primary-container transition-all"
+        >
+          <button
+            class="w-12 h-12 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"
+          >
+            <span class="material-symbols-outlined">add_circle</span>
+          </button>
+          <input
+            class="flex-1 border-none focus:ring-0 bg-transparent py-3 text-body-md text-on-surface"
+            placeholder="Type your question or record audio..."
+            type="text"
+          />
+          <div class="flex items-center gap-sm px-md">
+            <button
+              class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors"
+            >
+              <span class="material-symbols-outlined">camera_alt</span>
+            </button>
+            <button
+              class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors"
+            >
+              <span class="material-symbols-outlined">attach_file</span>
+            </button>
+            <button
+              class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center soft-elevation hover:brightness-95 active:scale-95 transition-all"
+            >
+              <span
+                class="material-symbols-outlined text-[28px]"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >mic</span
+              >
+            </button>
+          </div>
+        </div>
+        <p
+          class="text-center mt-sm text-[10px] text-on-surface-variant uppercase tracking-widest font-bold"
+        >
+          Krishi AI can make mistakes. Verify critical actions with local
+          experts.
+        </p>
+      </div>
+    </main>
+    <script>
+      // Micro-interactions and subtle effects
+      document.addEventListener("DOMContentLoaded", () => {
+        const chatContainer = document.querySelector(".chat-scroll");
+        // Scroll to bottom on load
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+
+        // Simple hover effect for chips
+        const chips = document.querySelectorAll(".px-md.py-xs");
+        chips.forEach((chip) => {
+          chip.addEventListener("mouseenter", () => {
+            chip.classList.add("scale-105");
+          });
+          chip.addEventListener("mouseleave", () => {
+            chip.classList.remove("scale-105");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

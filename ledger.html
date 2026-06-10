@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Crop Ledger &amp; Expense Diary</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "primary-fixed": "#ffdf9f",
+              "on-tertiary": "#ffffff",
+              surface: "#fdf9f0",
+              "inverse-surface": "#31312b",
+              "primary-fixed-dim": "#f0c052",
+              "on-primary-fixed-variant": "#5b4300",
+              "surface-tint": "#795900",
+              "surface-container": "#f1eee5",
+              "outline-variant": "#d2c5b0",
+              "on-tertiary-container": "#5b4639",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#d2b5a4",
+              "on-tertiary-fixed": "#28180d",
+              "surface-container-low": "#f7f3ea",
+              primary: "#795900",
+              "on-primary": "#ffffff",
+              "primary-container": "#e3b448",
+              "on-secondary-fixed-variant": "#23501e",
+              "on-error": "#ffffff",
+              tertiary: "#705a4c",
+              "on-primary-container": "#604600",
+              "surface-bright": "#fdf9f0",
+              error: "#ba1a1a",
+              "on-background": "#1c1c17",
+              "on-surface-variant": "#4e4636",
+              "surface-container-high": "#ece8df",
+              "surface-variant": "#e6e2d9",
+              "tertiary-fixed-dim": "#dec1af",
+              "secondary-fixed": "#bcf0ae",
+              "secondary-container": "#b9eeab",
+              "secondary-fixed-dim": "#a1d494",
+              "on-secondary-fixed": "#002201",
+              background: "#fdf9f0",
+              secondary: "#3b6934",
+              "on-primary-fixed": "#261a00",
+              "inverse-on-surface": "#f4f0e8",
+              "inverse-primary": "#f0c052",
+              "tertiary-fixed": "#fbddca",
+              "on-surface": "#1c1c17",
+              "on-secondary-container": "#3f6d38",
+              "surface-dim": "#dddad1",
+              "surface-container-highest": "#e6e2d9",
+              "on-tertiary-fixed-variant": "#574335",
+              "on-secondary": "#ffffff",
+              outline: "#807664",
+              "on-error-container": "#93000a",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "8px",
+              md: "16px",
+              "margin-desktop": "64px",
+              base: "4px",
+              xs: "4px",
+              "margin-mobile": "16px",
+              lg: "24px",
+              gutter: "20px",
+              xl: "32px",
+            },
+            fontFamily: {
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "400",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "600",
+                },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  fontWeight: "700",
+                },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  fontWeight: "700",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  fontWeight: "400",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: theme("colors.background");
+        color: theme("colors.on-background");
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+      .card-shadow {
+        box-shadow: 0 12px 32px -4px rgba(61, 43, 31, 0.08);
+      }
+    </style>
+  </head>
+  <body class="flex bg-surface font-body-lg text-body-lg">
+    <!-- SideNavBar (WEB) -->
+    <!-- Side Navigation Shell -->
+    <aside
+      class="fixed left-0 top-0 h-full flex flex-col py-lg px-md w-64 bg-surface-container-low border-r border-outline-variant/20 z-50"
+    >
+      <div class="mb-xl px-md">
+        <h1 class="font-headline-md text-headline-md font-bold text-primary">
+          KrishiSetu
+        </h1>
+        <p class="text-label-sm text-on-surface-variant">
+          Mitti Ki Baat, Digital Saath
+        </p>
+      </div>
+      <nav class="flex-1 space-y-sm">
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="home.html"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="font-label-lg text-label-lg">Home</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="ai-expert.html"
+        >
+          <span class="material-symbols-outlined">psychology</span>
+          <span class="font-label-lg text-label-lg">AI Expert</span>
+        </a>
+        <a
+          class="flex items-center gap-md bg-secondary-container text-on-secondary-container rounded-lg px-md py-sm transition-all"
+          href="mandi.html"
+        >
+          <span class="material-symbols-outlined">storefront</span>
+          <span class="font-label-lg text-label-lg">Mandi</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="weather.html"
+        >
+          <span class="material-symbols-outlined">wb_sunny</span>
+          <span class="font-label-lg text-label-lg">Weather</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="ledger.html"
+        >
+          <span class="material-symbols-outlined">menu_book</span>
+          <span class="font-label-lg text-label-lg">Ledger</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="community.html"
+        >
+          <span class="material-symbols-outlined">groups</span>
+          <span class="font-label-lg text-label-lg">Community</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="setting.html"
+          ><span class="material-symbols-outlined">settings</span
+          ><span class="font-label-lg text-label-lg">Settings</span></a
+        >
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="#"
+          ><span class="material-symbols-outlined">language</span
+          ><span class="font-label-lg text-label-lg">Language</span></a
+        >
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="signin.html"
+          ><span class="material-symbols-outlined">login</span
+          ><span class="font-label-lg text-label-lg">Sign In</span></a
+        >
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="create-account.html"
+          ><span class="material-symbols-outlined">person_add</span
+          ><span class="font-label-lg text-label-lg">Create Account</span></a
+        >
+      </nav>
+      <div class="mt-auto px-md">
+        <button
+          class="w-full bg-primary-container text-on-primary-container font-label-lg py-sm rounded-xl border-b-2 border-on-primary-container/20 hover:brightness-105 transition-all"
+        >
+          Upgrade to Pro
+        </button>
+      </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="flex-1 md:ml-64 min-h-screen flex flex-col">
+      <!-- TopAppBar (Global - Mobile Header & Desktop Header) -->
+      <header
+        class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-base bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows"
+      >
+        <div class="flex items-center gap-md">
+          <button
+            class="md:hidden text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high transition-colors scale-95 active:opacity-80 transition-all p-sm rounded-full"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <div
+            class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim"
+          >
+            Crop Ledger &amp; Expense Diary
+          </div>
+        </div>
+        <div class="flex items-center gap-sm">
+          <button
+            class="text-on-surface-variant hover:bg-surface-container-high transition-colors scale-95 active:opacity-80 transition-all p-sm rounded-full"
+          >
+            <span class="material-symbols-outlined" data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="text-on-surface-variant hover:bg-surface-container-high transition-colors scale-95 active:opacity-80 transition-all p-sm rounded-full hidden md:block"
+          >
+            <span class="material-symbols-outlined" data-icon="account_circle"
+              >account_circle</span
+            >
+          </button>
+        </div>
+      </header>
+      <!-- Dashboard Content -->
+      <div class="flex-1 overflow-y-auto pb-24 md:pb-lg">
+        <div
+          class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg"
+        >
+          <!-- Page Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-xl gap-md"
+          >
+            <div>
+              <h2 class="font-display-md text-display-md text-primary mb-xs">
+                📒 Crop Ledger &amp; Expense Diary
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Apni kheti ka hisaab — seedha aapke haath mein
+              </p>
+            </div>
+            <div
+              class="flex items-center gap-sm bg-surface-container px-md py-sm rounded-full border border-outline-variant"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >calendar_month</span
+              >
+              <span class="font-label-lg text-label-lg text-primary"
+                >Kharif 2025</span
+              >
+              <span class="material-symbols-outlined text-primary ml-sm"
+                >expand_more</span
+              >
+            </div>
+          </div>
+          <!-- Dashboard Sub-Nav -->
+          <div
+            class="flex items-center gap-xl w-full mt-base mb-xl overflow-x-auto hide-scrollbar bg-surface-container dark:bg-surface-container-highest px-md rounded-lg"
+          >
+            <button
+              class="text-secondary border-b-2 border-secondary font-bold pb-2 pt-2 whitespace-nowrap"
+            >
+              Overview
+            </button>
+            <button
+              class="text-on-surface-variant pb-2 pt-2 hover:text-secondary transition-colors whitespace-nowrap"
+            >
+              Expenses
+            </button>
+            <button
+              class="text-on-surface-variant pb-2 pt-2 hover:text-secondary transition-colors whitespace-nowrap"
+            >
+              Income
+            </button>
+            <button
+              class="text-on-surface-variant pb-2 pt-2 hover:text-secondary transition-colors whitespace-nowrap"
+            >
+              Crops
+            </button>
+            <button
+              class="text-on-surface-variant pb-2 pt-2 hover:text-secondary transition-colors whitespace-nowrap"
+            >
+              Reports
+            </button>
+          </div>
+          <!-- Bento Grid Layout -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+            <!-- Primary Financial Snapshot (Span 8) -->
+            <div
+              class="md:col-span-8 bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30 relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -mr-20 -mt-20"
+              ></div>
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-lg"
+              >
+                Financial Snapshot
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-lg mb-lg">
+                <div
+                  class="bg-secondary-container/30 p-md rounded-xl border border-secondary/20"
+                >
+                  <p
+                    class="font-label-sm text-label-sm text-on-surface-variant mb-xs"
+                  >
+                    Net P&amp;L This Season
+                  </p>
+                  <div class="flex items-end gap-sm">
+                    <h4 class="font-display-md text-display-md text-secondary">
+                      ₹+34,200
+                    </h4>
+                    <span
+                      class="font-label-sm text-label-sm text-secondary bg-secondary-container px-2 py-1 rounded mb-2"
+                      >ROI 70.8%</span
+                    >
+                  </div>
+                </div>
+                <div class="flex flex-col gap-md">
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <p
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        Total Income
+                      </p>
+                      <p
+                        class="font-headline-md text-headline-md text-secondary"
+                      >
+                        ₹82,500
+                      </p>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-secondary bg-secondary-container/50 p-2 rounded-full"
+                      >trending_up</span
+                    >
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <p
+                        class="font-label-sm text-label-sm text-on-surface-variant"
+                      >
+                        Total Expenses
+                      </p>
+                      <p class="font-headline-md text-headline-md text-error">
+                        ₹48,300
+                      </p>
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-error bg-error-container/50 p-2 rounded-full"
+                      >trending_down</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="flex justify-between font-label-sm text-label-sm mb-xs"
+                >
+                  <span class="text-secondary">Income (63%)</span>
+                  <span class="text-error">Expense (37%)</span>
+                </div>
+                <div
+                  class="w-full h-3 bg-error-container rounded-full overflow-hidden flex"
+                >
+                  <div class="h-full bg-secondary" style="width: 63%"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Quick Actions & Insights (Span 4) -->
+            <div class="md:col-span-4 flex flex-col gap-lg">
+              <div
+                class="bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30 flex flex-col gap-md"
+              >
+                <button
+                  class="w-full py-md bg-secondary text-on-secondary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-sm hover:opacity-90 transition-opacity border-b-2 border-secondary-fixed"
+                >
+                  <span class="material-symbols-outlined">add_circle</span>
+                  Add Expense
+                </button>
+                <button
+                  class="w-full py-md border-2 border-secondary text-secondary font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-sm hover:bg-secondary-container/20 transition-colors"
+                >
+                  <span class="material-symbols-outlined">add_card</span>
+                  Add Income
+                </button>
+              </div>
+              <!-- Auto-Import Card -->
+              <div
+                class="bg-primary-container/10 rounded-2xl p-md border border-primary/20 flex items-center gap-md cursor-pointer hover:bg-primary-container/20 transition-colors"
+              >
+                <div class="bg-primary text-on-primary p-sm rounded-lg">
+                  <span class="material-symbols-outlined">receipt_long</span>
+                </div>
+                <div>
+                  <h4 class="font-label-lg text-label-lg text-primary">
+                    Auto-Import from Mandi
+                  </h4>
+                  <p
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                  >
+                    Sync recent sales receipts
+                  </p>
+                </div>
+                <span class="material-symbols-outlined text-primary ml-auto"
+                  >chevron_right</span
+                >
+              </div>
+            </div>
+            <!-- Charts Area (Span 12 split 7/5) -->
+            <div
+              class="md:col-span-7 bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30 min-h-[300px] flex flex-col"
+            >
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-lg"
+              >
+                Monthly Income vs Expense
+              </h3>
+              <div
+                class="flex-1 flex items-end justify-between px-md pt-lg relative"
+              >
+                <!-- Dummy Bar Chart -->
+                <div
+                  class="absolute inset-0 border-b border-l border-outline-variant ml-md mb-md"
+                ></div>
+                <div
+                  class="w-12 h-32 bg-secondary rounded-t-sm z-10 mx-2"
+                ></div>
+                <div
+                  class="w-12 h-16 bg-error rounded-t-sm z-10 mx-2 -ml-8 opacity-80"
+                ></div>
+                <div
+                  class="w-12 h-48 bg-secondary rounded-t-sm z-10 mx-2"
+                ></div>
+                <div
+                  class="w-12 h-24 bg-error rounded-t-sm z-10 mx-2 -ml-8 opacity-80"
+                ></div>
+                <div
+                  class="w-12 h-64 bg-secondary rounded-t-sm z-10 mx-2"
+                ></div>
+                <div
+                  class="w-12 h-40 bg-error rounded-t-sm z-10 mx-2 -ml-8 opacity-80"
+                ></div>
+              </div>
+              <div
+                class="flex justify-between px-lg mt-sm font-label-sm text-on-surface-variant"
+              >
+                <span class="">Jul</span><span class="">Aug</span
+                ><span class="">Sep</span>
+              </div>
+            </div>
+            <div
+              class="md:col-span-5 bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30 flex flex-col"
+            >
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-lg"
+              >
+                Expense Breakdown
+              </h3>
+              <div class="flex-1 flex items-center justify-center relative">
+                <!-- Dummy Donut Chart representation -->
+                <div
+                  class="w-48 h-48 rounded-full border-[16px] border-surface-container-high relative"
+                >
+                  <div
+                    class="absolute inset-0 border-[16px] border-secondary rounded-full border-r-transparent border-b-transparent transform rotate-45"
+                  ></div>
+                  <div
+                    class="absolute inset-0 border-[16px] border-primary rounded-full border-l-transparent border-b-transparent border-t-transparent transform rotate-12"
+                  ></div>
+                  <div
+                    class="absolute inset-0 flex items-center justify-center flex-col"
+                  >
+                    <span
+                      class="font-headline-md text-headline-md text-on-surface"
+                      >₹48k</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                      >Total</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-sm mt-md">
+                <div class="flex items-center gap-xs font-label-sm">
+                  <div class="w-3 h-3 rounded-full bg-secondary"></div>
+                  Fertilizer (40%)
+                </div>
+                <div class="flex items-center gap-xs font-label-sm">
+                  <div class="w-3 h-3 rounded-full bg-primary"></div>
+                  Seeds (25%)
+                </div>
+                <div class="flex items-center gap-xs font-label-sm">
+                  <div class="w-3 h-3 rounded-full bg-tertiary"></div>
+                  Labor (20%)
+                </div>
+                <div class="flex items-center gap-xs font-label-sm">
+                  <div
+                    class="w-3 h-3 rounded-full bg-surface-container-high"
+                  ></div>
+                  Other (15%)
+                </div>
+              </div>
+            </div>
+            <!-- Yield Predictor & Benchmarking -->
+            <div
+              class="md:col-span-4 bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30 flex flex-col"
+            >
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-md"
+              >
+                Yield Predictor
+              </h3>
+              <div class="flex-1 flex flex-col justify-center">
+                <div class="flex justify-between items-end mb-sm">
+                  <div>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      Estimated Yield
+                    </p>
+                    <p class="font-headline-lg text-headline-lg text-secondary">
+                      24.5 <span class="text-label-lg">Quintals/Acre</span>
+                    </p>
+                  </div>
+                  <div class="text-right">
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      District Avg
+                    </p>
+                    <p class="font-label-lg text-label-lg text-on-surface">
+                      21.2 Q/A
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden"
+                >
+                  <div class="h-full bg-secondary" style="width: 85%"></div>
+                </div>
+                <p
+                  class="mt-md font-label-sm text-label-sm text-secondary flex items-center gap-xs"
+                >
+                  <span class="material-symbols-outlined text-[16px]"
+                    >verified</span
+                  >
+                  Performing 15% better than neighbors!
+                </p>
+              </div>
+            </div>
+            <!-- Input Inventory Tracker -->
+            <div
+              class="md:col-span-4 bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30"
+            >
+              <h3
+                class="font-headline-md text-headline-md text-on-surface mb-md"
+              >
+                Inventory Stock
+              </h3>
+              <div class="flex flex-col gap-md">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-sm">
+                    <span class="material-symbols-outlined text-primary"
+                      >grass</span
+                    >
+                    <span class="font-label-lg text-label-lg">Wheat Seeds</span>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >45kg Left</span
+                  >
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-sm">
+                    <span class="material-symbols-outlined text-error"
+                      >Science</span
+                    >
+                    <span class="font-label-lg text-label-lg text-error"
+                      >Urea (Low!)</span
+                    >
+                  </div>
+                  <span class="font-label-sm text-label-sm text-error font-bold"
+                    >2 Bags Left</span
+                  >
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-sm">
+                    <span class="material-symbols-outlined text-primary"
+                      >pest_control</span
+                    >
+                    <span class="font-label-lg text-label-lg">Pesticides</span>
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-on-surface-variant"
+                    >12L Left</span
+                  >
+                </div>
+              </div>
+              <button
+                class="w-full mt-lg py-sm border border-primary text-primary rounded-lg font-label-sm hover:bg-primary-container/10 transition-colors"
+              >
+                Order More Stocks
+              </button>
+            </div>
+            <!-- Digital Receipt Vault -->
+            <div
+              class="md:col-span-4 bg-surface-container-lowest rounded-2xl p-lg card-shadow border border-outline-variant/30"
+            >
+              <div class="flex justify-between items-center mb-md">
+                <h3 class="font-headline-md text-headline-md text-on-surface">
+                  Receipt Vault
+                </h3>
+                <span
+                  class="material-symbols-outlined text-on-surface-variant cursor-pointer"
+                  >more_vert</span
+                >
+              </div>
+              <div class="flex gap-sm mb-lg overflow-x-auto hide-scrollbar">
+                <div
+                  class="w-16 h-20 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant"
+                    >description</span
+                  >
+                </div>
+                <div
+                  class="w-16 h-20 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant"
+                    >description</span
+                  >
+                </div>
+                <div
+                  class="w-16 h-20 bg-surface-container-high rounded border border-outline-variant flex items-center justify-center flex-shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-on-surface-variant"
+                    >description</span
+                  >
+                </div>
+              </div>
+              <button
+                class="w-full py-md bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-xl flex items-center justify-center gap-sm hover:opacity-90 transition-opacity"
+              >
+                <span class="material-symbols-outlined">psychology</span>
+                Analyze with AI
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

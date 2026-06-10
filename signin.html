@@ -1,0 +1,413 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KrishiSetu - Sign In</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#fdf9f0",
+              "on-primary-fixed-variant": "#5b4300",
+              "on-error": "#ffffff",
+              error: "#ba1a1a",
+              "on-surface-variant": "#4e4636",
+              background: "#fdf9f0",
+              "surface-tint": "#795900",
+              "surface-container-highest": "#e6e2d9",
+              "primary-fixed-dim": "#f0c052",
+              primary: "#795900",
+              "on-background": "#1c1c17",
+              "outline-variant": "#d2c5b0",
+              "on-secondary-fixed": "#002201",
+              "inverse-on-surface": "#f4f0e8",
+              "on-primary-fixed": "#261a00",
+              "secondary-fixed": "#bcf0ae",
+              "tertiary-fixed": "#fbddca",
+              "surface-container-high": "#ece8df",
+              "secondary-fixed-dim": "#a1d494",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#31312b",
+              "surface-bright": "#fdf9f0",
+              secondary: "#3b6934",
+              "error-container": "#ffdad6",
+              "on-surface": "#1c1c17",
+              "surface-container-low": "#f7f3ea",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdf9f",
+              "primary-container": "#e3b448",
+              "on-secondary-fixed-variant": "#23501e",
+              outline: "#807664",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dddad1",
+              "inverse-primary": "#f0c052",
+              "on-tertiary": "#ffffff",
+              tertiary: "#705a4c",
+              "on-tertiary-fixed-variant": "#574335",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-tertiary-fixed": "#28180d",
+              "on-secondary-container": "#3f6d38",
+              "on-primary": "#ffffff",
+              "secondary-container": "#b9eeab",
+              "on-primary-container": "#604600",
+              "on-tertiary-container": "#5b4639",
+              "tertiary-container": "#d2b5a4",
+              "surface-variant": "#e6e2d9",
+              "surface-container": "#f1eee5",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              lg: "24px",
+              base: "4px",
+              xl: "32px",
+              gutter: "20px",
+              "margin-desktop": "64px",
+              sm: "8px",
+              md: "16px",
+              xs: "4px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "display-lg": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "400",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                {
+                  lineHeight: "32px",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "16px",
+                {
+                  lineHeight: "24px",
+                  fontWeight: "400",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                {
+                  lineHeight: "36px",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                {
+                  lineHeight: "28px",
+                  fontWeight: "600",
+                },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .hero-bg {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .hero-overlay {
+        background: linear-gradient(
+          180deg,
+          rgba(61, 43, 31, 0.1) 0%,
+          rgba(61, 43, 31, 0.4) 100%
+        );
+      }
+
+      .input-glow:focus-within {
+        box-shadow: 0 0 0 4px rgba(227, 180, 72, 0.2);
+        border-color: #e3b448;
+      }
+
+      .btn-depth {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+      }
+      .btn-depth:active {
+        border-bottom-width: 0px;
+        transform: translateY(2px);
+      }
+    </style>
+  </head>
+  <body
+    class="font-body-md text-on-surface bg-surface min-h-screen flex flex-col antialiased"
+  >
+    <!-- Transactional layout: No Global Navigation -->
+    <!-- Main Content Area -->
+    <main
+      class="flex-grow flex items-center justify-center relative min-h-screen hero-bg"
+      data-alt="A breathtaking cinematic photograph of a vast, rolling agricultural landscape during the golden hour. The rolling hills are lush green and harvest gold, bathed in warm, soft sunlight piercing through low-lying mist. Two tractors and a barn are silhouetted against a pastel-colored sky of pink, orange, and soft blue. The overall mood is serene, fertile, and deeply connected to traditional farming roots with a premium, majestic feel."
+      style="
+        background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9D-Oy_PWHR10YcP4MqO8YrLoOc4snwUK92EpCxcl9m9PlyeNLljJQSnLCPQ7ALVaxcSPl4shNHOKvwNYFRz4Pw7mxHxOZMgIe1l_aKtxOHkIhg5WNm1utUE9fSqWQ00nj4ssObU6MwaDXCq1sGbaoq0YfOud8J_LG53ByZWcLqHSpapPokO01WhWpM1V4YdB0w4yqT-J1pLSmEZGKBIszVpgueKiDfgoGWmv37rLGRL-IxSZzucgCfuyKu7mvQGiFQQAxr0A4XINC&quot;);
+      "
+    >
+      <!-- Dark Overlay for better contrast -->
+      <div class="absolute inset-0 hero-overlay"></div>
+      <!-- Glassmorphism Card Container -->
+      <div class="relative z-10 w-full max-w-[480px] px-margin-mobile md:px-0">
+        <div
+          class="glass-card rounded-xl p-lg md:p-xl shadow-[0_12px_32px_-4px_rgba(61,43,31,0.15)] flex flex-col gap-lg"
+        >
+          <!-- Header / Branding -->
+          <div class="flex flex-col items-center text-center space-y-sm">
+            <div
+              class="w-16 h-16 bg-surface rounded-full flex items-center justify-center shadow-sm border border-outline-variant/30 mb-sm"
+            >
+              <span
+                class="material-symbols-outlined text-4xl text-primary"
+                data-icon="agriculture"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >agriculture</span
+              >
+            </div>
+            <h1
+              class="font-display-md text-display-md text-primary tracking-tight"
+            >
+              KrishiSetu
+            </h1>
+            <div>
+              <h2
+                class="font-headline-lg text-headline-lg text-on-surface mt-xs"
+              >
+                Ram-Ram! Swagat Hai.
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+                Welcome back!
+              </p>
+            </div>
+          </div>
+          <!-- Sign In Form -->
+          <form class="flex flex-col gap-md mt-sm">
+            <!-- Mobile Number Input -->
+            <div class="flex flex-col gap-xs">
+              <label
+                class="font-label-lg text-label-lg text-tertiary"
+                for="mobile"
+                >Mobile Number / मोबाइल नंबर</label
+              >
+              <div
+                class="relative flex items-center bg-surface border border-outline-variant rounded-lg input-glow transition-all duration-200"
+              >
+                <div
+                  class="pl-md pr-sm py-3 flex items-center border-r border-outline-variant/50 text-on-surface-variant font-label-lg"
+                >
+                  <span
+                    class="material-symbols-outlined text-xl mr-1 opacity-70"
+                    data-icon="call"
+                    >call</span
+                  >
+                  +91
+                </div>
+                <input
+                  class="flex-grow bg-transparent border-none py-3 px-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0"
+                  id="mobile"
+                  name="mobile"
+                  pattern="[0-9]{10}"
+                  placeholder="10-digit mobile number"
+                  type="tel"
+                />
+              </div>
+            </div>
+            <!-- Password Input -->
+            <div class="flex flex-col gap-xs">
+              <div class="flex justify-between items-center">
+                <label
+                  class="font-label-lg text-label-lg text-tertiary"
+                  for="password"
+                  >Password / पासवर्ड</label
+                >
+                <a
+                  class="font-label-sm text-label-sm text-primary hover:text-surface-tint transition-colors"
+                  href="#"
+                  >Forgot Password?</a
+                >
+              </div>
+              <div
+                class="relative flex items-center bg-surface border border-outline-variant rounded-lg input-glow transition-all duration-200"
+              >
+                <div
+                  class="pl-md py-3 flex items-center text-on-surface-variant"
+                >
+                  <span
+                    class="material-symbols-outlined text-xl opacity-70"
+                    data-icon="lock"
+                    >lock</span
+                  >
+                </div>
+                <input
+                  class="flex-grow bg-transparent border-none py-3 px-3 font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  type="password"
+                />
+                <button
+                  class="pr-md py-3 flex items-center text-on-surface-variant hover:text-on-surface transition-colors"
+                  type="button"
+                >
+                  <span
+                    class="material-symbols-outlined text-xl"
+                    data-icon="visibility_off"
+                    >visibility_off</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Actions -->
+            <div class="flex flex-col gap-sm mt-sm">
+              <!-- Primary Login Button -->
+              <button
+                class="w-full bg-primary-container text-on-primary-fixed font-label-lg text-label-lg py-3 px-md rounded-lg flex items-center justify-center gap-sm btn-depth hover:bg-primary-fixed transition-colors"
+                type="submit"
+              >
+                <span>Sign In / प्रवेश करें</span>
+                <span
+                  class="material-symbols-outlined text-xl"
+                  data-icon="arrow_forward"
+                  >arrow_forward</span
+                >
+              </button>
+              <!-- Divider -->
+              <div class="flex items-center gap-sm my-xs">
+                <div class="h-px bg-outline-variant/40 flex-grow"></div>
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >OR</span
+                >
+                <div class="h-px bg-outline-variant/40 flex-grow"></div>
+              </div>
+              <!-- Secondary Login Button -->
+              <button
+                class="w-full border-2 border-secondary text-secondary font-label-lg text-label-lg py-3 px-md rounded-lg flex items-center justify-center gap-sm hover:bg-secondary-container/20 transition-colors"
+                type="button"
+              >
+                <span class="material-symbols-outlined text-xl" data-icon="sms"
+                  >sms</span
+                >
+                <span>Login with OTP / ओ.टी.पी से लॉगिन</span>
+              </button>
+            </div>
+          </form>
+          <!-- Footer Links -->
+          <div class="text-center mt-sm">
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Naye kisaan?
+              <a
+                class="font-label-lg text-label-lg text-primary hover:underline ml-1"
+                href="create-account.html"
+                >Account banayein (Create Account)</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Trust Signals (Outside Card for visual hierarchy) -->
+        <div class="mt-lg flex items-center justify-center gap-lg px-md">
+          <div
+            class="flex items-center gap-xs bg-surface/90 backdrop-blur-sm px-3 py-2 rounded-full border border-outline-variant/20 shadow-sm"
+          >
+            <span
+              class="material-symbols-outlined text-secondary text-lg"
+              data-icon="verified_user"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >verified_user</span
+            >
+            <span class="font-label-sm text-label-sm text-on-surface-variant"
+              >Government Verified</span
+            >
+          </div>
+          <div
+            class="flex items-center gap-xs bg-surface/90 backdrop-blur-sm px-3 py-2 rounded-full border border-outline-variant/20 shadow-sm"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-lg"
+              data-icon="groups"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >groups</span
+            >
+            <span class="font-label-sm text-label-sm text-on-surface-variant"
+              >10M+ Farmers Joined</span
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

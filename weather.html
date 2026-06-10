@@ -1,0 +1,1018 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KrishiSetu - Weather</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              tertiary: "#705a4c",
+              "on-tertiary-fixed-variant": "#574335",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-tertiary-fixed": "#28180d",
+              "on-secondary-container": "#3f6d38",
+              "on-primary": "#ffffff",
+              "secondary-container": "#b9eeab",
+              "inverse-primary": "#f0c052",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#d2b5a4",
+              "surface-variant": "#e6e2d9",
+              "surface-container": "#f1eee5",
+              "on-primary-container": "#604600",
+              "on-tertiary-container": "#5b4639",
+              "surface-container-highest": "#e6e2d9",
+              "primary-fixed-dim": "#f0c052",
+              primary: "#795900",
+              "on-background": "#1c1c17",
+              "outline-variant": "#d2c5b0",
+              "on-secondary-fixed": "#002201",
+              "inverse-on-surface": "#f4f0e8",
+              "on-primary-fixed": "#261a00",
+              surface: "#fdf9f0",
+              "on-primary-fixed-variant": "#5b4300",
+              "on-error": "#ffffff",
+              error: "#ba1a1a",
+              "on-surface-variant": "#4e4636",
+              background: "#fdf9f0",
+              "surface-tint": "#795900",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#ffdf9f",
+              "primary-container": "#e3b448",
+              "on-secondary-fixed-variant": "#23501e",
+              outline: "#807664",
+              "on-error-container": "#93000a",
+              "surface-dim": "#dddad1",
+              "secondary-fixed": "#bcf0ae",
+              "tertiary-fixed": "#fbddca",
+              "surface-container-high": "#ece8df",
+              "secondary-fixed-dim": "#a1d494",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#31312b",
+              "surface-bright": "#fdf9f0",
+              secondary: "#3b6934",
+              "error-container": "#ffdad6",
+              "on-surface": "#1c1c17",
+              "surface-container-low": "#f7f3ea",
+              "harvest-deep-green": "#1B4332",
+              "harvest-lime": "#A3E635",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "8px",
+              xs: "4px",
+              "margin-mobile": "16px",
+              md: "16px",
+              lg: "24px",
+              base: "4px",
+              xl: "32px",
+              gutter: "20px",
+              "margin-desktop": "64px",
+            },
+            fontFamily: {
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        font-feature-settings: "liga";
+        -webkit-font-feature-settings: "liga";
+        -webkit-font-smoothing: antialiased;
+      }
+
+      body {
+        background-color: theme("colors.background");
+        color: theme("colors.on-background");
+      }
+
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: theme("spacing.lg");
+      }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(61, 43, 31, 0.05);
+        box-shadow:
+          0 4px 6px -1px rgba(0, 0, 0, 0.05),
+          0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      }
+
+      /* Line chart placeholder styling */
+      .chart-line-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+      .chart-path {
+        fill: none;
+        stroke: theme("colors.harvest-deep-green");
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        filter: drop-shadow(0px 4px 6px rgba(27, 67, 50, 0.2));
+      }
+
+      .timeline-glow {
+        box-shadow: 0 0 15px theme("colors.harvest-lime");
+      }
+    </style>
+  </head>
+  <body class="flex min-h-screen bg-surface">
+    <div class="fixed inset-0 z-0 overflow-hidden">
+      <img
+        alt="Agricultural landscape background"
+        class="w-full h-full object-cover"
+        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1qOhXoFZ9QvurnxzuonJXsJL8z_z4S2ZjZg2CX-wapOn2KUzPyNODNqKUOapTmBMVSAaXv54JtebK_z_e2tW4mr_TQwgYJSzDm6hUeWqXES8Azbo2LUq2uiwb_Ip4VeBcun53Uqhr7Dvz8Ay5nltgFVQRns0JwQsT3wIZpbS19kdZd3LgL3yuS6ZpHetGaJ56WoDE36qSWs2Fi4Y8m_UW5ZvVBZ2txqCx0fJiVimE0S57-a4eAFVAWenivuKXzj5o9R8eIOl2RFcJ"
+      />
+      <div class="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+    </div>
+    <!-- SideNavBar (Hidden on Mobile) -->
+    <!-- Side Navigation Shell -->
+    <aside
+      class="fixed left-0 top-0 h-full flex flex-col py-lg px-md w-64 bg-surface-container-low border-r border-outline-variant/20 z-50"
+    >
+      <div class="mb-xl px-md">
+        <h1 class="font-headline-md text-headline-md font-bold text-primary">
+          KrishiSetu
+        </h1>
+        <p class="text-label-sm text-on-surface-variant">
+          Mitti Ki Baat, Digital Saath
+        </p>
+      </div>
+      <nav class="flex-1 space-y-sm">
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="home.html"
+        >
+          <span class="material-symbols-outlined">home</span>
+          <span class="font-label-lg text-label-lg">Home</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="ai-expert.html"
+        >
+          <span class="material-symbols-outlined">psychology</span>
+          <span class="font-label-lg text-label-lg">AI Expert</span>
+        </a>
+        <a
+          class="flex items-center gap-md bg-secondary-container text-on-secondary-container rounded-lg px-md py-sm transition-all"
+          href="mandi.html"
+        >
+          <span class="material-symbols-outlined">storefront</span>
+          <span class="font-label-lg text-label-lg">Mandi</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="weather.html"
+        >
+          <span class="material-symbols-outlined">wb_sunny</span>
+          <span class="font-label-lg text-label-lg">Weather</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="ledger.html"
+        >
+          <span class="material-symbols-outlined">menu_book</span>
+          <span class="font-label-lg text-label-lg">Ledger</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="community.html"
+        >
+          <span class="material-symbols-outlined">groups</span>
+          <span class="font-label-lg text-label-lg">Community</span>
+        </a>
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="setting.html"
+          ><span class="material-symbols-outlined">settings</span
+          ><span class="font-label-lg text-label-lg">Settings</span></a
+        >
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="#"
+          ><span class="material-symbols-outlined">language</span
+          ><span class="font-label-lg text-label-lg">Language</span></a
+        >
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="signin.html"
+          ><span class="material-symbols-outlined">login</span
+          ><span class="font-label-lg text-label-lg">Sign In</span></a
+        >
+        <a
+          class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg transition-all"
+          href="create-account.html"
+          ><span class="material-symbols-outlined">person_add</span
+          ><span class="font-label-lg text-label-lg">Create Account</span></a
+        >
+      </nav>
+      <div class="mt-auto px-md">
+        <button
+          class="w-full bg-primary-container text-on-primary-container font-label-lg py-sm rounded-xl border-b-2 border-on-primary-container/20 hover:brightness-105 transition-all"
+        >
+          Upgrade to Pro
+        </button>
+      </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="flex-1 md:ml-64 flex flex-col min-h-screen relative z-10">
+      <!-- TopNavBar (Mobile Only) -->
+      <header
+        class="md:hidden flex justify-between items-center w-full px-md py-sm sticky top-0 z-50 bg-surface shadow-sm"
+      >
+        <h1 class="font-display-md text-display-md font-extrabold text-primary">
+          KrishiSetu
+        </h1>
+        <div class="flex gap-sm">
+          <button
+            class="p-sm text-primary hover:bg-surface-container-low transition-colors rounded-full"
+          >
+            <span class="material-symbols-outlined" data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="p-sm text-primary hover:bg-surface-container-low transition-colors rounded-full"
+          >
+            <span class="material-symbols-outlined" data-icon="person"
+              >person</span
+            >
+          </button>
+        </div>
+      </header>
+      <div class="p-md md:p-lg flex-1 bento-grid">
+        <!-- 1. Current Weather Hero -->
+        <div
+          class="col-span-12 md:col-span-8 rounded-2xl overflow-hidden relative min-h-[300px] flex items-end p-lg glass-card"
+        >
+          <div class="relative z-10 w-full flex justify-between items-end">
+            <div>
+              <div class="flex items-center gap-sm text-primary-fixed mb-xs">
+                <span
+                  class="material-symbols-outlined text-4xl"
+                  data-icon="wb_sunny"
+                  data-weight="fill"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >wb_sunny</span
+                >
+                <span class="font-headline-md text-headline-md"
+                  >Clear &amp; Sunny</span
+                >
+              </div>
+              <h2 class="font-display-lg text-display-lg text-primary-fixed">
+                34°C
+              </h2>
+              <p class="font-body-md text-body-md text-primary-fixed-dim">
+                Jalgaon, Maharashtra
+              </p>
+            </div>
+            <div
+              class="grid grid-cols-2 gap-md text-right bg-black/20 p-md rounded-xl backdrop-blur-sm border border-white/10"
+            >
+              <div>
+                <p class="font-label-sm text-label-sm text-primary-fixed-dim">
+                  Humidity
+                </p>
+                <p class="font-headline-md text-headline-md text-primary-fixed">
+                  45%
+                </p>
+              </div>
+              <div>
+                <p class="font-label-sm text-label-sm text-primary-fixed-dim">
+                  Wind
+                </p>
+                <p class="font-headline-md text-headline-md text-primary-fixed">
+                  12 km/h
+                </p>
+              </div>
+              <div>
+                <p class="font-label-sm text-label-sm text-primary-fixed-dim">
+                  Visibility
+                </p>
+                <p class="font-headline-md text-headline-md text-primary-fixed">
+                  10 km
+                </p>
+              </div>
+              <div>
+                <p class="font-label-sm text-label-sm text-primary-fixed-dim">
+                  Rain Chance
+                </p>
+                <p class="font-headline-md text-headline-md text-primary-fixed">
+                  0%
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 2. Weather Alert & 10. AI Weather Advisor -->
+        <div class="col-span-12 md:col-span-4 flex flex-col gap-lg">
+          <!-- Weather Alert Banner -->
+          <div
+            class="bg-error-container border border-error rounded-2xl p-md flex items-start gap-md animate-pulse"
+          >
+            <span
+              class="material-symbols-outlined text-error mt-1"
+              data-icon="warning"
+              data-weight="fill"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >warning</span
+            >
+            <div>
+              <h3
+                class="font-headline-md text-headline-md text-on-error-container"
+              >
+                Heavy Rain Warning
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-error-container mt-xs"
+              >
+                Expected in next 48 hours. Secure harvested crops.
+              </p>
+            </div>
+          </div>
+          <!-- AI Advisor -->
+          <div class="glass-card rounded-2xl p-md flex-1 flex flex-col">
+            <div class="flex items-center gap-sm mb-md text-primary">
+              <span class="material-symbols-outlined" data-icon="smart_toy"
+                >smart_toy</span
+              >
+              <h3 class="font-headline-md text-headline-md">Weather Advisor</h3>
+            </div>
+            <p
+              class="font-body-md text-body-md text-on-surface-variant mb-md flex-1"
+            >
+              Ask questions based on current local conditions.
+            </p>
+            <div class="flex flex-wrap gap-sm">
+              <button
+                class="bg-surface-container-high text-on-surface font-label-sm text-label-sm py-xs px-sm rounded-full border border-outline-variant hover:bg-surface-container-highest transition-colors"
+              >
+                Kab boaayi karoon?
+              </button>
+              <button
+                class="bg-surface-container-high text-on-surface font-label-sm text-label-sm py-xs px-sm rounded-full border border-outline-variant hover:bg-surface-container-highest transition-colors"
+              >
+                Spray schedule?
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 5. Satellite Advisory (Updated) -->
+        <div class="col-span-12 glass-card rounded-2xl p-lg">
+          <h3 class="font-headline-md text-headline-md text-primary mb-lg">
+            Satellite Micro-Local Advisory
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <!-- Soil Moisture -->
+            <div
+              class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 flex flex-col gap-sm"
+            >
+              <div class="flex items-center gap-md mb-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"
+                >
+                  <span class="material-symbols-outlined" data-icon="water_drop"
+                    >water_drop</span
+                  >
+                </div>
+                <h4 class="font-headline-md text-on-surface">Soil Moisture</h4>
+              </div>
+              <div class="flex justify-between items-end">
+                <div>
+                  <p class="font-display-md text-primary">62%</p>
+                  <p class="font-label-sm text-on-surface-variant">
+                    Current vs Optimal (60-70%)
+                  </p>
+                </div>
+                <div
+                  class="w-16 h-16 rounded-t-full bg-surface-container-high overflow-hidden relative border-b-2 border-outline-variant"
+                >
+                  <div
+                    class="absolute bottom-0 left-0 w-full bg-secondary transition-all"
+                    style="height: 62%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <!-- NDVI Crop Health -->
+            <div
+              class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 flex flex-col gap-sm"
+            >
+              <div class="flex items-center gap-md mb-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container"
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="energy_savings_leaf"
+                    >energy_savings_leaf</span
+                  >
+                </div>
+                <h4 class="font-headline-md text-on-surface">
+                  NDVI Crop Health
+                </h4>
+              </div>
+              <p class="font-display-md text-primary">
+                0.72
+                <span
+                  class="text-secondary text-sm ml-1 font-normal uppercase tracking-wider"
+                  >Good</span
+                >
+              </p>
+              <div
+                class="w-full bg-surface-container-high h-3 rounded-full mt-2 relative"
+              >
+                <div
+                  class="absolute top-0 left-0 h-full bg-harvest-lime rounded-full"
+                  style="width: 72%"
+                ></div>
+                <div
+                  class="absolute top-0 h-full w-1 bg-on-surface z-10"
+                  style="left: 68%"
+                  title="District Average: 0.68"
+                ></div>
+              </div>
+              <p class="font-label-sm text-on-surface-variant text-right mt-1">
+                vs District Avg (0.68)
+              </p>
+            </div>
+            <!-- Pest Risk -->
+            <div
+              class="bg-error-container/20 rounded-xl p-md border border-error/30 flex flex-col gap-sm"
+            >
+              <div class="flex items-center gap-md mb-2">
+                <div
+                  class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-error"
+                >
+                  <span class="material-symbols-outlined" data-icon="bug_report"
+                    >bug_report</span
+                  >
+                </div>
+                <h4 class="font-headline-md text-on-surface">
+                  Pest &amp; Disease Risk
+                </h4>
+              </div>
+              <div
+                class="flex justify-between items-center border-b border-error/20 pb-2"
+              >
+                <span class="font-label-lg text-on-surface">Aphids</span>
+                <span
+                  class="bg-error text-on-error font-label-sm px-2 py-1 rounded"
+                  >HIGH</span
+                >
+              </div>
+              <div class="flex justify-between items-center pt-1">
+                <span class="font-label-lg text-on-surface">Fungal Rust</span>
+                <span
+                  class="bg-error text-on-error font-label-sm px-2 py-1 rounded"
+                  >HIGH</span
+                >
+              </div>
+              <p class="font-label-sm text-error mt-2">
+                Triggered by recent humidity.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Detailed Components Section -->
+        <!-- 14-Day Rainfall & Metric Predictor -->
+        <div
+          class="col-span-12 md:col-span-6 glass-card rounded-2xl p-lg flex flex-col border border-outline-variant/30"
+        >
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="font-headline-lg text-primary">14-Day Forecast</h3>
+              <p class="font-body-md text-on-surface-variant">
+                Rainfall &amp; Temperature trend
+              </p>
+            </div>
+            <div
+              class="flex gap-2 bg-surface-container-low p-1 rounded-lg border border-outline-variant/20"
+            >
+              <button
+                class="px-3 py-1 bg-surface shadow-sm rounded text-primary font-label-sm"
+              >
+                Rain &amp; Temp
+              </button>
+              <button
+                class="px-3 py-1 text-on-surface-variant hover:text-on-surface font-label-sm"
+              >
+                Humidity
+              </button>
+              <button
+                class="px-3 py-1 text-on-surface-variant hover:text-on-surface font-label-sm"
+              >
+                Wind
+              </button>
+            </div>
+          </div>
+          <div class="relative flex-1 min-h-[200px] w-full mt-4">
+            <!-- Simulated Chart -->
+            <div
+              class="absolute inset-0 flex items-end justify-between px-2 z-10"
+            >
+              <!-- Bars for Rainfall -->
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 10%"
+              >
+                <div
+                  class="absolute -top-6 left-1/2 -translate-x-1/2 hidden group-hover:block bg-surface-container text-on-surface text-xs p-1 rounded"
+                >
+                  2mm
+                </div>
+              </div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 5%"
+              >
+                <div
+                  class="absolute -top-6 left-1/2 -translate-x-1/2 hidden group-hover:block bg-surface-container text-on-surface text-xs p-1 rounded"
+                >
+                  1mm
+                </div>
+              </div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 0%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 60%"
+              >
+                <div
+                  class="absolute -top-6 left-1/2 -translate-x-1/2 hidden group-hover:block bg-surface-container text-on-surface text-xs p-1 rounded"
+                >
+                  15mm
+                </div>
+              </div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 80%"
+              >
+                <div
+                  class="absolute -top-6 left-1/2 -translate-x-1/2 hidden group-hover:block bg-surface-container text-on-surface text-xs p-1 rounded"
+                >
+                  20mm
+                </div>
+              </div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 30%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 10%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 0%"
+              >
+                <span
+                  class="material-symbols-outlined text-harvest-lime absolute -top-8 left-1/2 -translate-x-1/2"
+                  data-icon="grass"
+                  title="Best Farming Day"
+                  >grass</span
+                >
+              </div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 0%"
+              >
+                <span
+                  class="material-symbols-outlined text-harvest-lime absolute -top-8 left-1/2 -translate-x-1/2"
+                  data-icon="grass"
+                  title="Best Farming Day"
+                  >grass</span
+                >
+              </div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 5%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 10%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 40%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 20%"
+              ></div>
+              <div
+                class="w-[6%] bg-harvest-lime/80 rounded-t-sm relative group"
+                style="height: 5%"
+              ></div>
+            </div>
+            <!-- Line for Temperature -->
+            <svg
+              class="absolute inset-0 chart-line-svg z-20"
+              preserveaspectratio="none"
+              viewbox="0 0 100 100"
+            >
+              <path
+                class="chart-path"
+                d="M 3,60 Q 10,55 18,50 T 32,70 T 46,80 T 60,40 T 75,30 T 89,45 T 97,50"
+              ></path>
+            </svg>
+          </div>
+          <div
+            class="flex justify-between text-label-sm text-on-surface-variant mt-2 px-2"
+          >
+            <span>Today</span>
+            <span>Day 7</span>
+            <span>Day 14</span>
+          </div>
+          <div class="mt-4 flex items-center justify-center gap-6">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 bg-harvest-lime rounded-sm"></div>
+              <span class="font-label-sm text-on-surface">Rainfall (mm)</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-4 h-1 bg-harvest-deep-green"></div>
+              <span class="font-label-sm text-on-surface"
+                >Temperature (°C)</span
+              >
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-harvest-lime text-lg"
+                data-icon="grass"
+                >grass</span
+              ><span class="font-label-sm text-on-surface"
+                >Best Farming Days</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Precision Crop Lifecycle Timeline -->
+        <div
+          class="col-span-12 md:col-span-6 glass-card rounded-2xl p-lg flex flex-col border border-outline-variant/30"
+        >
+          <div class="flex justify-between items-start mb-6">
+            <h3 class="font-headline-lg text-primary">Crop Lifecycle</h3>
+            <div
+              class="bg-harvest-lime/20 text-harvest-deep-green font-label-lg px-3 py-1 rounded-full border border-harvest-lime/50 flex items-center gap-1"
+            >
+              <span class="material-symbols-outlined text-sm" data-icon="timer"
+                >timer</span
+              >
+              45 Days to Harvest
+            </div>
+          </div>
+          <div class="flex-1 flex flex-col justify-center gap-8">
+            <!-- Timeline -->
+            <div class="relative w-full flex justify-between items-center mt-4">
+              <div
+                class="absolute top-1/2 left-0 w-full h-1 bg-surface-container-high -translate-y-1/2 z-0"
+              ></div>
+              <div
+                class="absolute top-1/2 left-0 w-[40%] h-1 bg-primary -translate-y-1/2 z-0"
+              ></div>
+              <div class="flex flex-col items-center z-10 gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-primary border-2 border-surface"
+                ></div>
+                <span
+                  class="font-label-sm text-on-surface-variant hidden sm:block"
+                  >Sowing</span
+                >
+              </div>
+              <div class="flex flex-col items-center z-10 gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-primary border-2 border-surface"
+                ></div>
+                <span
+                  class="font-label-sm text-on-surface-variant hidden sm:block"
+                  >Germin.</span
+                >
+              </div>
+              <div class="flex flex-col items-center z-10 gap-2">
+                <div
+                  class="w-6 h-6 rounded-full bg-harvest-lime border-4 border-surface timeline-glow"
+                ></div>
+                <span class="font-label-sm text-primary font-bold"
+                  >Vegetative</span
+                >
+              </div>
+              <div class="flex flex-col items-center z-10 gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-surface"
+                ></div>
+                <span
+                  class="font-label-sm text-on-surface-variant hidden sm:block"
+                  >Reprod.</span
+                >
+              </div>
+              <div class="flex flex-col items-center z-10 gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-surface"
+                ></div>
+                <span
+                  class="font-label-sm text-on-surface-variant hidden sm:block"
+                  >Grain Fill</span
+                >
+              </div>
+              <div class="flex flex-col items-center z-10 gap-2">
+                <div
+                  class="w-4 h-4 rounded-full bg-surface-container-highest border-2 border-surface"
+                ></div>
+                <span
+                  class="font-label-sm text-on-surface-variant hidden sm:block"
+                  >Harvest</span
+                >
+              </div>
+            </div>
+            <!-- Phase Detail Card -->
+            <div
+              class="bg-surface-container-low rounded-xl p-md border border-primary/20 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between"
+            >
+              <div>
+                <h4
+                  class="font-headline-md text-primary flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined" data-icon="eco"
+                    >eco</span
+                  >
+                  Current: Vegetative Phase
+                </h4>
+                <p class="font-body-md text-on-surface-variant mt-1">
+                  High water &amp; nutrient demand.
+                </p>
+              </div>
+              <div class="flex gap-4">
+                <div class="text-right">
+                  <p class="font-label-sm text-on-surface-variant">Opt. Temp</p>
+                  <p class="font-headline-md text-on-surface">22-28°C</p>
+                  <p class="text-xs text-error">Current: 34°C</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-label-sm text-on-surface-variant">
+                    Water Req.
+                  </p>
+                  <p class="font-headline-md text-secondary">High</p>
+                  <p class="text-xs text-on-surface-variant">4-5 mm/day</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Smart Operational Advisors -->
+        <div
+          class="col-span-12 md:col-span-8 glass-card rounded-2xl p-lg border border-outline-variant/30 flex flex-col gap-md"
+        >
+          <h3 class="font-headline-md text-primary">
+            Smart Operational Advisors
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            <!-- Spray Window Forecast -->
+            <div
+              class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30"
+            >
+              <h4
+                class="font-label-lg text-on-surface mb-4 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined" data-icon="sprinkler"
+                  >sprinkler</span
+                >
+                Spray Window (7 Days)
+              </h4>
+              <div class="flex flex-col gap-2">
+                <div
+                  class="flex justify-between items-center text-sm border-b border-outline-variant/20 pb-2"
+                >
+                  <span>Today</span
+                  ><span
+                    class="bg-error-container text-on-error-container px-2 py-1 rounded font-medium"
+                    >Avoid (Wind)</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center text-sm border-b border-outline-variant/20 pb-2"
+                >
+                  <span>Tomorrow</span
+                  ><span
+                    class="bg-error-container text-on-error-container px-2 py-1 rounded font-medium"
+                    >Avoid (Rain)</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between items-center text-sm border-b border-outline-variant/20 pb-2"
+                >
+                  <span>Wednesday</span
+                  ><span
+                    class="bg-secondary-container text-on-secondary-container px-2 py-1 rounded font-medium"
+                    >Ideal</span
+                  >
+                </div>
+                <div class="flex justify-between items-center text-sm pb-1">
+                  <span>Thursday</span
+                  ><span
+                    class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded font-medium"
+                    >Good</span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Irrigation Planner -->
+            <div
+              class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 flex flex-col justify-between"
+            >
+              <div>
+                <h4
+                  class="font-label-lg text-on-surface mb-2 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined" data-icon="water"
+                    >water</span
+                  >
+                  Irrigation Planner
+                </h4>
+                <p class="font-body-md text-on-surface-variant">
+                  Based on soil ET rates and expected rain.
+                </p>
+              </div>
+              <div
+                class="mt-4 p-md bg-secondary/10 rounded-lg border border-secondary/20 text-center"
+              >
+                <p
+                  class="font-label-sm text-secondary uppercase tracking-wider mb-1"
+                >
+                  Recommended Next Irrigation
+                </p>
+                <p class="font-display-md text-harvest-deep-green">
+                  Thu, Jul 17
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Market & Historical Context -->
+        <div
+          class="col-span-12 md:col-span-4 glass-card rounded-2xl p-lg border border-outline-variant/30 flex flex-col gap-md"
+        >
+          <h3 class="font-headline-md text-primary">Market &amp; Context</h3>
+          <!-- Mandi Impact -->
+          <div
+            class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30"
+          >
+            <h4
+              class="font-label-lg text-on-surface mb-2 flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined" data-icon="trending_up"
+                >trending_up</span
+              >
+              Mandi Weather Impact
+            </h4>
+            <p class="font-body-md text-on-surface-variant text-sm">
+              48-hour rain alert expected to cause arrival delays.
+            </p>
+            <div class="mt-3 flex items-center gap-3">
+              <span class="font-headline-lg text-secondary">+3-5%</span>
+              <span class="font-label-sm text-on-surface-variant"
+                >Expected Wheat Price Increase</span
+              >
+            </div>
+          </div>
+          <!-- Historical Comparison -->
+          <div
+            class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 flex-1"
+          >
+            <h4
+              class="font-label-lg text-on-surface mb-4 flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined" data-icon="history"
+                >history</span
+              >
+              Historical Rainfall
+            </h4>
+            <div class="flex items-end gap-4 h-24 mt-2">
+              <div class="flex-1 flex flex-col justify-end items-center gap-2">
+                <div
+                  class="w-full bg-surface-variant rounded-t-md relative"
+                  style="height: 60%"
+                >
+                  <span
+                    class="absolute -top-5 w-full text-center text-xs text-on-surface-variant"
+                    >120mm</span
+                  >
+                </div>
+                <span class="font-label-sm text-on-surface-variant text-xs"
+                  >Last Year</span
+                >
+              </div>
+              <div class="flex-1 flex flex-col justify-end items-center gap-2">
+                <div
+                  class="w-full bg-harvest-lime rounded-t-md relative"
+                  style="height: 85%"
+                >
+                  <span
+                    class="absolute -top-5 w-full text-center text-xs text-harvest-deep-green font-bold"
+                    >180mm</span
+                  >
+                </div>
+                <span class="font-label-sm text-primary font-bold text-xs"
+                  >This Month</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

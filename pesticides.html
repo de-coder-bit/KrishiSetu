@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Smart Pesticides &amp; Inputs Catalog - KrishiSetu</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-variant": "#e6e2d9",
+              "surface-bright": "#fdf9f0",
+              "inverse-primary": "#f0c052",
+              "tertiary-fixed": "#fbddca",
+              "surface-container-highest": "#e6e2d9",
+              "secondary-fixed": "#bcf0ae",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#d2b5a4",
+              "on-tertiary-fixed-variant": "#574335",
+              error: "#ba1a1a",
+              "on-tertiary-container": "#5b4639",
+              "on-secondary-fixed-variant": "#23501e",
+              "inverse-on-surface": "#f4f0e8",
+              "on-surface-variant": "#4e4636",
+              "on-error-container": "#93000a",
+              outline: "#807664",
+              "on-secondary": "#ffffff",
+              "outline-variant": "#d2c5b0",
+              "secondary-fixed-dim": "#a1d494",
+              "on-surface": "#1c1c17",
+              "surface-container-lowest": "#ffffff",
+              "primary-container": "#e3b448",
+              "on-primary-fixed-variant": "#5b4300",
+              secondary: "#3b6934",
+              "surface-tint": "#795900",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#f0c052",
+              tertiary: "#705a4c",
+              "surface-dim": "#dddad1",
+              "surface-container": "#f1eee5",
+              "primary-fixed": "#ffdf9f",
+              "on-secondary-fixed": "#002201",
+              "surface-container-low": "#f7f3ea",
+              "on-secondary-container": "#3f6d38",
+              "on-primary-container": "#604600",
+              surface: "#fdf9f0",
+              "on-primary-fixed": "#261a00",
+              background: "#fdf9f0",
+              "secondary-container": "#b9eeab",
+              primary: "#795900",
+              "on-error": "#ffffff",
+              "on-tertiary-fixed": "#28180d",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-tertiary": "#ffffff",
+              "inverse-surface": "#31312b",
+              "surface-container-high": "#ece8df",
+              "on-background": "#1c1c17",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xs: "4px",
+              base: "4px",
+              "margin-desktop": "64px",
+              xl: "32px",
+              sm: "8px",
+              md: "16px",
+              "margin-mobile": "16px",
+              lg: "24px",
+              gutter: "20px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-lg": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(128, 118, 100, 0.1);
+      }
+      .organic-gradient {
+        background: linear-gradient(135deg, #fdf9f0 0%, #f1eee5 100%);
+      }
+      .shield-gradient {
+        background: linear-gradient(90deg, #3b6934 0%, #b9eeab 100%);
+      }
+      .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUpAnim 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      @keyframes fadeUpAnim {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .delay-100 {
+        animation-delay: 100ms;
+      }
+      .delay-200 {
+        animation-delay: 200ms;
+      }
+      .delay-300 {
+        animation-delay: 300ms;
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden"
+  >
+    <!-- Desktop Layout Wrapper -->
+    <div class="flex min-h-screen">
+      <!-- SideNavBar Component (Hidden on Mobile, Visible on md+) -->
+      <nav
+        class="hidden md:flex fixed left-0 top-0 h-full flex-col py-lg px-md w-64 bg-surface-container-low dark:bg-surface-container-lowest border-r border-outline-variant/20 z-40"
+      >
+        <div class="flex flex-col h-full">
+          <!-- Header -->
+          <div class="mb-xl px-sm">
+            <h1
+              class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed"
+            >
+              KrishiSetu
+            </h1>
+            <p class="font-label-sm text-label-sm text-on-surface-variant mt-1">
+              Mitti Ki Baat, Digital Saath
+            </p>
+          </div>
+          <!-- Navigation Links -->
+          <div class="flex-1 flex flex-col gap-2">
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="home"
+                >home</span
+              >
+              <span class="font-label-lg text-label-lg">Home</span>
+            </a>
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="psychology"
+                >psychology</span
+              >
+              <span class="font-label-lg text-label-lg">AI Expert</span>
+            </a>
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="storefront"
+                >storefront</span
+              >
+              <span class="font-label-lg text-label-lg">Mandi</span>
+            </a>
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="wb_sunny"
+                >wb_sunny</span
+              >
+              <span class="font-label-lg text-label-lg">Weather</span>
+            </a>
+            <!-- Active State for Pesticides context (falling under Ledger/Mandi loosely, but let's highlight AI Expert as it implies smart catalog) -->
+            <a
+              class="flex items-center gap-md bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg px-md py-sm scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="science"
+                >science</span
+              >
+              <span class="font-label-lg text-label-lg">Pesticides</span>
+            </a>
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="menu_book"
+                >menu_book</span
+              >
+              <span class="font-label-lg text-label-lg">Ledger</span>
+            </a>
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+            >
+              <span class="material-symbols-outlined" data-icon="groups"
+                >groups</span
+              >
+              <span class="font-label-lg text-label-lg">Community</span>
+            </a>
+            <a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+              ><span class="material-symbols-outlined" data-icon="settings"
+                >settings</span
+              ><span class="font-label-lg text-label-lg">Settings</span></a
+            ><a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+              ><span class="material-symbols-outlined" data-icon="language"
+                >language</span
+              ><span class="font-label-lg text-label-lg">Language</span></a
+            ><a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+              ><span class="material-symbols-outlined" data-icon="login"
+                >login</span
+              ><span class="font-label-lg text-label-lg">Sign In</span></a
+            ><a
+              class="flex items-center gap-md text-on-surface-variant dark:text-on-surface-variant px-md py-sm hover:bg-surface-container-high dark:hover:bg-surface-container rounded-lg scale-98 active:scale-95 transition-transform duration-150"
+              href="#"
+              ><span class="material-symbols-outlined" data-icon="person_add"
+                >person_add</span
+              ><span class="font-label-lg text-label-lg"
+                >Create Account</span
+              ></a
+            >
+          </div>
+          <!-- Footer CTA -->
+          <div class="mt-auto pt-lg border-t border-outline-variant/20">
+            <div class="flex flex-col gap-2 mb-md"></div>
+            <button
+              class="w-full py-sm px-md bg-primary-container text-on-primary-container font-label-lg rounded-full hover:opacity-90 transition-opacity"
+            >
+              Upgrade to Pro
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- TopNavBar for Mobile (Visible only on mobile) -->
+      <nav
+        class="md:hidden flex justify-between items-center px-margin-mobile w-full sticky top-0 z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant/20 w-full h-16 flat no shadows"
+      >
+        <div class="flex items-center gap-sm">
+          <span
+            class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed"
+            >KrishiSetu</span
+          >
+        </div>
+        <div class="flex items-center gap-sm">
+          <button
+            class="p-2 text-primary dark:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors cursor-pointer rounded-full"
+          >
+            <span class="material-symbols-outlined" data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <button
+            class="p-2 text-primary dark:text-primary-fixed hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors cursor-pointer rounded-full"
+          >
+            <span class="material-symbols-outlined" data-icon="help">help</span>
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content Area -->
+      <main class="flex-1 md:ml-64 relative min-h-screen pb-24">
+        <!-- Header Section -->
+        <header
+          class="sticky top-0 md:top-0 z-30 bg-surface/90 backdrop-blur-md border-b border-outline-variant/20 pt-lg pb-md px-margin-mobile md:px-margin-desktop"
+        >
+          <div class="flex flex-col gap-sm">
+            <h1
+              class="font-display-md text-display-md text-on-surface flex items-center gap-sm"
+            >
+              <span
+                class="material-symbols-outlined text-4xl text-primary"
+                data-icon="science"
+                >science</span
+              >
+              Smart Pesticides &amp; Inputs
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl"
+            >
+              Verified catalog with real-time market pricing and AI-driven
+              recommendations.
+            </p>
+          </div>
+          <!-- Price Shield Banner -->
+          <div
+            class="mt-md shield-gradient rounded-lg p-sm flex items-center justify-between text-on-secondary shadow-sm"
+          >
+            <div class="flex items-center gap-sm">
+              <span class="material-symbols-outlined" data-icon="verified_user"
+                >verified_user</span
+              >
+              <span class="font-label-lg text-label-lg"
+                >Price Shield Active: We monitor local mandis daily to prevent
+                overcharging.</span
+              >
+            </div>
+          </div>
+        </header>
+        <div class="px-margin-mobile md:px-margin-desktop py-lg space-y-xl">
+          <!-- Filter & Stats Bar -->
+          <section
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-md fade-up"
+          >
+            <!-- Search & Filters -->
+            <div class="flex flex-col w-full md:w-auto gap-sm">
+              <div class="relative w-full md:w-96">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                  data-icon="search"
+                  >search</span
+                >
+                <input
+                  class="w-full pl-10 pr-4 py-2 bg-surface-container rounded-full border border-outline-variant focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all font-body-md text-on-surface placeholder:text-outline"
+                  placeholder="Search by crop, pest, or product..."
+                  type="text"
+                />
+              </div>
+              <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+                <button
+                  class="px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm whitespace-nowrap border border-secondary/20"
+                >
+                  All Inputs
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm whitespace-nowrap border border-outline-variant hover:bg-surface-container-high transition-colors"
+                >
+                  Insecticide
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm whitespace-nowrap border border-outline-variant hover:bg-surface-container-high transition-colors"
+                >
+                  Fungicide
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm whitespace-nowrap border border-outline-variant hover:bg-surface-container-high transition-colors"
+                >
+                  Bio-pesticide
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm whitespace-nowrap border border-outline-variant hover:bg-surface-container-high transition-colors"
+                >
+                  Fertilizer
+                </button>
+              </div>
+            </div>
+            <!-- Stats Pills -->
+            <div class="flex gap-sm flex-wrap">
+              <div
+                class="px-3 py-1.5 bg-surface-container-high rounded-lg flex items-center gap-xs text-on-surface-variant font-label-sm border border-outline-variant/30"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px]"
+                  data-icon="inventory_2"
+                  >inventory_2</span
+                >
+                142 Products
+              </div>
+              <div
+                class="px-3 py-1.5 bg-surface-container-high rounded-lg flex items-center gap-xs text-on-surface-variant font-label-sm border border-outline-variant/30"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px]"
+                  data-icon="update"
+                  >update</span
+                >
+                Prices checked today
+              </div>
+              <div
+                class="px-3 py-1.5 bg-tertiary-container/30 text-tertiary rounded-lg flex items-center gap-xs font-label-sm border border-tertiary/20"
+              >
+                <span
+                  class="material-symbols-outlined text-[16px]"
+                  data-icon="gpp_good"
+                  >gpp_good</span
+                >
+                CIB&amp;RC Verified
+              </div>
+            </div>
+          </section>
+          <!-- Featured / Most Used Row -->
+          <section class="fade-up delay-100">
+            <h2
+              class="font-headline-md text-headline-md text-on-surface mb-md flex items-center gap-xs"
+            >
+              <span
+                class="material-symbols-outlined text-primary"
+                data-icon="star"
+                >star</span
+              >
+              Most Used Around You
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+              <!-- Featured Card 1 -->
+              <div
+                class="bg-surface-container-lowest rounded-xl p-md border-l-4 border-l-error flex flex-col gap-sm shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
+              >
+                <div
+                  class="absolute top-0 right-0 bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-bl-lg z-10"
+                >
+                  AI RECOMMENDED
+                </div>
+                <div class="flex justify-between items-start">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <span
+                        class="text-[10px] font-bold tracking-wider uppercase text-error px-2 py-0.5 bg-error-container rounded"
+                        >Insecticide</span
+                      >
+                      <span
+                        class="text-[10px] font-bold tracking-wider text-outline px-2 py-0.5 bg-surface-variant rounded"
+                        >Class II (Yellow)</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface font-bold"
+                    >
+                      Chlorpyrifos 20% EC
+                    </h3>
+                    <p class="font-body-sm text-on-surface-variant">
+                      Broad-spectrum organophosphate
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container-low rounded-lg p-sm mt-2 border border-outline-variant/30"
+                >
+                  <p class="text-xs text-on-surface-variant mb-1">
+                    Fair Price Range / L
+                  </p>
+                  <p class="font-headline-md text-secondary font-bold">
+                    ₹380 – ₹450
+                  </p>
+                </div>
+                <div class="flex gap-2 mt-auto pt-2">
+                  <button
+                    class="flex-1 bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-sm py-2 rounded-lg transition-colors flex justify-center items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px]"
+                      data-icon="psychology"
+                      >psychology</span
+                    >
+                    AI se Poochho
+                  </button>
+                  <button
+                    class="flex-1 border border-outline text-on-surface font-label-sm py-2 rounded-lg hover:bg-surface-container transition-colors"
+                  >
+                    Dealers
+                  </button>
+                </div>
+              </div>
+              <!-- Featured Card 2 -->
+              <div
+                class="bg-surface-container-lowest rounded-xl p-md border-l-4 border-l-tertiary flex flex-col gap-sm shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div class="flex justify-between items-start">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <span
+                        class="text-[10px] font-bold tracking-wider uppercase text-tertiary px-2 py-0.5 bg-tertiary-container rounded"
+                        >Fungicide</span
+                      >
+                      <span
+                        class="text-[10px] font-bold tracking-wider text-outline px-2 py-0.5 bg-surface-variant rounded"
+                        >Class III (Blue)</span
+                      >
+                    </div>
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface font-bold"
+                    >
+                      Mancozeb 75% WP
+                    </h3>
+                    <p class="font-body-sm text-on-surface-variant">
+                      Contact fungicide
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-surface-container-low rounded-lg p-sm mt-2 border border-outline-variant/30"
+                >
+                  <p class="text-xs text-on-surface-variant mb-1">
+                    Fair Price Range / kg
+                  </p>
+                  <p class="font-headline-md text-secondary font-bold">
+                    ₹180 – ₹240
+                  </p>
+                </div>
+                <div class="flex gap-2 mt-auto pt-2">
+                  <button
+                    class="flex-1 bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm py-2 rounded-lg transition-colors flex justify-center items-center gap-1"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[16px]"
+                      data-icon="psychology"
+                      >psychology</span
+                    >
+                    AI se Poochho
+                  </button>
+                  <button
+                    class="flex-1 border border-outline text-on-surface font-label-sm py-2 rounded-lg hover:bg-surface-container transition-colors"
+                  >
+                    Dealers
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Product Grid -->
+          <section class="fade-up delay-200">
+            <h2 class="font-headline-md text-headline-md text-on-surface mb-md">
+              All Inputs Catalog
+            </h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-lg">
+              <!-- List Item 1 -->
+              <div
+                class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col md:flex-row gap-md hover:border-primary-container transition-colors"
+              >
+                <div class="flex-1 flex flex-col gap-sm">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <span
+                        class="text-[10px] font-bold tracking-wider uppercase text-error px-2 py-0.5 bg-error-container rounded"
+                        >Insecticide</span
+                      >
+                    </div>
+                    <h4 class="font-headline-md text-on-surface font-bold">
+                      Imidacloprid 17.8% SL
+                    </h4>
+                    <p
+                      class="font-body-sm text-on-surface-variant mt-1 text-sm"
+                    >
+                      Systemic insecticide for sucking pests.
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-2 py-1 bg-surface-container text-on-surface-variant text-xs rounded"
+                      >Aphids</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-surface-container text-on-surface-variant text-xs rounded"
+                      >Jassids</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-surface-container text-on-surface-variant text-xs rounded"
+                      >Whitefly</span
+                    >
+                  </div>
+                  <div class="text-sm text-on-surface-variant mt-1">
+                    <span class="font-semibold">Dose:</span> 100-150 ml/acre
+                  </div>
+                </div>
+                <div
+                  class="w-full md:w-48 flex flex-col justify-between border-t md:border-t-0 md:border-l border-outline-variant/30 pt-md md:pt-0 md:pl-md"
+                >
+                  <div>
+                    <p class="text-xs text-on-surface-variant mb-1">
+                      Fair Price / L
+                    </p>
+                    <p class="font-headline-md text-secondary font-bold">
+                      ₹700 – ₹850
+                    </p>
+                    <button
+                      class="text-primary text-xs font-semibold mt-1 flex items-center gap-1 hover:underline"
+                    >
+                      <span
+                        class="material-symbols-outlined text-[14px]"
+                        data-icon="bar_chart"
+                        >bar_chart</span
+                      >
+                      Price Report
+                    </button>
+                  </div>
+                  <div class="mt-4 flex gap-2">
+                    <button
+                      class="flex-1 border border-outline text-on-surface font-label-sm py-1.5 rounded-lg hover:bg-surface-container transition-colors text-center"
+                    >
+                      Dealers
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- List Item 2 -->
+              <div
+                class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col md:flex-row gap-md hover:border-primary-container transition-colors"
+              >
+                <div class="flex-1 flex flex-col gap-sm">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <span
+                        class="text-[10px] font-bold tracking-wider uppercase text-secondary px-2 py-0.5 bg-secondary-container rounded"
+                        >Bio-pesticide</span
+                      >
+                    </div>
+                    <h4 class="font-headline-md text-on-surface font-bold">
+                      Trichoderma viride
+                    </h4>
+                    <p
+                      class="font-body-sm text-on-surface-variant mt-1 text-sm"
+                    >
+                      Eco-friendly fungicide for soil-borne diseases.
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap gap-2 mt-2">
+                    <span
+                      class="px-2 py-1 bg-surface-container text-on-surface-variant text-xs rounded"
+                      >Root Rot</span
+                    >
+                    <span
+                      class="px-2 py-1 bg-surface-container text-on-surface-variant text-xs rounded"
+                      >Wilt</span
+                    >
+                  </div>
+                  <div class="text-sm text-on-surface-variant mt-1">
+                    <span class="font-semibold">Dose:</span> 1-2 kg/acre (Soil
+                    application)
+                  </div>
+                </div>
+                <div
+                  class="w-full md:w-48 flex flex-col justify-between border-t md:border-t-0 md:border-l border-outline-variant/30 pt-md md:pt-0 md:pl-md"
+                >
+                  <div>
+                    <p class="text-xs text-on-surface-variant mb-1">
+                      Fair Price / kg
+                    </p>
+                    <p class="font-headline-md text-secondary font-bold">
+                      ₹120 – ₹180
+                    </p>
+                  </div>
+                  <div class="mt-4 flex gap-2">
+                    <button
+                      class="flex-1 border border-outline text-on-surface font-label-sm py-1.5 rounded-lg hover:bg-surface-container transition-colors text-center"
+                    >
+                      Dealers
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- List Item 3 -->
+              <div
+                class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl p-md flex flex-col md:flex-row gap-md hover:border-primary-container transition-colors"
+              >
+                <div class="flex-1 flex flex-col gap-sm">
+                  <div>
+                    <div class="flex items-center gap-2 mb-1">
+                      <span
+                        class="text-[10px] font-bold tracking-wider uppercase text-on-surface px-2 py-0.5 bg-surface-variant rounded"
+                        >Fertilizer</span
+                      >
+                    </div>
+                    <h4 class="font-headline-md text-on-surface font-bold">
+                      Urea 46% N
+                    </h4>
+                    <p
+                      class="font-body-sm text-on-surface-variant mt-1 text-sm"
+                    >
+                      Standard nitrogen fertilizer.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="w-full md:w-48 flex flex-col justify-between border-t md:border-t-0 md:border-l border-outline-variant/30 pt-md md:pt-0 md:pl-md"
+                >
+                  <div>
+                    <p class="text-xs text-on-surface-variant mb-1">
+                      Govt Rate / 50kg
+                    </p>
+                    <p class="font-headline-md text-secondary font-bold">
+                      ₹266
+                    </p>
+                    <span class="text-[10px] text-tertiary mt-1 block"
+                      >*Subsidized</span
+                    >
+                  </div>
+                  <div class="mt-4 flex gap-2">
+                    <button
+                      class="flex-1 border border-outline text-on-surface font-label-sm py-1.5 rounded-lg hover:bg-surface-container transition-colors text-center"
+                    >
+                      Dealers
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Footer / Safety -->
+          <footer
+            class="mt-xl pt-lg border-t border-outline-variant/20 fade-up delay-300"
+          >
+            <div
+              class="bg-tertiary-container/20 rounded-xl p-md flex flex-col md:flex-row items-center justify-between gap-md border border-tertiary-container"
+            >
+              <div class="flex items-center gap-md">
+                <span
+                  class="material-symbols-outlined text-4xl text-tertiary"
+                  data-icon="warning"
+                  >warning</span
+                >
+                <div>
+                  <h4 class="font-headline-md text-on-surface font-bold">
+                    Safety First
+                  </h4>
+                  <p class="text-sm text-on-surface-variant">
+                    Always wear protective gear. Read labels carefully before
+                    application.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-sm w-full md:w-auto">
+                <button
+                  class="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-surface rounded-lg border border-outline-variant font-label-sm hover:bg-surface-container transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px]"
+                    data-icon="download"
+                    >download</span
+                  >
+                  Safety PDF
+                </button>
+                <button
+                  class="flex-1 md:flex-none flex items-center justify-center gap-2 px-4 py-2 bg-tertiary text-on-tertiary rounded-lg font-label-sm hover:opacity-90 transition-opacity"
+                >
+                  <span
+                    class="material-symbols-outlined text-[18px]"
+                    data-icon="call"
+                    >call</span
+                  >
+                  Kisan Helpline
+                </button>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,394 @@
+<!doctype html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KrishiSetu - Create Account</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-bright": "#fdf9f0",
+              "primary-fixed": "#ffdf9f",
+              background: "#fdf9f0",
+              surface: "#fdf9f0",
+              tertiary: "#705a4c",
+              "on-tertiary": "#ffffff",
+              "surface-container-high": "#ece8df",
+              "on-primary-fixed-variant": "#5b4300",
+              "on-background": "#1c1c17",
+              "tertiary-container": "#d2b5a4",
+              "primary-container": "#e3b448",
+              "on-error": "#ffffff",
+              "surface-dim": "#dddad1",
+              "surface-container": "#f1eee5",
+              "secondary-fixed-dim": "#a1d494",
+              "on-secondary-fixed": "#002201",
+              "surface-variant": "#e6e2d9",
+              "secondary-container": "#b9eeab",
+              "on-tertiary-fixed": "#28180d",
+              "on-secondary-container": "#3f6d38",
+              primary: "#795900",
+              "tertiary-fixed": "#fbddca",
+              "surface-container-low": "#f7f3ea",
+              "on-surface-variant": "#4e4636",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-tertiary-fixed-variant": "#574335",
+              "on-surface": "#1c1c17",
+              "secondary-fixed": "#bcf0ae",
+              "error-container": "#ffdad6",
+              "surface-container-highest": "#e6e2d9",
+              "inverse-on-surface": "#f4f0e8",
+              "surface-tint": "#795900",
+              "on-tertiary-container": "#5b4639",
+              "on-secondary-fixed-variant": "#23501e",
+              "on-primary-container": "#604600",
+              "primary-fixed-dim": "#f0c052",
+              "on-primary-fixed": "#261a00",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              error: "#ba1a1a",
+              "inverse-primary": "#f0c052",
+              secondary: "#3b6934",
+              "outline-variant": "#d2c5b0",
+              "inverse-surface": "#31312b",
+              "on-secondary": "#ffffff",
+              "on-primary": "#ffffff",
+              outline: "#807664",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+              "3xl": "1.5rem",
+            },
+            spacing: {
+              sm: "8px",
+              lg: "24px",
+              xl: "32px",
+              "margin-desktop": "64px",
+              base: "4px",
+              "margin-mobile": "16px",
+              xs: "4px",
+              gutter: "20px",
+              md: "16px",
+              "2xl": "48px",
+              "3xl": "64px",
+            },
+            fontFamily: {
+              "display-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 12px 32px -4px rgba(61, 43, 31, 0.08);
+      }
+      .form-input:focus {
+        border-color: #e3b448;
+        box-shadow: 0 0 0 4px rgba(227, 180, 72, 0.2);
+        outline: none;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen relative flex items-center justify-center p-md md:p-lg antialiased"
+  >
+    <!-- Background Image with Overlay -->
+    <div class="fixed inset-0 z-0">
+      <img
+        alt="A cinematic, golden-hour view of rolling agricultural fields with distant tractors and a farm house, conveying warmth, growth, and the rich narrative of Indian farming."
+        class="w-full h-full object-cover object-center"
+        data-alt="A cinematic, golden-hour view of rolling agricultural fields with distant tractors and a farm house, conveying warmth, growth, and the rich narrative of Indian farming. The scene is bathed in a soft, warm light that highlights the textured, golden wheat and green crops. The mood is serene, fertile, and deeply connected to nature, perfectly matching the premium organic modernism aesthetic."
+        src="https://lh3.googleusercontent.com/aida/AP1WRLurLZFmkVUm9xqm5-8cFRmPjdSXrTShGN71O1KmRGUgmtwEH18Nj0lygYzMGn5vkPSDRG9bI4SrFMyyJvGJqYYJLd6qLqU25If5BqDd6XfYrVtYRbNfKBVZ6FRa5_tRWNFzGrdDYixJ8T2tMrOSxs2tKDwrwzFHgg-KVwT7n4nPayvPBy0j107-Og6Xo77sCmaqodItWrFkFK5nWUDI-VIt1il1FcOp3Bh6UcQuakpIQn_WYhG7o7jlmxw"
+      />
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+    </div>
+    <!-- Main Content Container -->
+    <div class="relative z-10 w-full max-w-[500px]">
+      <!-- Glassmorphism Card -->
+      <div class="glass-panel rounded-3xl p-lg md:p-xl flex flex-col gap-lg">
+        <!-- Header Section -->
+        <div class="text-center flex flex-col gap-sm">
+          <div class="flex items-center justify-center gap-2 mb-2">
+            <span
+              class="material-symbols-outlined text-primary text-3xl"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >eco</span
+            >
+            <h1 class="font-headline-lg text-headline-lg text-primary">
+              KrishiSetu
+            </h1>
+          </div>
+          <h2 class="font-headline-md text-headline-md text-on-surface">
+            Khet Se Judein, Pragati Paayein
+          </h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Aaj hi KrishiSetu par apna account banayein.
+            <br class="hidden md:block" />
+            <span class="text-sm opacity-80"
+              >(Create your KrishiSetu account today.)</span
+            >
+          </p>
+        </div>
+        <!-- Language Toggle (Micro-interaction) -->
+        <div class="flex justify-end">
+          <div class="inline-flex bg-surface-container-high rounded-full p-1">
+            <button
+              class="px-3 py-1 rounded-full text-label-sm font-label-sm bg-white text-primary shadow-sm transition-all"
+            >
+              A/अ
+            </button>
+          </div>
+        </div>
+        <!-- Form -->
+        <form class="flex flex-col gap-md">
+          <!-- Full Name -->
+          <div class="flex flex-col gap-xs">
+            <label
+              class="font-label-lg text-label-lg text-tertiary"
+              for="fullName"
+              >Pura Naam (Full Name)</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >person</span
+              >
+              <input
+                class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
+                id="fullName"
+                placeholder="Rahul Kumar"
+                type="text"
+              />
+            </div>
+          </div>
+          <!-- Mobile Number -->
+          <div class="flex flex-col gap-xs">
+            <label
+              class="font-label-lg text-label-lg text-tertiary"
+              for="mobile"
+              >Mobile Number</label
+            >
+            <div class="flex gap-2">
+              <div
+                class="flex-shrink-0 flex items-center justify-center w-14 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface font-body-md text-body-md"
+              >
+                +91
+              </div>
+              <div class="relative flex-grow">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                  >call</span
+                >
+                <input
+                  class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
+                  id="mobile"
+                  placeholder="98765 43210"
+                  type="tel"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- State Selector -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-lg text-label-lg text-tertiary" for="state"
+              >Rajya (State)</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >map</span
+              >
+              <select
+                class="form-input w-full pl-10 pr-10 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md appearance-none transition-all"
+                id="state"
+              >
+                <option disabled="" selected="" value="">
+                  Chunein (Select State)
+                </option>
+                <option value="up">Uttar Pradesh</option>
+                <option value="mp">Madhya Pradesh</option>
+                <option value="pb">Punjab</option>
+                <option value="mh">Maharashtra</option>
+              </select>
+              <span
+                class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none"
+                >expand_more</span
+              >
+            </div>
+          </div>
+          <!-- Password -->
+          <div class="flex flex-col gap-xs">
+            <label
+              class="font-label-lg text-label-lg text-tertiary"
+              for="password"
+              >Password Banayein (Create Password)</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >lock</span
+              >
+              <input
+                class="form-input w-full pl-10 pr-10 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
+                id="password"
+                placeholder="••••••••"
+                type="password"
+              />
+              <button
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
+                type="button"
+              >
+                <span class="material-symbols-outlined">visibility_off</span>
+              </button>
+            </div>
+          </div>
+          <!-- Terms Checkbox -->
+          <div class="flex items-start gap-3 mt-sm">
+            <input
+              class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary-container bg-white/50 cursor-pointer"
+              id="terms"
+              type="checkbox"
+            />
+            <label
+              class="font-body-md text-sm text-on-surface-variant leading-tight cursor-pointer"
+              for="terms"
+            >
+              Main niyam aur sharton (Terms) aur privacy policy se sehmat hoon.
+              <br />
+              <span class="opacity-80 text-xs"
+                >(I agree to the terms and privacy policy.)</span
+              >
+            </label>
+          </div>
+          <!-- Submit Action -->
+          <button
+            class="mt-md w-full bg-primary-container text-on-primary-fixed-variant font-label-lg text-label-lg py-4 rounded-xl shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 border-b-2 border-on-primary-fixed-variant/20"
+            type="submit"
+          >
+            <span>Create Account</span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </form>
+        <!-- Trust Badges -->
+        <div
+          class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-sm border-t border-outline-variant/30"
+        >
+          <div class="flex items-center gap-1.5 text-secondary">
+            <span
+              class="material-symbols-outlined text-[18px]"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >verified_user</span
+            >
+            <span class="font-label-sm text-label-sm">Government Verified</span>
+          </div>
+          <div
+            class="w-1 h-1 rounded-full bg-outline-variant hidden md:block"
+          ></div>
+          <div class="flex items-center gap-1.5 text-primary">
+            <span
+              class="material-symbols-outlined text-[18px]"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >groups</span
+            >
+            <span class="font-label-sm text-label-sm">10M+ Farmers Joined</span>
+          </div>
+        </div>
+        <!-- Footer Link -->
+        <div class="text-center mt-xs">
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Pehle se account hai? <br class="md:hidden" />
+            <a
+              class="text-primary font-bold hover:underline underline-offset-4 ml-1"
+              href="signin.html"
+              >Sign In karein (Sign In)</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

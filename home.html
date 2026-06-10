@@ -1,0 +1,1483 @@
+<!doctype html>
+<html class="light" lang="en">
+  <head></head>
+  <body class="bg-background text-on-background antialiased overflow-x-hidden">
+    ```html
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KrishiSetu Desktop Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              error: "#ba1a1a",
+              "secondary-fixed-dim": "#a1d494",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#ece8df",
+              "on-secondary-fixed": "#002201",
+              "on-tertiary-fixed-variant": "#574335",
+              "primary-container": "#e3b448",
+              "surface-tint": "#795900",
+              "surface-variant": "#e6e2d9",
+              "surface-container": "#f1eee5",
+              "secondary-fixed": "#bcf0ae",
+              "tertiary-fixed": "#fbddca",
+              "primary-fixed-dim": "#f0c052",
+              "on-primary-fixed-variant": "#5b4300",
+              "surface-dim": "#dddad1",
+              tertiary: "#705a4c",
+              outline: "#807664",
+              "inverse-surface": "#31312b",
+              "tertiary-container": "#d2b5a4",
+              "surface-container-highest": "#e6e2d9",
+              "on-primary-fixed": "#261a00",
+              "on-tertiary-container": "#5b4639",
+              "inverse-primary": "#f0c052",
+              "on-primary-container": "#604600",
+              "on-error": "#ffffff",
+              background: "#fdf9f0",
+              "tertiary-fixed-dim": "#dec1af",
+              "on-error-container": "#93000a",
+              "inverse-on-surface": "#f4f0e8",
+              "outline-variant": "#d2c5b0",
+              "on-secondary-fixed-variant": "#23501e",
+              secondary: "#3b6934",
+              "on-secondary-container": "#3f6d38",
+              "error-container": "#ffdad6",
+              "on-surface": "#1c1c17",
+              surface: "#fdf9f0",
+              "on-background": "#1c1c17",
+              primary: "#795900",
+              "secondary-container": "#b9eeab",
+              "on-primary": "#ffffff",
+              "surface-bright": "#fdf9f0",
+              "surface-container-low": "#f7f3ea",
+              "primary-fixed": "#ffdf9f",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#4e4636",
+              "on-tertiary-fixed": "#28180d",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              sm: "8px",
+              xs: "4px",
+              "margin-desktop": "64px",
+              lg: "24px",
+              xl: "32px",
+              md: "16px",
+              "margin-mobile": "16px",
+              base: "4px",
+              gutter: "20px",
+            },
+            fontFamily: {
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "label-sm": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .icon-fill {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Animation Background Container */
+      .shader-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+    <!-- WebGL Shader Background -->
+    <div class="shader-bg"></div>
+    <div class="flex h-screen overflow-hidden">
+      <!-- SideNavBar (Desktop Only) -->
+      <nav
+        class="hidden md:flex flex-col py-lg px-md w-64 bg-surface-container-low/80 backdrop-blur-md border-r border-outline-variant/20 h-screen shrink-0 z-40"
+      >
+        <!-- Brand / Header -->
+        <div class="mb-xl px-sm">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container shadow-sm"
+            >
+              <span class="material-symbols-outlined text-[24px]"
+                >agriculture</span
+              >
+            </div>
+            <div>
+              <h1
+                class="font-headline-md text-headline-md font-bold text-primary"
+              >
+                KrishiSetu
+              </h1>
+              <p class="font-label-sm text-label-sm text-on-surface-variant">
+                Mitti Ki Baat, Digital Saath
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Navigation Links -->
+        <ul class="flex flex-col gap-2 flex-grow">
+          <!-- Home (Active) -->
+          <li class="">
+            <a
+              class="flex items-center gap-md bg-secondary-container text-on-secondary-container rounded-lg px-md py-sm scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="home.html"
+            >
+              <span class="material-symbols-outlined icon-fill">home</span>
+              <span class="">Home</span>
+            </a>
+          </li>
+          <!-- AI Expert -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="ai-expert.html"
+            >
+              <span class="material-symbols-outlined">psychology</span>
+              <span class="">AI Expert</span>
+            </a>
+          </li>
+          <!-- Mandi -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="mandi.html"
+            >
+              <span class="material-symbols-outlined">storefront</span>
+              <span class="">Mandi</span>
+            </a>
+          </li>
+          <!-- Weather -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="weather.html"
+            >
+              <span class="material-symbols-outlined">wb_sunny</span>
+              <span class="">Weather</span>
+            </a>
+          </li>
+          <!-- Ledger -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="ledger.html"
+            >
+              <span class="material-symbols-outlined">menu_book</span>
+              <span class="">Ledger</span>
+            </a>
+          </li>
+          <!-- Community -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="community.html"
+            >
+              <span class="material-symbols-outlined">groups</span>
+              <span class="">Community</span>
+            </a>
+          </li>
+          <!-- Settings -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="setting.html"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              <span class="">Settings</span>
+            </a>
+          </li>
+          <!-- Language (file list mein nahi hai, isliye # rakha) -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="#"
+            >
+              <span class="material-symbols-outlined">language</span>
+              <span class="">Language</span>
+            </a>
+          </li>
+          <!-- Sign In -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="signin.html"
+            >
+              <span class="material-symbols-outlined">login</span>
+              <span class="">Sign In</span>
+            </a>
+          </li>
+          <!-- Create Account -->
+          <li class="">
+            <a
+              class="flex items-center gap-md text-on-surface-variant px-md py-sm hover:bg-surface-container-high rounded-lg scale-98 active:scale-95 transition-transform duration-150 font-label-lg text-label-lg"
+              href="create-account.html"
+            >
+              <span class="material-symbols-outlined">person_add</span>
+              <span class="">Create Account</span>
+            </a>
+          </li>
+        </ul>
+        <!-- CTA -->
+        <div class="mt-auto pt-lg">
+          <button
+            class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-3 rounded-lg shadow-sm hover:bg-primary hover:text-on-primary transition-colors flex justify-center items-center gap-2"
+          >
+            <span class="material-symbols-outlined">workspace_premium</span>
+            Upgrade to Pro
+          </button>
+        </div>
+      </nav>
+      <!-- Main Content Area -->
+      <main class="flex-1 flex flex-col h-screen overflow-y-auto relative z-10">
+        <!-- TopNavBar -->
+        <header
+          class="w-full h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 sticky top-0 z-50 flex justify-between items-center px-margin-desktop md:px-lg lg:px-margin-desktop shadow-sm"
+        >
+          <!-- Mobile Menu Toggle & Brand (Visible mainly on mobile if side nav hidden) -->
+          <div class="flex items-center gap-4 md:hidden">
+            <button
+              class="text-on-surface-variant hover:bg-surface-container p-2 rounded-full transition-colors"
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+            <span
+              class="font-headline-md text-headline-md font-bold text-primary"
+              >KrishiSetu</span
+            >
+          </div>
+          <!-- Search Bar -->
+          <div class="hidden md:flex flex-1 max-w-md mx-4 relative group">
+            <span
+              class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors"
+              >search</span
+            >
+            <input
+              class="w-full bg-surface-container border border-outline-variant/50 rounded-full py-2 pl-10 pr-4 text-body-md font-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary-container focus:ring-2 focus:ring-primary-container/30 transition-all"
+              placeholder="Fasal, mandi rate ya mausam khojen..."
+              type="text"
+            />
+          </div>
+          <!-- Right Actions -->
+          <div class="flex items-center gap-2 lg:gap-4">
+            <button
+              aria-label="notifications"
+              class="text-on-surface-variant hover:bg-surface-container p-2 rounded-full transition-colors relative"
+            >
+              <span class="material-symbols-outlined">notifications</span>
+              <span
+                class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface"
+              ></span>
+            </button>
+            <button
+              aria-label="help"
+              class="text-on-surface-variant hover:bg-surface-container p-2 rounded-full transition-colors hidden sm:block"
+            >
+              <span class="material-symbols-outlined">help</span>
+            </button>
+            <!-- Profile -->
+            <div
+              class="ml-2 pl-2 border-l border-outline-variant/30 flex items-center gap-3 cursor-pointer hover:bg-surface-container p-1 pr-3 rounded-full transition-colors"
+            >
+              <img
+                alt="A warm, professional portrait of an Indian farmer smiling softly. The lighting is golden hour, highlighting a realistic and trustworthy appearance suitable for an agricultural app profile."
+                class="w-8 h-8 rounded-full object-cover border border-outline-variant/30"
+                data-alt="A warm, professional portrait of an Indian farmer smiling softly. The lighting is golden hour, highlighting a realistic and trustworthy appearance suitable for an agricultural app profile."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC10CW1RY_5AY7hb_qCLBHXtksh-GFyfmqAKr-Q4XugIn1jjGnI6n2OUjos7Smzp9r3dJCEMHFtfdxbHOTtPTLettW-TV3_MYg5ct78dx7V0MKRFGqGpC2xysS5EaiyZjvOAj82McKY8G82qhlrSnrXrMCIxw7B1PuT4xq7PIH_xXau5mlXBJ9x9LYOn6T2JPIBMd7BxcSncQxvgHk3MsjsKcH3yPGGTnvJOcXIHtq1-IxCE6t0vIDraJY512mbzvcxC0HksUpesnQ4"
+              />
+              <span
+                class="font-label-lg text-label-lg text-on-surface hidden lg:block"
+                >Ramesh S.</span
+              >
+            </div>
+          </div>
+        </header>
+        <!-- Dashboard Content Container -->
+        <div
+          class="p-4 md:p-8 lg:p-margin-desktop max-w-7xl mx-auto w-full flex flex-col gap-8 pb-24"
+        >
+          <!-- Main Hero Section -->
+          <div
+            class="glass-panel rounded-xl p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-[0_12px_32px_-4px_rgba(61,43,31,0.08)]"
+          >
+            <div>
+              <div
+                class="flex items-center gap-2 mb-2 text-secondary font-label-lg text-label-lg"
+              >
+                <span class="material-symbols-outlined text-[18px]"
+                  >location_on</span
+                >
+                <span class="">Nashik, Maharashtra</span>
+              </div>
+              <h2 class="font-display-md text-display-md text-primary mb-2">
+                Ram-Ram, Ramesh ji!
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Aapki fasal (Soybean) ke liye aaj din accha hai.
+              </p>
+            </div>
+            <!-- Weather Widget inside Hero -->
+            <div
+              class="bg-surface/60 backdrop-blur-md border border-outline-variant/30 rounded-lg p-4 flex items-center gap-4 min-w-[200px]"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary"
+              >
+                <span class="material-symbols-outlined text-[32px]"
+                  >partly_cloudy_day</span
+                >
+              </div>
+              <div>
+                <div class="font-headline-lg text-headline-lg text-on-surface">
+                  28°C
+                </div>
+                <div
+                  class="font-label-sm text-label-sm text-on-surface-variant"
+                >
+                  Bina barish ki asha
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Quick Action Grid (Bento Style) -->
+          <div>
+            <h3
+              class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-secondary">bolt</span>
+              Quick Actions
+            </h3>
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            >
+              <!-- Krishi AI Expert Card -->
+              <div
+                class="glass-panel rounded-xl p-5 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer border-l-4 border-l-secondary group relative overflow-hidden"
+              >
+                <div
+                  class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-container/30 rounded-full blur-xl group-hover:bg-secondary-container/50 transition-colors"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-4"
+                >
+                  <span class="material-symbols-outlined">psychology</span>
+                </div>
+                <h4
+                  class="font-headline-md text-headline-md text-on-surface mb-1"
+                >
+                  Krishi AI Expert
+                </h4>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2"
+                >
+                  Photo kheencho, bimari pehchano aur ilaaj pao.
+                </p>
+                <div
+                  class="mt-auto flex items-center text-secondary font-label-lg text-label-lg group-hover:gap-2 transition-all"
+                >
+                  <span class="">Poocho</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    >arrow_right_alt</span
+                  >
+                </div>
+              </div>
+              <!-- Live Mandi Rates Card -->
+              <div
+                class="glass-panel rounded-xl p-5 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer border-l-4 border-l-primary group relative overflow-hidden"
+              >
+                <div
+                  class="absolute -right-4 -top-4 w-24 h-24 bg-primary-container/30 rounded-full blur-xl group-hover:bg-primary-container/50 transition-colors"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4"
+                >
+                  <span class="material-symbols-outlined">storefront</span>
+                </div>
+                <h4
+                  class="font-headline-md text-headline-md text-on-surface mb-1"
+                >
+                  Live Mandi Rates
+                </h4>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2"
+                >
+                  Aas paas ki mandiyon ke taaza bhaav dekhen.
+                </p>
+                <div
+                  class="mt-auto flex items-center text-primary font-label-lg text-label-lg group-hover:gap-2 transition-all"
+                >
+                  <span class="">Check Karein</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    >arrow_right_alt</span
+                  >
+                </div>
+              </div>
+              <!-- Govt. Yojanaen Card -->
+              <div
+                class="glass-panel rounded-xl p-5 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer border-l-4 border-l-tertiary group relative overflow-hidden"
+              >
+                <div
+                  class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary-container/30 rounded-full blur-xl group-hover:bg-tertiary-container/50 transition-colors"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary mb-4"
+                >
+                  <span class="material-symbols-outlined">account_balance</span>
+                </div>
+                <h4
+                  class="font-headline-md text-headline-md text-on-surface mb-1"
+                >
+                  Govt. Yojanaen
+                </h4>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2"
+                >
+                  Sarkari schemes aur subsidy ki jaankari.
+                </p>
+                <div
+                  class="mt-auto flex items-center text-tertiary font-label-lg text-label-lg group-hover:gap-2 transition-all"
+                >
+                  <span class="">Apply Karein</span>
+                  <span class="material-symbols-outlined text-[18px]"
+                    >arrow_right_alt</span
+                  >
+                </div>
+              </div>
+              <!-- Add Expense (Ledger) Card -->
+              <div
+                class="glass-panel rounded-xl p-5 hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer border-l-4 border-l-outline group relative overflow-hidden bg-surface-container-low/80"
+              >
+                <div
+                  class="absolute -right-4 -top-4 w-24 h-24 bg-surface-variant/50 rounded-full blur-xl group-hover:bg-surface-variant transition-colors"
+                ></div>
+                <div
+                  class="w-10 h-10 rounded-lg bg-outline/10 flex items-center justify-center text-on-surface-variant mb-4"
+                >
+                  <span class="material-symbols-outlined">receipt_long</span>
+                </div>
+                <h4
+                  class="font-headline-md text-headline-md text-on-surface mb-1"
+                >
+                  Kharcha Darj Karein
+                </h4>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2"
+                >
+                  Aaj ka hisaab kitaab update karein.
+                </p>
+                <div
+                  class="mt-auto flex items-center text-on-surface-variant font-label-lg text-label-lg group-hover:gap-2 transition-all"
+                >
+                  <span class="">Darj Karein</span>
+                  <span class="material-symbols-outlined text-[18px]">add</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Market Data Section -->
+          <div>
+            <div class="flex justify-between items-end mb-4">
+              <h3
+                class="font-headline-md text-headline-md text-on-surface flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >trending_up</span
+                >
+                AAJKE TOP BHAAV
+              </h3>
+              <a
+                class="font-label-lg text-label-lg text-secondary hover:underline"
+                href="#"
+                >Sabhi dekhen</a
+              >
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <!-- Commodity Card 1 -->
+              <div
+                class="glass-panel rounded-xl p-5 flex items-center justify-between border border-outline-variant/20 hover:border-primary/30 transition-colors"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-[#f4f0e8] overflow-hidden flex-shrink-0 border border-outline-variant/30"
+                  >
+                    <img
+                      alt="Close up high quality photo of dried soybeans resting in a woven basket. Warm golden lighting highlights the organic texture of the agricultural commodity."
+                      class="w-full h-full object-cover"
+                      data-alt="Close up high quality photo of dried soybeans resting in a woven basket. Warm golden lighting highlights the organic texture of the agricultural commodity."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzew34XIcAIl1e97Asheo6_pRMsgoEzJmuFAwAiIoQAl-VPXfhOcX9053NXyXqbpkquKvw4QQZFjz5EK5bEeFhYED1TRnAD0EuqkkxGji60qXXGi75Ra0IseyICXJQizshZBtsEBZieob8rDJmeSl4TMXLOq6FnvXoZZI4WL5WH78c2-tXXz9usXFQ2kNglqqf3BFN5YbXLsFWPytfJSxsFQTO86yAYn6dio4IUymmRMhRlHwg7Xj7X-YK1dJO1NMi1dNKcyekAZso"
+                    />
+                  </div>
+                  <div>
+                    <h4
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Soybean
+                    </h4>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      Nashik Mandi
+                    </p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div
+                    class="font-headline-md text-headline-md text-on-surface"
+                  >
+                    ₹4,850<span
+                      class="text-label-sm text-on-surface-variant font-normal"
+                      >/q</span
+                    >
+                  </div>
+                  <div
+                    class="font-label-sm text-label-sm text-secondary flex items-center justify-end gap-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >arrow_upward</span
+                    >
+                    ₹50 (+1.2%)
+                  </div>
+                </div>
+              </div>
+              <!-- Commodity Card 2 -->
+              <div
+                class="glass-panel rounded-xl p-5 flex items-center justify-between border border-outline-variant/20 hover:border-primary/30 transition-colors"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-[#f4f0e8] overflow-hidden flex-shrink-0 border border-outline-variant/30"
+                  >
+                    <img
+                      alt="Vibrant fresh red onions piled together. Shot in natural, warm daylight emphasizing the agricultural product's quality and earthy origins."
+                      class="w-full h-full object-cover"
+                      data-alt="Vibrant fresh red onions piled together. Shot in natural, warm daylight emphasizing the agricultural product's quality and earthy origins."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs4PAZJ7HrK0qcIJE4TpkAU8BCxiPEYLw8W0jAJkUrow5eeJq9izUwxcffH0xge_KSU25UYBCY_i-c4-wlQIocu-hjRwvtM_8XNDrZpCra0t0lRYIPyL4hD3-ZdCb-AVDrv78YNI3u9drdaEll29stir7g5WufrFhbEofU-1dwkdLbyUqAe8qqcFs5FrHWtSF7FrXDY2mPyA8MMMwUQehuu80DqTY2j-4IZppQMPVb7kdHAv3R-zLmHYX7KMT0Bm2tmdVGMpn06php"
+                    />
+                  </div>
+                  <div>
+                    <h4
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Pyaaz (Onion)
+                    </h4>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      Lasalgaon
+                    </p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div
+                    class="font-headline-md text-headline-md text-on-surface"
+                  >
+                    ₹2,100<span
+                      class="text-label-sm text-on-surface-variant font-normal"
+                      >/q</span
+                    >
+                  </div>
+                  <div
+                    class="font-label-sm text-label-sm text-error flex items-center justify-end gap-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >arrow_downward</span
+                    >
+                    ₹20 (-0.9%)
+                  </div>
+                </div>
+              </div>
+              <!-- Commodity Card 3 -->
+              <div
+                class="glass-panel rounded-xl p-5 flex items-center justify-between border border-outline-variant/20 hover:border-primary/30 transition-colors"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-full bg-[#f4f0e8] overflow-hidden flex-shrink-0 border border-outline-variant/30"
+                  >
+                    <img
+                      alt="Golden wheat grains scooped in wooden hands, softly lit by morning sun. Represents farming bounty and rural agricultural commerce in India."
+                      class="w-full h-full object-cover"
+                      data-alt="Golden wheat grains scooped in wooden hands, softly lit by morning sun. Represents farming bounty and rural agricultural commerce in India."
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1hUmeduSW51D1I2elS-lhkHRZlaHdA-9saH5AafL3gf3XG6Ogbig7a2eF808sSXuKtTtyRzViqRGXYEmQtAoduUIyK-E1EMG89xD1CVP99ZEE0Zx9CByx0OvihbG1ElhyxR1MJGZZmlN5dvTUR1_X49eO7GpJt3Br7i4UX9O8cVzATYinhFxjVtzILqGB5Du_6uhhhzI8ZNvttGmPFviJdD5JJnBamWwP4ostToHgI-PO5pqPbHvuUpdXoj6h5u85cBNfqitvcEKH"
+                    />
+                  </div>
+                  <div>
+                    <h4
+                      class="font-headline-md text-headline-md text-on-surface"
+                    >
+                      Gehu (Wheat)
+                    </h4>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface-variant"
+                    >
+                      Pune Mandi
+                    </p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div
+                    class="font-headline-md text-headline-md text-on-surface"
+                  >
+                    ₹2,450<span
+                      class="text-label-sm text-on-surface-variant font-normal"
+                      >/q</span
+                    >
+                  </div>
+                  <div
+                    class="font-label-sm text-label-sm text-secondary flex items-center justify-end gap-1"
+                  >
+                    <span class="material-symbols-outlined text-[14px]"
+                      >arrow_upward</span
+                    >
+                    ₹10 (+0.4%)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- EXTENDED SECTIONS APPENDED BELOW -->
+          <!-- 1. Platform Statistics -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-primary-container mb-2"
+                  >groups</span
+                >
+                <div
+                  class="font-display-md text-display-md text-on-surface font-bold"
+                >
+                  5M+
+                </div>
+                <div class="font-body-md text-body-md text-on-surface-variant">
+                  Farmers Connected
+                </div>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-primary-container mb-2"
+                  >grass</span
+                >
+                <div
+                  class="font-display-md text-display-md text-on-surface font-bold"
+                >
+                  50+
+                </div>
+                <div class="font-body-md text-body-md text-on-surface-variant">
+                  Crops Covered
+                </div>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-primary-container mb-2"
+                  >psychology</span
+                >
+                <div
+                  class="font-display-md text-display-md text-on-surface font-bold"
+                >
+                  10M+
+                </div>
+                <div class="font-body-md text-body-md text-on-surface-variant">
+                  AI Advice Given
+                </div>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-primary-container mb-2"
+                  >verified</span
+                >
+                <div
+                  class="font-display-md text-display-md text-on-surface font-bold"
+                >
+                  98%
+                </div>
+                <div class="font-body-md text-body-md text-on-surface-variant">
+                  Accuracy Rate
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 2. Our Services (8 Cards) -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Hamari Sewaen (Our Services)
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary text-[32px]"
+                    >analytics</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Mandi Analytics
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Bhavishya ke mandi rates ka anuman lagayen.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[32px]"
+                    >shield</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Crop Insurance
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Apni fasal ka beema karwayen aur surakshit rahein.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary text-[32px]"
+                    >science</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Soil Testing
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Mitti ki jaanch karwayen aur sahi khad chunein.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary text-[32px]"
+                    >satellite_alt</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Satellite View
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Khet ki nigrani aasman se karein.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[32px]"
+                    >water_drop</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Smart Irrigation
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Pani ki bachat aur sahi sinchai ke tarike.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-tertiary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-tertiary text-[32px]"
+                    >agriculture</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Equipment Rent
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Tractor aur machine kiraye par lein.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary text-[32px]"
+                    >menu_book</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Digital Ledger
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Hisaab-kitaab apne phone par rakhein.
+                </p>
+              </div>
+              <div
+                class="glass-panel rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-4"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary text-[32px]"
+                    >support_agent</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Expert Advice
+                </h3>
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                  Krishi visheshagyon se baat karein.
+                </p>
+              </div>
+            </div>
+          </section>
+          <!-- 3. Why Choose Us -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Humein Kyon Chunein?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div class="flex items-start gap-4">
+                <span
+                  class="material-symbols-outlined text-secondary text-[32px]"
+                  >check_circle</span
+                >
+                <div>
+                  <h3 class="font-headline-md text-headline-md mb-2">
+                    Direct-to-Mandi
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Bichauliyon se mukti, seedha mandi me apni fasal beche.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span
+                  class="material-symbols-outlined text-secondary text-[32px]"
+                  >check_circle</span
+                >
+                <div>
+                  <h3 class="font-headline-md text-headline-md mb-2">
+                    Expert AI
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Fasal ki bimariyon ka turant aur sahi nidan.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span
+                  class="material-symbols-outlined text-secondary text-[32px]"
+                  >check_circle</span
+                >
+                <div>
+                  <h3 class="font-headline-md text-headline-md mb-2">
+                    Community Support
+                  </h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">
+                    Lakho kisano ke sath juden aur anubhav sanjha karein.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 4. AI Features (8 Cards) & 8. Smart Farming Technology Combined visually -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+              <div class="lg:w-1/2">
+                <img
+                  alt="AI Farming App"
+                  class="w-full rounded-2xl shadow-xl"
+                  src="https://lh3.googleusercontent.com/aida/AP1WRLu9aYPrWRhsJQWU_Lii_sJVYKBdYxFGFqleU4wEQlfFKiAajd7JFkku05vpCz68ybj5qYIfl6yvqIJArTQXilpfxAhRQhKntofbdPKM-QBHj-dhOgVp_HpT_Q7esoxZh35grjOoA-njORIH_1_62O8kyPcsMgnnKvhxVf6DqXAWEmT68gZ2eMCn70ghEgG_23hiIcXKY-yZz25BCH6f4IS8SdvLPjHPLZ9CEGX9zBntqMavr6SRKORtpD4M"
+                />
+              </div>
+              <div class="lg:w-1/2">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-6">
+                  Krishi AI: Aapka Digital Sahayak
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >pest_control</span
+                    >
+                    <span class="font-headline-md">Disease Scan</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-secondary"
+                      >eco</span
+                    >
+                    <span class="font-headline-md">Crop Health</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-tertiary"
+                      >query_stats</span
+                    >
+                    <span class="font-headline-md">Yield Predict</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >thermostat</span
+                    >
+                    <span class="font-headline-md">Climate Sync</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-secondary"
+                      >compost</span
+                    >
+                    <span class="font-headline-md">Soil Analysis</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-tertiary"
+                      >water_drop</span
+                    >
+                    <span class="font-headline-md">Irrigation AI</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-primary"
+                      >psychology</span
+                    >
+                    <span class="font-headline-md">Chatbot</span>
+                  </div>
+                  <div
+                    class="glass-panel p-4 rounded-xl flex items-center gap-4"
+                  >
+                    <span class="material-symbols-outlined text-secondary"
+                      >notifications_active</span
+                    >
+                    <span class="font-headline-md">Alerts</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 5. Live Weather Dashboard -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Mausam Ka Haal
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div
+                class="glass-panel rounded-2xl p-6 text-center border-t-4 border-t-primary"
+              >
+                <span
+                  class="material-symbols-outlined text-[48px] text-primary mb-2"
+                  >sunny</span
+                >
+                <div class="font-display-md">28°C</div>
+                <div class="font-label-lg text-on-surface-variant">
+                  Aaj (Today)
+                </div>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-secondary mb-2"
+                  >partly_cloudy_day</span
+                >
+                <div class="font-display-md">26°C</div>
+                <div class="font-label-lg text-on-surface-variant">
+                  Kal (Tomorrow)
+                </div>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-secondary mb-2"
+                  >rainy</span
+                >
+                <div class="font-display-md">24°C</div>
+                <div class="font-label-lg text-on-surface-variant">
+                  Parso (Day 3)
+                </div>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-tertiary mb-2"
+                  >water_drop</span
+                >
+                <div class="font-display-md">65%</div>
+                <div class="font-label-lg text-on-surface-variant">
+                  Nami (Humidity)
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 6. Live Mandi Prices (Table) -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Live Mandi Bhav
+            </h2>
+            <div class="glass-panel rounded-2xl overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                  <thead class="bg-surface-container-high">
+                    <tr>
+                      <th class="p-4 font-headline-md text-on-surface">
+                        Fasal (Crop)
+                      </th>
+                      <th class="p-4 font-headline-md text-on-surface">
+                        Mandi
+                      </th>
+                      <th class="p-4 font-headline-md text-on-surface">
+                        Bhav (₹/q)
+                      </th>
+                      <th class="p-4 font-headline-md text-on-surface">
+                        Trend
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr
+                      class="border-b border-outline-variant/20 hover:bg-surface-container/50"
+                    >
+                      <td class="p-4 font-body-lg">Soybean</td>
+                      <td class="p-4 font-body-lg text-on-surface-variant">
+                        Nashik
+                      </td>
+                      <td class="p-4 font-headline-md">₹4,850</td>
+                      <td class="p-4 text-secondary flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[18px]"
+                          >trending_up</span
+                        >
+                        +1.2%
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-outline-variant/20 hover:bg-surface-container/50"
+                    >
+                      <td class="p-4 font-body-lg">Pyaaz</td>
+                      <td class="p-4 font-body-lg text-on-surface-variant">
+                        Lasalgaon
+                      </td>
+                      <td class="p-4 font-headline-md">₹2,100</td>
+                      <td class="p-4 text-error flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[18px]"
+                          >trending_down</span
+                        >
+                        -0.9%
+                      </td>
+                    </tr>
+                    <tr
+                      class="border-b border-outline-variant/20 hover:bg-surface-container/50"
+                    >
+                      <td class="p-4 font-body-lg">Gehu</td>
+                      <td class="p-4 font-body-lg text-on-surface-variant">
+                        Pune
+                      </td>
+                      <td class="p-4 font-headline-md">₹2,450</td>
+                      <td class="p-4 text-secondary flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[18px]"
+                          >trending_up</span
+                        >
+                        +0.4%
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-surface-container/50">
+                      <td class="p-4 font-body-lg">Chana</td>
+                      <td class="p-4 font-body-lg text-on-surface-variant">
+                        Latur
+                      </td>
+                      <td class="p-4 font-headline-md">₹5,200</td>
+                      <td class="p-4 text-secondary flex items-center gap-1">
+                        <span class="material-symbols-outlined text-[18px]"
+                          >trending_up</span
+                        >
+                        +2.1%
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <!-- 7. Featured Crops (8 Cards) & Image 4 -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Pramukh Fasalein
+            </h2>
+            <div class="mb-8 rounded-2xl overflow-hidden shadow-lg">
+              <img
+                alt="Crops Collage"
+                class="w-full h-64 object-cover"
+                src="https://lh3.googleusercontent.com/aida/AP1WRLvMPYdQgzGh7JP37ULedV5HtGrN2QzJ3wSwo5jowRrVoprjQtL7JLIhnQOr7r0YUEEoQm74racF5sTssptU9e0IGCUvlEfm0UyMsByb2Q32ULX8jF6t16KuN0IVG4NjpuJkpxFVW8i5SSEcE7AwkmNmJ4oZkBlkhq6JSTRUroLeLgA4mYMe1a0jK-Ikxi303K6fkm8KnZfCZlGOhhF_LN4uOjyot00h9ynbzQKsSPpTG7rktS-AM4GWoGZk"
+              />
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Gehu (Wheat)</h3>
+                <p class="font-label-sm text-on-surface-variant">Rabi Season</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Dhan (Rice)</h3>
+                <p class="font-label-sm text-on-surface-variant">
+                  Kharif Season
+                </p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Kapas (Cotton)</h3>
+                <p class="font-label-sm text-on-surface-variant">Cash Crop</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Ganna (Sugarcane)</h3>
+                <p class="font-label-sm text-on-surface-variant">Cash Crop</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Soybean</h3>
+                <p class="font-label-sm text-on-surface-variant">
+                  Kharif Season
+                </p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Makka (Maize)</h3>
+                <p class="font-label-sm text-on-surface-variant">All Season</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Sarso (Mustard)</h3>
+                <p class="font-label-sm text-on-surface-variant">Rabi Season</p>
+              </div>
+              <div class="glass-panel p-4 rounded-xl text-center">
+                <h3 class="font-headline-md">Dal (Pulses)</h3>
+                <p class="font-label-sm text-on-surface-variant">High Demand</p>
+              </div>
+            </div>
+          </section>
+          <!-- 8. Smart Farming Technology -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <div class="flex flex-col-reverse lg:flex-row gap-12 items-center">
+              <div class="lg:w-1/2">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-6">
+                  Smart Farming Tech
+                </h2>
+                <p class="font-body-lg mb-6 text-on-surface-variant">
+                  Drone, IoT sensors aur satellite ki madad se kheti ko aasan
+                  aur munafedar banayein.
+                </p>
+                <ul class="space-y-4">
+                  <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary"
+                      >flight</span
+                    >
+                    <span class="font-headline-md">Drone Spraying</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary"
+                      >sensors</span
+                    >
+                    <span class="font-headline-md">IoT Soil Sensors</span>
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-secondary"
+                      >satellite_alt</span
+                    >
+                    <span class="font-headline-md"
+                      >Satellite Crop Monitoring</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:w-1/2">
+                <img
+                  alt="Drone Technology"
+                  class="w-full rounded-2xl shadow-xl"
+                  src="https://lh3.googleusercontent.com/aida/AP1WRLvkuw5T0sAVdLIIUt8n0076r6kpLk5IjuUbYb_e2RYBjTFvGLVl7Chd_5hKmkyZ6cmM2Ws4UIgHpBbEwahvVc548ikK6nvsSx10GJcChbbfXhBTkaRHwDTZ116qHMGfXNG7rIEWhZPWtFiP_-FmnikQUTdT8wsKielbtqtBPbL_gvI-xuPm_OZt66tgeqyId9hOPpMhvM_Njw6FeAkTAfkEz_8g67iXa9pYIuAFVyFNOjN29XsRLgOvNGQ"
+                />
+              </div>
+            </div>
+          </section>
+          <!-- 9. Equipment Rental -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Krishi Yantra Kiraye Par
+            </h2>
+            <div
+              class="glass-panel rounded-3xl p-6 flex flex-col md:flex-row gap-8 items-center"
+            >
+              <img
+                alt="Tractor Rental"
+                class="w-full md:w-1/2 rounded-2xl object-cover h-64"
+                src="https://lh3.googleusercontent.com/aida/AP1WRLuv6oZZ8KkqKzr601B-sDTivxiRrrvgV0Two5ZtC4ZnBUmFNn2UqVdgdK5fM58-dtx_Mv9CEMRV0K3bVCrBUgQXSZgTD-GvZEP6dt8NPgDq6pH4woRbfOx6nYjgBUZ4PoA9hkYQKZH0kIpl1Qz8F-nMLwXtRBivYaaY_79Zngdk92VbHfkeKHcjcRCF_zDjIvZOxSd8FnRhb4SU5ByR6YBc30fLwKwzCsynFVv2RjzxTI1g_d9RpRV4QmYH"
+              />
+              <div class="md:w-1/2">
+                <h3 class="font-headline-lg mb-4">
+                  Modern Tractors &amp; Harvesters
+                </h3>
+                <p class="font-body-lg text-on-surface-variant mb-6">
+                  Saste daam par naye yantra kiraye par lein. Samay aur mehnat
+                  bachayen.
+                </p>
+                <div class="flex gap-4">
+                  <button
+                    class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-lg flex items-center gap-2 hover:bg-primary/90 transition-colors"
+                  >
+                    <span class="material-symbols-outlined">agriculture</span>
+                    Rent Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 10. Agriculture Marketplace -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Kisan Marketplace
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-tertiary mb-4"
+                  >grass</span
+                >
+                <h3 class="font-headline-md mb-2">Beej (Seeds)</h3>
+                <p class="font-body-md text-on-surface-variant mb-4">
+                  Unnat kism ke beej kharidein.
+                </p>
+                <button
+                  class="w-full border border-primary text-primary py-2 rounded-lg hover:bg-primary/10"
+                >
+                  Shop Seeds
+                </button>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-secondary mb-4"
+                  >science</span
+                >
+                <h3 class="font-headline-md mb-2">Khad (Fertilizer)</h3>
+                <p class="font-body-md text-on-surface-variant mb-4">
+                  Sahi daam par khad mangwayen.
+                </p>
+                <button
+                  class="w-full border border-secondary text-secondary py-2 rounded-lg hover:bg-secondary/10"
+                >
+                  Shop Fertilizer
+                </button>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 text-center">
+                <span
+                  class="material-symbols-outlined text-[48px] text-primary mb-4"
+                  >pest_control</span
+                >
+                <h3 class="font-headline-md mb-2">Dawayein (Pesticides)</h3>
+                <p class="font-body-md text-on-surface-variant mb-4">
+                  Fasal suraksha ke liye dawayein.
+                </p>
+                <button
+                  class="w-full border border-primary text-primary py-2 rounded-lg hover:bg-primary/10"
+                >
+                  Shop Pesticides
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- 11. Government Schemes -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <h2
+              class="font-headline-lg text-headline-lg text-center text-primary mb-8"
+            >
+              Sarkari Yojanaen
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="glass-panel rounded-2xl p-6 flex flex-col h-full">
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  PM-Kisan Samman Nidhi
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4"
+                >
+                  Kisan bhaiyon ko saalana ₹6,000 ki aarthik madad.
+                </p>
+                <button
+                  class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-lg hover:bg-primary hover:text-on-primary transition-colors"
+                >
+                  Apply Now
+                </button>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 flex flex-col h-full">
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  PM Fasal Bima Yojana
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4"
+                >
+                  Prakritik aapdaon se fasal ke nuksan ka bima.
+                </p>
+                <button
+                  class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-lg hover:bg-primary hover:text-on-primary transition-colors"
+                >
+                  Apply Now
+                </button>
+              </div>
+              <div class="glass-panel rounded-2xl p-6 flex flex-col h-full">
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Kisan Credit Card (KCC)
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant flex-grow mb-4"
+                >
+                  Sasti daron par krishi rin prapt karein.
+                </p>
+                <button
+                  class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-lg hover:bg-primary hover:text-on-primary transition-colors"
+                >
+                  Apply Now
+                </button>
+              </div>
+            </div>
+          </section>
+          <!-- 12. Seasonal Crop Calendar -->
+          <section class="py-16 border-t border-outline-variant/20">
+            <div class="glass-panel rounded-2xl p-8 overflow-x-auto"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

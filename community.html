@@ -1,0 +1,1628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>KrishiSetu - Community Hub</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "on-background": "#1c1c17",
+              background: "#fdf9f0",
+              "surface-container-high": "#ece8df",
+              "surface-variant": "#e6e2d9",
+              tertiary: "#705a4c",
+              "inverse-on-surface": "#f4f0e8",
+              surface: "#fdf9f0",
+              "primary-fixed": "#ffdf9f",
+              "primary-container": "#e3b448",
+              "surface-bright": "#fdf9f0",
+              "on-secondary-fixed-variant": "#23501e",
+              primary: "#795900",
+              "on-primary-fixed-variant": "#5b4300",
+              "on-tertiary-fixed": "#28180d",
+              "primary-fixed-dim": "#f0c052",
+              "on-surface": "#1c1c17",
+              "tertiary-container": "#d2b5a4",
+              "on-primary-fixed": "#261a00",
+              outline: "#807664",
+              "on-primary": "#ffffff",
+              error: "#ba1a1a",
+              "tertiary-fixed": "#fbddca",
+              "secondary-container": "#b9eeab",
+              "surface-dim": "#dddad1",
+              "surface-container-highest": "#e6e2d9",
+              secondary: "#3b6934",
+              "on-surface-variant": "#4e4636",
+              "error-container": "#ffdad6",
+              "surface-container": "#f1eee5",
+              "inverse-primary": "#f0c052",
+              "tertiary-fixed-dim": "#dec1af",
+              "surface-container-low": "#f7f3ea",
+              "on-primary-container": "#604600",
+              "surface-tint": "#795900",
+              "secondary-fixed-dim": "#a1d494",
+              "on-tertiary-fixed-variant": "#574335",
+              "on-tertiary-container": "#5b4639",
+              "inverse-surface": "#31312b",
+              "secondary-fixed": "#bcf0ae",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-fixed": "#002201",
+              "on-secondary-container": "#3f6d38",
+              "outline-variant": "#d2c5b0",
+              "on-secondary": "#ffffff",
+              "on-error-container": "#93000a",
+              "deep-green": "#1B4332",
+              "harvest-gold": "#A3E635",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xl: "32px",
+              xs: "4px",
+              sm: "8px",
+              md: "16px",
+              lg: "24px",
+              gutter: "20px",
+              "margin-mobile": "16px",
+              "margin-desktop": "64px",
+              base: "4px",
+            },
+            fontFamily: {
+              "label-sm": ["Plus Jakarta Sans"],
+              "label-lg": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              "display-md": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.02em",
+                  fontWeight: "500",
+                },
+              ],
+              "label-lg": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "headline-lg-mobile": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "700" },
+              ],
+              "display-lg": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "display-md": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-md": [
+                "20px",
+                { lineHeight: "28px", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .material-symbols-outlined[data-weight="fill"] {
+        font-variation-settings: "FILL" 1;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .animate-scroll {
+        animation: scroll 20s linear infinite;
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background text-on-background font-body-md antialiased overflow-x-hidden flex h-screen"
+  >
+    <!-- SideNavBar -->
+    <nav
+      class="hidden md:flex flex-col h-screen w-64 left-0 top-0 bg-surface-container-low border-r border-outline-variant p-md gap-sm shrink-0"
+    >
+      <div class="flex items-center gap-sm mb-lg px-sm">
+        <span
+          class="material-symbols-outlined text-primary text-3xl"
+          data-icon="eco"
+          data-weight="fill"
+          >eco</span
+        >
+        <div>
+          <h1
+            class="font-headline-md text-headline-md font-extrabold text-primary"
+          >
+            KrishiSetu
+          </h1>
+          <p class="font-label-sm text-label-sm text-on-surface-variant">
+            Mitti Ki Baat, Digital Saath
+          </p>
+        </div>
+      </div>
+      <ul class="flex flex-col gap-xs flex-grow">
+        <li class="">
+          <a
+            class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant rounded-xl font-label-lg text-label-lg transition-all duration-150 active:scale-95"
+            href="home.html"
+            ><span class="material-symbols-outlined" data-icon="home"
+              >home</span
+            >
+            Home</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant rounded-xl font-label-lg text-label-lg transition-all duration-150 active:scale-95"
+            href="ai-expert.html"
+            ><span class="material-symbols-outlined" data-icon="psychology"
+              >psychology</span
+            >
+            AI Expert</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant rounded-xl font-label-lg text-label-lg transition-all duration-150 active:scale-95"
+            href="mandi.html"
+            ><span class="material-symbols-outlined" data-icon="storefront"
+              >storefront</span
+            >
+            Mandi</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant rounded-xl font-label-lg text-label-lg transition-all duration-150 active:scale-95"
+            href="weather.html"
+            ><span class="material-symbols-outlined" data-icon="wb_sunny"
+              >wb_sunny</span
+            >
+            Weather</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:bg-surface-variant rounded-xl font-label-lg text-label-lg transition-all duration-150 active:scale-95"
+            href="ledger.html"
+            ><span class="material-symbols-outlined" data-icon="menu_book"
+              >menu_book</span
+            >
+            Ledger</a
+          >
+        </li>
+        <li class="">
+          <a
+            class="flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-xl font-bold font-label-lg text-label-lg transition-all duration-150 active:scale-95"
+            href="community.html"
+            ><span class="material-symbols-outlined" data-icon="groups"
+              >groups</span
+            >
+            Community</a
+          >
+        </li>
+      </ul>
+      <div class="mt-auto">
+        <button
+          class="w-full flex items-center justify-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-variant rounded-xl font-label-lg text-label-lg transition-all duration-150"
+        >
+          <span class="material-symbols-outlined" data-icon="help">help</span>
+          Help Center
+        </button>
+      </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="flex-grow flex flex-col h-screen overflow-hidden">
+      <!-- TopNavBar -->
+      <header
+        class="flex justify-between items-center w-full px-md py-sm md:px-margin-desktop md:py-md bg-surface shadow-sm shrink-0 z-10"
+      >
+        <div class="flex items-center gap-md">
+          <div class="md:hidden">
+            <h1
+              class="font-headline-md text-headline-md font-bold text-primary"
+            >
+              KrishiSetu
+            </h1>
+          </div>
+          <div
+            class="hidden md:flex items-center gap-xs text-on-surface-variant font-label-lg text-label-lg bg-surface-container rounded-full px-md py-sm"
+          >
+            <span
+              class="material-symbols-outlined text-secondary"
+              data-icon="location_on"
+              >location_on</span
+            >
+            Indore, MP
+          </div>
+        </div>
+        <div class="flex items-center gap-md">
+          <button
+            class="p-sm rounded-full text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-95"
+          >
+            <span class="material-symbols-outlined" data-icon="notifications"
+              >notifications</span
+            >
+          </button>
+          <div
+            class="flex items-center gap-sm cursor-pointer hover:bg-surface-container-high p-xs rounded-full transition-colors duration-200 active:scale-95"
+          >
+            <img
+              alt="User profile avatar"
+              class="w-8 h-8 rounded-full border-2 border-primary-container object-cover"
+              data-alt="A close-up portrait of an Indian farmer with a weathered, kind face, wearing a traditional white turban and a simple cotton shirt. The lighting is warm and natural, suggesting the golden hour in an agricultural setting. The background is slightly blurred, showing hints of green fields. The overall mood is authentic, trustworthy, and rooted in the harvest aesthetic."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTVKqxYpWLrf0WDmd1zdD8Sw7zwsHM4DIHLxz2YX7VZfJjmeZpP9oxule-Ix6AMFsnreI0n1u8CL9mG1u4xM2ekHR2RBqNG9wzV8DPAcjJAnl-WwuO6jX5_UhLs2J6ilJQisGJ7Xmk7zp5LQmXobkHYHToFy8XwCVIVsPt5LS4k_5xjBcKoO8Dgvfgx7OGV0AEW5uZBrxmDbZvDYmk2K5sgItcZ_jQwLXXyE1szzWh3NcmqPbygHElXbBqksoJQ0sYuwUyDy8KgQ02"
+            />
+            <span
+              class="hidden lg:block font-label-lg text-label-lg text-primary mr-sm"
+              >Profile</span
+            >
+          </div>
+        </div>
+      </header>
+      <!-- Scrollable Content Area -->
+      <div
+        class="flex-grow overflow-y-auto bg-surface-container-low p-md lg:p-lg space-y-xl"
+      >
+        <!-- Live Activity Marquee -->
+        <div
+          class="bg-primary text-on-primary rounded-lg overflow-hidden py-sm px-md flex items-center shadow-sm"
+        >
+          <span
+            class="material-symbols-outlined mr-sm shrink-0"
+            data-icon="campaign"
+            >campaign</span
+          >
+          <div class="flex-grow overflow-hidden relative h-6">
+            <div
+              class="absolute whitespace-nowrap animate-scroll font-label-lg text-label-lg"
+            >
+              🚀 150+ farmers joined the Soybean Group Buy in Bhopal! • 🌦️
+              Alert: Expected rainfall in Malwa region next Tuesday. • 💡 Tip:
+              Time to apply organic compost for Kharif prep.
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+          <!-- Left/Main Column -->
+          <div class="lg:col-span-8 space-y-xl">
+            <!-- Community Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+              <div
+                class="bg-surface rounded-xl p-md border border-outline-variant/30 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-secondary"
+                  >24K+</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >Kisaans</span
+                >
+              </div>
+              <div
+                class="bg-surface rounded-xl p-md border border-outline-variant/30 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-secondary"
+                  >52</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >Districts</span
+                >
+              </div>
+              <div
+                class="bg-surface rounded-xl p-md border border-outline-variant/30 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-secondary"
+                  >1.2M</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >Posts</span
+                >
+              </div>
+              <div
+                class="bg-surface rounded-xl p-md border border-outline-variant/30 flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="font-headline-lg text-headline-lg font-bold text-primary-container"
+                  >84</span
+                >
+                <span
+                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                  >Active Pools</span
+                >
+              </div>
+            </div>
+            <!-- Region Tabs -->
+            <div
+              class="flex overflow-x-auto hide-scrollbar gap-sm pb-sm border-b border-outline-variant/30"
+            >
+              <button
+                class="shrink-0 px-md py-sm bg-primary-container text-on-primary-container rounded-full font-label-lg text-label-lg font-bold shadow-sm"
+              >
+                Indore
+              </button>
+              <button
+                class="shrink-0 px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Bhopal
+              </button>
+              <button
+                class="shrink-0 px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Ujjain
+              </button>
+              <button
+                class="shrink-0 px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Jabalpur</button
+              ><button
+                class="shrink-0 px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Sehore
+              </button>
+              <button
+                class="shrink-0 px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Gwalior
+              </button>
+              <button
+                class="shrink-0 px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors flex items-center gap-xs"
+              >
+                More
+                <span
+                  class="material-symbols-outlined text-sm"
+                  data-icon="expand_more"
+                  >expand_more</span
+                >
+              </button>
+            </div>
+            <!-- Group Buying -->
+            <section>
+              <div class="flex justify-between items-end mb-md">
+                <div>
+                  <h2
+                    class="font-headline-md text-headline-md font-bold text-on-background"
+                  >
+                    Group Buying (Samuhik Kharid)
+                  </h2>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mt-xs"
+                  >
+                    Pool orders together to get bulk discounts.
+                  </p>
+                </div>
+                <button
+                  class="hidden md:flex text-primary font-label-lg text-label-lg font-bold items-center hover:text-primary-container transition-colors"
+                >
+                  View All
+                  <span
+                    class="material-symbols-outlined ml-xs text-sm"
+                    data-icon="arrow_forward"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+              <div
+                class="flex overflow-x-auto hide-scrollbar gap-md pb-md snap-x"
+              >
+                <!-- Pool Card 1 -->
+                <div
+                  class="shrink-0 w-80 bg-surface rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm snap-start"
+                >
+                  <div
+                    class="h-24 bg-surface-variant relative p-md flex items-start justify-between"
+                  >
+                    <div
+                      class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded text-xs font-bold uppercase tracking-wide"
+                    >
+                      Up to 20% Off
+                    </div>
+                    <span
+                      class="material-symbols-outlined text-secondary bg-surface p-xs rounded-full shadow-sm"
+                      data-icon="agriculture"
+                      >agriculture</span
+                    >
+                  </div>
+                  <div class="p-md">
+                    <h3
+                      class="font-headline-md text-headline-md font-bold text-on-background line-clamp-1"
+                    >
+                      DAP Fertilizer - IFFCO
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant mt-xs text-sm"
+                    >
+                      Target: 500 Bags • Closes in 2 days
+                    </p>
+                    <div class="mt-md">
+                      <div
+                        class="flex justify-between font-label-sm text-label-sm mb-xs text-on-surface-variant"
+                      >
+                        <span class="">320 Bags ordered</span>
+                        <span class="font-bold text-secondary">64%</span>
+                      </div>
+                      <div
+                        class="w-full bg-surface-container-highest rounded-full h-2"
+                      >
+                        <div
+                          class="bg-gradient-to-r from-secondary to-primary-container h-2 rounded-full"
+                          style="width: 64%"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="flex gap-sm mt-md">
+                      <div
+                        class="flex-1 bg-surface-container text-center py-sm rounded-lg border border-outline-variant/30"
+                      >
+                        <span class="block font-bold text-on-surface"
+                          >₹1,250</span
+                        >
+                        <span class="text-xs text-on-surface-variant"
+                          >Current Price</span
+                        >
+                      </div>
+                      <div
+                        class="flex-1 bg-primary-container/20 text-center py-sm rounded-lg border border-primary-container/30"
+                      >
+                        <span class="block font-bold text-primary">₹1,100</span>
+                        <span class="text-xs text-primary">Goal Price</span>
+                      </div>
+                    </div>
+                    <button
+                      class="w-full mt-md bg-secondary text-on-secondary py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm hover:bg-on-secondary-container transition-colors border-b-2 border-on-secondary-fixed"
+                    >
+                      Join Pool
+                    </button>
+                  </div>
+                </div>
+                <!-- Start New Pool CTA -->
+                <div
+                  class="shrink-0 w-64 bg-surface-container-low rounded-2xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-md snap-start text-center hover:bg-surface-variant transition-colors cursor-pointer"
+                >
+                  <div
+                    class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center mb-md"
+                  >
+                    <span
+                      class="material-symbols-outlined text-2xl"
+                      data-icon="add"
+                      >add</span
+                    >
+                  </div>
+                  <h3
+                    class="font-headline-md text-headline-md font-bold text-on-background"
+                  >
+                    Start New Pool
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mt-xs text-sm"
+                  >
+                    Need something specific? Gather farmers and buy together.
+                  </p>
+                </div>
+              </div>
+            </section>
+            <!-- Discussion Feed -->
+            <section>
+              <h2
+                class="font-headline-md text-headline-md font-bold text-on-background mb-md"
+              >
+                Community Feed
+              </h2>
+              <!-- Composer -->
+              <div
+                class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm mb-lg"
+              >
+                <div class="flex gap-md">
+                  <img
+                    alt="User avatar"
+                    class="w-10 h-10 rounded-full object-cover shrink-0"
+                    data-alt="Same farmer portrait as header profile."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMOOLbdEdc_XSs76POItwqUkx8BRfMSE-c8tRsbvSvk_Fy7pMMxHZrZw8NSw1b5yEP2tUpNE75xtegSePIVmrH92povoZZbXHZgx21QPRTPVQuxfwoLV8JOf6KOGRl07RgNUhXmLRIM_dvB3w7Kd4G-vwOOqvBeIdMTjkLZu7e2_8Fm4T6iv6ZETiWjCMzbtDo3fgmnGzcXbliAocQL_TVq63jJNbWVaMCGKddqthf0rYx9PkE4gqJNXLAKIPDYBsaoXosGdCgsw0F"
+                  />
+                  <div class="flex-grow">
+                    <input
+                      class="w-full bg-surface-container-lowest border-none rounded-xl p-sm focus:ring-2 focus:ring-primary-container font-body-md text-body-md"
+                      placeholder="Kya chal raha hai, kisaan bhai?"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="flex justify-between items-center mt-md pt-sm border-t border-outline-variant/20"
+                >
+                  <div class="flex gap-sm">
+                    <button
+                      class="flex items-center gap-xs px-sm py-xs text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors font-label-sm text-label-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined text-primary"
+                        data-icon="image"
+                        >image</span
+                      >
+                      Photo
+                    </button>
+                    <button
+                      class="flex items-center gap-xs px-sm py-xs text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors font-label-sm text-label-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined text-secondary"
+                        data-icon="mic"
+                        >mic</span
+                      >
+                      Voice
+                    </button>
+                    <button
+                      class="flex items-center gap-xs px-sm py-xs text-on-surface-variant hover:bg-surface-variant rounded-lg transition-colors font-label-sm text-label-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined text-outline"
+                        data-icon="poll"
+                        >poll</span
+                      >
+                      Poll
+                    </button>
+                  </div>
+                  <button
+                    class="bg-primary text-on-primary px-lg py-xs rounded-full font-label-lg text-label-lg font-bold shadow-sm hover:bg-primary-fixed-dim transition-colors"
+                  >
+                    Post
+                  </button>
+                </div>
+              </div>
+              <!-- Feed Cards -->
+              <div class="space-y-md">
+                <!-- Question Card -->
+                <article
+                  class="bg-surface rounded-2xl border border-blue-200 p-md shadow-sm"
+                >
+                  <div class="flex justify-between items-start mb-sm">
+                    <div class="flex items-center gap-sm">
+                      <img
+                        alt="Ramesh Patel"
+                        class="w-10 h-10 rounded-full object-cover"
+                        data-alt="Portrait of a middle-aged Indian farmer in a field, looking thoughtful."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSfVM5bE9HbEBmWbY2tan_TqCpQyFS7CYtAyksxPXnhlzdyqQXtZZqfUCToMQ_zfXiA3tmB0i5qR_DjmrsGodRXuc8XbBKVdIxhUzAF5qS-a4G_0h3VfGjMC91Nxe9txFYT24AnKut7MPFxFL40Kave0m3ErJqVNqJopJ1QFFlIe4nflQKT6PmHunrzWRqWYtw6qaD_G9H64KNz10mUAGU0r9oqrEnRoJ8Ghi_4hAeAxAapsian1Bc_7pKSKdglUTmw9b70Zvz5x72"
+                      />
+                      <div>
+                        <h4
+                          class="font-label-lg text-label-lg font-bold text-on-background"
+                        >
+                          Ramesh Patel
+                        </h4>
+                        <p
+                          class="font-label-sm text-label-sm text-on-surface-variant"
+                        >
+                          2 hrs ago • Ujjain
+                        </p>
+                      </div>
+                    </div>
+                    <span
+                      class="bg-blue-50 text-blue-700 border border-blue-200 px-sm py-xs rounded text-xs font-bold flex items-center gap-xs"
+                      ><span
+                        class="material-symbols-outlined text-[14px]"
+                        data-icon="help"
+                        >help</span
+                      >
+                      Question</span
+                    >
+                  </div>
+                  <p class="font-body-md text-body-md text-on-background mb-sm">
+                    My wheat crop leaves are turning yellow from the tips.
+                    Watering is regular. What could be the issue? #गेहूं
+                    #WheatFarming
+                  </p>
+                  <!-- AI Answer Chip -->
+                  <div
+                    class="bg-surface-container rounded-xl p-sm mb-md flex gap-sm items-start border border-outline-variant/30"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary mt-xs shrink-0"
+                      data-icon="psychology"
+                      >psychology</span
+                    >
+                    <div>
+                      <p
+                        class="font-label-sm text-label-sm font-bold text-primary mb-xs"
+                      >
+                        Krishi AI Suggestion
+                      </p>
+                      <p
+                        class="font-body-md text-body-md text-on-surface-variant text-sm"
+                      >
+                        Based on symptoms in your area, this looks like Nitrogen
+                        deficiency. Applying a mild urea spray might help.
+                        Consult local expert for confirmation.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex items-center gap-md border-t border-outline-variant/20 pt-sm"
+                  >
+                    <button
+                      class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined"
+                        data-icon="thumb_up"
+                        >thumb_up</span
+                      >
+                      24
+                    </button>
+                    <button
+                      class="flex items-center gap-xs text-on-surface-variant hover:text-secondary transition-colors font-label-sm text-label-sm"
+                    >
+                      <span
+                        class="material-symbols-outlined"
+                        data-icon="comment"
+                        >comment</span
+                      >
+                      8 Answers
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+          <!-- Right Sidebar -->
+          <div class="lg:col-span-4 space-y-lg hidden lg:block">
+            <!-- Expert Corner -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm"
+            >
+              <div class="flex items-center gap-sm mb-md">
+                <span
+                  class="material-symbols-outlined text-primary-container text-2xl"
+                  data-icon="verified"
+                  data-weight="fill"
+                  >verified</span
+                >
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-background"
+                >
+                  Expert Corner
+                </h3>
+              </div>
+              <div class="space-y-sm mb-md">
+                <div
+                  class="flex items-center gap-sm p-xs hover:bg-surface-variant rounded-lg cursor-pointer transition-colors"
+                >
+                  <img
+                    alt="Dr. Sharma"
+                    class="w-10 h-10 rounded-full object-cover"
+                    data-alt="Professional portrait of an agronomist, wearing glasses and a neat collared shirt, smiling confidently."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_OEbmPK8sTzvA2vGKL9GHf-1MXksFDEVWdSdPvkGpa2zucEhXhpJ0oReG1v1uHb6NWVcaoXgYUFmk4n8HzkZbyElL2kWALqW3mBgSjjJkn9WkH5CfmDfLZsJFI1GcUaqgSY_zdoFDzKEgo5IcwSCXs7Bq3mClrIjEih02JF_a84yqmYZRGRklO3edl0t66HTlM0GPxSQ7q93FlCOorB3ac5NbeHHm3JMtzaGoJ-NQoFFrmrTaAUTn-I8XYR4RvirO4M07RJAom0Sw"
+                  />
+                  <div class="flex-grow">
+                    <h4
+                      class="font-label-lg text-label-lg font-bold text-on-background text-sm"
+                    >
+                      Dr. S. Sharma
+                    </h4>
+                    <p
+                      class="font-label-sm text-label-sm text-on-surface-variant text-xs"
+                    >
+                      Soil Pathologist
+                    </p>
+                  </div>
+                  <button
+                    class="text-primary hover:bg-primary-container/20 p-xs rounded-full transition-colors"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="chat"
+                      >chat</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <button
+                class="w-full bg-surface-container text-primary py-sm rounded-xl font-label-lg text-label-lg font-bold hover:bg-surface-variant transition-colors border border-primary/20"
+              >
+                Ask an Expert
+              </button>
+            </div>
+            <!-- Groups & Circles -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm"
+            >
+              <h3
+                class="font-headline-md text-headline-md font-bold text-on-background mb-md"
+              >
+                Your Circles
+              </h3>
+              <div class="flex gap-sm overflow-x-auto hide-scrollbar pb-xs">
+                <div
+                  class="flex flex-col items-center gap-xs cursor-pointer group"
+                >
+                  <div
+                    class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center group-hover:ring-2 ring-secondary transition-all"
+                  >
+                    <span
+                      class="material-symbols-outlined text-secondary text-2xl"
+                      data-icon="grass"
+                      >grass</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-center w-16 truncate"
+                    >Wheat</span
+                  >
+                </div>
+                <div
+                  class="flex flex-col items-center gap-xs cursor-pointer group"
+                >
+                  <div
+                    class="w-14 h-14 rounded-full bg-primary-container/30 flex items-center justify-center group-hover:ring-2 ring-primary transition-all"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary text-2xl"
+                      data-icon="water_drop"
+                      >water_drop</span
+                    >
+                  </div>
+                  <span
+                    class="font-label-sm text-label-sm text-center w-16 truncate"
+                    >Irrigation</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- NEW SECTIONS START HERE -->
+        <!-- Section 1: Community Marketplace -->
+        <section class="mt-xl">
+          <div class="flex justify-between items-end mb-md">
+            <div>
+              <h2
+                class="font-headline-md text-headline-md font-bold text-on-background"
+              >
+                Kisan Bazaar (Marketplace)
+              </h2>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mt-xs"
+              >
+                Buy, sell, or rent farming equipment and produce.
+              </p>
+            </div>
+            <div class="flex gap-sm hidden md:flex">
+              <button
+                class="px-md py-sm bg-primary-container text-on-primary-container rounded-full font-label-lg text-label-lg font-bold shadow-sm"
+              >
+                All
+              </button>
+              <button
+                class="px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Buy
+              </button>
+              <button
+                class="px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Sell
+              </button>
+              <button
+                class="px-md py-sm bg-surface text-on-surface-variant border border-outline-variant rounded-full font-label-lg text-label-lg hover:bg-surface-variant transition-colors"
+              >
+                Rent
+              </button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <!-- Market Item 1 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div
+                class="h-40 bg-surface-variant flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-5xl text-outline-variant"
+                  data-icon="agriculture"
+                  >agriculture</span
+                >
+              </div>
+              <div class="p-md">
+                <div class="flex justify-between items-start mb-xs">
+                  <span
+                    class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded text-xs font-bold uppercase tracking-wide"
+                    >For Rent</span
+                  >
+                  <span class="font-bold text-primary">₹500/day</span>
+                </div>
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-background line-clamp-1"
+                >
+                  Mahindra Tractor 575 DI
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant text-sm mt-xs"
+                >
+                  Available for rent in Indore district. Good condition.
+                </p>
+                <div class="flex gap-sm mt-md">
+                  <button
+                    class="flex-1 bg-deep-green text-white py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="call"
+                      >call</span
+                    >
+                    Call
+                  </button>
+                  <button
+                    class="flex-1 bg-harvest-gold text-deep-green py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="chat"
+                      >chat</span
+                    >
+                    WhatsApp
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Market Item 2 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div
+                class="h-40 bg-surface-variant flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-5xl text-outline-variant"
+                  data-icon="water_drop"
+                  >water_drop</span
+                >
+              </div>
+              <div class="p-md">
+                <div class="flex justify-between items-start mb-xs">
+                  <span
+                    class="bg-primary-container text-on-primary-container px-sm py-xs rounded text-xs font-bold uppercase tracking-wide"
+                    >For Sale</span
+                  >
+                  <span class="font-bold text-primary">₹15,000</span>
+                </div>
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-background line-clamp-1"
+                >
+                  Used Water Pump 5HP
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant text-sm mt-xs"
+                >
+                  Barely used Crompton pump. Selling due to upgrade.
+                </p>
+                <div class="flex gap-sm mt-md">
+                  <button
+                    class="flex-1 bg-deep-green text-white py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="call"
+                      >call</span
+                    >
+                    Call
+                  </button>
+                  <button
+                    class="flex-1 bg-harvest-gold text-deep-green py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="chat"
+                      >chat</span
+                    >
+                    WhatsApp
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Market Item 3 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/50 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div
+                class="h-40 bg-surface-variant flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-5xl text-outline-variant"
+                  data-icon="compost"
+                  >compost</span
+                >
+              </div>
+              <div class="p-md">
+                <div class="flex justify-between items-start mb-xs">
+                  <span
+                    class="bg-primary-container text-on-primary-container px-sm py-xs rounded text-xs font-bold uppercase tracking-wide"
+                    >For Sale</span
+                  >
+                  <span class="font-bold text-primary">₹120/bag</span>
+                </div>
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-background line-clamp-1"
+                >
+                  Organic Vermicompost
+                </h3>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant text-sm mt-xs"
+                >
+                  High quality organic compost made on farm. 50kg bags.
+                </p>
+                <div class="flex gap-sm mt-md">
+                  <button
+                    class="flex-1 bg-deep-green text-white py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="call"
+                      >call</span
+                    >
+                    Call
+                  </button>
+                  <button
+                    class="flex-1 bg-harvest-gold text-deep-green py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm flex items-center justify-center gap-xs"
+                  >
+                    <span
+                      class="material-symbols-outlined text-sm"
+                      data-icon="chat"
+                      >chat</span
+                    >
+                    WhatsApp
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 2: Expert Q&A Dashboard -->
+        <section class="mt-xl grid grid-cols-1 lg:grid-cols-3 gap-md">
+          <div class="lg:col-span-2 space-y-md">
+            <div>
+              <h2
+                class="font-headline-md text-headline-md font-bold text-on-background"
+              >
+                Vistar Adhikari Se Poochhein
+              </h2>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mt-xs"
+              >
+                Recently answered questions by verified experts.
+              </p>
+            </div>
+            <!-- QA Card 1 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm"
+            >
+              <div class="flex justify-between items-start mb-sm">
+                <h4
+                  class="font-label-lg text-label-lg font-bold text-on-background"
+                >
+                  Q: Best pesticide for whitefly in cotton?
+                </h4>
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded text-xs font-bold"
+                  >Answered</span
+                >
+              </div>
+              <div
+                class="bg-surface-container rounded-xl p-sm mt-sm border border-outline-variant/20"
+              >
+                <div class="flex items-center gap-sm mb-xs">
+                  <span
+                    class="material-symbols-outlined text-primary text-sm"
+                    data-icon="verified"
+                    >verified</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm font-bold text-primary"
+                    >Dr. A. Kumar (Agronomist)</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant text-sm"
+                >
+                  For whitefly, I recommend using Flonicamid 50% WG at 60g/acre
+                  or Diafenthiuron 50% WP at 250g/acre. Ensure thorough
+                  coverage.
+                </p>
+              </div>
+            </div>
+            <!-- QA Card 2 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm"
+            >
+              <div class="flex justify-between items-start mb-sm">
+                <h4
+                  class="font-label-lg text-label-lg font-bold text-on-background"
+                >
+                  Q: Optimal spacing for early sowing of Mustard?
+                </h4>
+                <span
+                  class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded text-xs font-bold"
+                  >Answered</span
+                >
+              </div>
+              <div
+                class="bg-surface-container rounded-xl p-sm mt-sm border border-outline-variant/20"
+              >
+                <div class="flex items-center gap-sm mb-xs">
+                  <span
+                    class="material-symbols-outlined text-primary text-sm"
+                    data-icon="verified"
+                    >verified</span
+                  >
+                  <span
+                    class="font-label-sm text-label-sm font-bold text-primary"
+                    >Dr. P. Singh (Seed Specialist)</span
+                  >
+                </div>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant text-sm"
+                >
+                  For early sowing, maintain row-to-row spacing of 30 cm and
+                  plant-to-plant spacing of 10-15 cm for optimal yield.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-1 space-y-md">
+            <!-- Submit Question Box -->
+            <div
+              class="bg-surface-container-low rounded-2xl border-2 border-primary-container p-md text-center"
+            >
+              <h3
+                class="font-headline-md text-headline-md font-bold text-on-background mb-sm"
+              >
+                Have a Question?
+              </h3>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant text-sm mb-md"
+              >
+                Upload a photo or record a voice note for our experts.
+              </p>
+              <div class="flex justify-center gap-sm mb-md">
+                <button
+                  class="w-12 h-12 rounded-full bg-surface hover:bg-surface-variant flex items-center justify-center border border-outline-variant transition-colors shadow-sm"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    data-icon="add_a_photo"
+                    >add_a_photo</span
+                  >
+                </button>
+                <button
+                  class="w-12 h-12 rounded-full bg-surface hover:bg-surface-variant flex items-center justify-center border border-outline-variant transition-colors shadow-sm"
+                >
+                  <span
+                    class="material-symbols-outlined text-secondary"
+                    data-icon="mic"
+                    >mic</span
+                  >
+                </button>
+              </div>
+              <button
+                class="w-full bg-primary text-on-primary py-sm rounded-xl font-label-lg text-label-lg font-bold shadow-sm hover:bg-primary-fixed-dim transition-colors"
+              >
+                Submit Question
+              </button>
+            </div>
+            <!-- Top Experts Sidebar -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm"
+            >
+              <h3
+                class="font-label-lg text-label-lg font-bold text-on-background mb-sm border-b border-outline-variant/20 pb-xs"
+              >
+                Top Responding Experts
+              </h3>
+              <ul class="space-y-sm">
+                <li class="flex justify-between items-center text-sm">
+                  <span class="text-on-surface-variant">Dr. S. Sharma</span>
+                  <span class="text-secondary font-bold text-xs"
+                    >1hr avg • 98%</span
+                  >
+                </li>
+                <li class="flex justify-between items-center text-sm">
+                  <span class="text-on-surface-variant">Dr. A. Kumar</span>
+                  <span class="text-secondary font-bold text-xs"
+                    >2hr avg • 95%</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!-- Section 3: Regional Agricultural Trends -->
+        <section
+          class="mt-xl bg-surface-container-low rounded-2xl border border-outline-variant/30 p-lg"
+        >
+          <div class="mb-md">
+            <h2
+              class="font-headline-md text-headline-md font-bold text-on-background"
+            >
+              Regional Trends (Indore, MP)
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-xs">
+              Market sentiment and local insights based on community data.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+            <!-- Trend Card 1: Soybean -->
+            <div
+              class="bg-surface rounded-xl p-md border border-outline-variant/20 shadow-sm"
+            >
+              <div class="flex justify-between items-center mb-sm">
+                <h3 class="font-label-lg text-label-lg font-bold">Soybean</h3>
+                <span
+                  class="bg-green-100 text-green-800 text-xs font-bold px-xs py-[2px] rounded flex items-center"
+                  ><span
+                    class="material-symbols-outlined text-[14px]"
+                    data-icon="trending_up"
+                    >trending_up</span
+                  >
+                  Bullish</span
+                >
+              </div>
+              <p class="text-sm text-on-surface-variant mb-xs">
+                Current Mandi Price: ₹4,800/q
+              </p>
+              <div class="w-full bg-surface-variant h-1 rounded-full mb-xs">
+                <div
+                  class="bg-green-500 h-1 rounded-full"
+                  style="width: 75%"
+                ></div>
+              </div>
+              <p class="text-xs text-on-surface-variant text-right">
+                75% farmers holding
+              </p>
+            </div>
+            <!-- Trend Card 2: Wheat -->
+            <div
+              class="bg-surface rounded-xl p-md border border-outline-variant/20 shadow-sm"
+            >
+              <div class="flex justify-between items-center mb-sm">
+                <h3 class="font-label-lg text-label-lg font-bold">
+                  Wheat (Lok-1)
+                </h3>
+                <span
+                  class="bg-yellow-100 text-yellow-800 text-xs font-bold px-xs py-[2px] rounded flex items-center"
+                  ><span
+                    class="material-symbols-outlined text-[14px]"
+                    data-icon="trending_flat"
+                    >trending_flat</span
+                  >
+                  Stable</span
+                >
+              </div>
+              <p class="text-sm text-on-surface-variant mb-xs">
+                Current Mandi Price: ₹2,450/q
+              </p>
+              <div class="w-full bg-surface-variant h-1 rounded-full mb-xs">
+                <div
+                  class="bg-yellow-500 h-1 rounded-full"
+                  style="width: 50%"
+                ></div>
+              </div>
+              <p class="text-xs text-on-surface-variant text-right">
+                50% farmers holding
+              </p>
+            </div>
+            <!-- Weather/Sowing Alert -->
+            <div
+              class="bg-primary-container/20 rounded-xl p-md border border-primary-container/30 shadow-sm"
+            >
+              <div class="flex items-center gap-sm mb-sm">
+                <span
+                  class="material-symbols-outlined text-primary"
+                  data-icon="wb_cloudy"
+                  >wb_cloudy</span
+                >
+                <h3 class="font-label-lg text-label-lg font-bold text-primary">
+                  Sowing Alert
+                </h3>
+              </div>
+              <p class="text-sm text-on-surface-variant">
+                Light showers expected this weekend. Ideal time for final field
+                preparation for Rabi crops. 80% of local farmers are delaying
+                sowing till next week.
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- Section 4: Expanded Resource Library -->
+        <section class="mt-xl">
+          <div class="flex justify-between items-end mb-md">
+            <div>
+              <h2
+                class="font-headline-md text-headline-md font-bold text-on-background"
+              >
+                Gyan Kendra (Knowledge Center)
+              </h2>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant mt-xs"
+              >
+                Guides, videos, and documents to boost your yield.
+              </p>
+            </div>
+            <button
+              class="hidden md:flex text-primary font-label-lg text-label-lg font-bold items-center hover:text-primary-container transition-colors"
+            >
+              Browse Library
+              <span
+                class="material-symbols-outlined ml-xs text-sm"
+                data-icon="arrow_forward"
+                >arrow_forward</span
+              >
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-md mb-md">
+            <button
+              class="bg-surface px-md py-sm rounded-xl border border-outline-variant shadow-sm hover:bg-surface-variant font-label-lg text-label-lg text-center transition-colors"
+            >
+              Government Schemes
+            </button>
+            <button
+              class="bg-surface px-md py-sm rounded-xl border border-outline-variant shadow-sm hover:bg-surface-variant font-label-lg text-label-lg text-center transition-colors"
+            >
+              Organic Farming
+            </button>
+            <button
+              class="bg-surface px-md py-sm rounded-xl border border-outline-variant shadow-sm hover:bg-surface-variant font-label-lg text-label-lg text-center transition-colors"
+            >
+              Pest Management
+            </button>
+            <button
+              class="bg-surface px-md py-sm rounded-xl border border-outline-variant shadow-sm hover:bg-surface-variant font-label-lg text-label-lg text-center transition-colors"
+            >
+              Crop Varieties
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+            <!-- Video Card 1 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 overflow-hidden shadow-sm group cursor-pointer hover:shadow-md transition-shadow"
+            >
+              <div
+                class="h-40 bg-surface-variant relative flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl text-on-surface-variant opacity-50 group-hover:scale-110 transition-transform"
+                  data-icon="play_circle"
+                  >play_circle</span
+                >
+                <span
+                  class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-xs py-[2px] rounded"
+                  >5:30</span
+                >
+              </div>
+              <div class="p-md">
+                <h3 class="font-label-lg text-label-lg font-bold line-clamp-2">
+                  How to prepare Jeevamrutha for Organic Farming
+                </h3>
+                <p class="text-xs text-on-surface-variant mt-xs">
+                  By Subhash Palekar Natural Farming
+                </p>
+              </div>
+            </div>
+            <!-- Video Card 2 -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 overflow-hidden shadow-sm group cursor-pointer hover:shadow-md transition-shadow"
+            >
+              <div
+                class="h-40 bg-surface-variant relative flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined text-4xl text-on-surface-variant opacity-50 group-hover:scale-110 transition-transform"
+                  data-icon="play_circle"
+                  >play_circle</span
+                >
+                <span
+                  class="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-xs py-[2px] rounded"
+                  >12:15</span
+                >
+              </div>
+              <div class="p-md">
+                <h3 class="font-label-lg text-label-lg font-bold line-clamp-2">
+                  Drip Irrigation Setup: Step by Step Guide
+                </h3>
+                <p class="text-xs text-on-surface-variant mt-xs">
+                  Krishi Darshan
+                </p>
+              </div>
+            </div>
+            <!-- Document Card -->
+            <div
+              class="bg-surface rounded-2xl border border-outline-variant/30 p-md shadow-sm flex flex-col justify-between"
+            >
+              <div>
+                <div class="flex items-center gap-sm mb-sm text-secondary">
+                  <span
+                    class="material-symbols-outlined"
+                    data-icon="description"
+                    >description</span
+                  >
+                  <span class="font-bold text-sm">PDF Guide</span>
+                </div>
+                <h3 class="font-label-lg text-label-lg font-bold mb-xs">
+                  PM Kisan Samman Nidhi Application Guide (Hindi)
+                </h3>
+                <p class="text-sm text-on-surface-variant mb-md">
+                  Step-by-step instructions for new applicants.
+                </p>
+              </div>
+              <button
+                class="w-full border border-primary text-primary py-sm rounded-xl font-label-lg text-label-lg font-bold hover:bg-primary/5 transition-colors flex justify-center items-center gap-xs"
+              >
+                <span
+                  class="material-symbols-outlined text-sm"
+                  data-icon="download"
+                  >download</span
+                >
+                Download
+              </button>
+            </div>
+          </div>
+        </section>
+        <!-- Section 5: Success Stories -->
+        <section class="mt-xl mb-xl">
+          <div class="text-center mb-lg">
+            <h2
+              class="font-display-md text-display-md font-bold text-deep-green"
+            >
+              Wall of Fame
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mt-xs">
+              Inspiring stories from our KrishiSetu family.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            <!-- Story 1 -->
+            <div
+              class="bg-surface rounded-3xl border border-outline-variant/50 p-lg shadow-md flex flex-col md:flex-row gap-md items-center"
+            >
+              <div
+                class="w-32 h-32 shrink-0 rounded-full bg-surface-variant flex items-center justify-center border-4 border-harvest-gold"
+              >
+                <span
+                  class="material-symbols-outlined text-5xl text-outline"
+                  data-icon="face"
+                  >face</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-background"
+                >
+                  Vijay Singh
+                </h3>
+                <p class="text-sm text-secondary font-bold mb-sm">
+                  Saved ₹45,000 via Group Buying
+                </p>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant italic mb-md"
+                >
+                  "By pooling our fertilizer orders on KrishiSetu, our village
+                  saved significantly on input costs this season."
+                </p>
+                <button
+                  class="text-primary font-bold hover:underline flex items-center gap-xs"
+                >
+                  View Journey
+                  <span
+                    class="material-symbols-outlined text-sm"
+                    data-icon="chevron_right"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Story 2 -->
+            <div
+              class="bg-surface rounded-3xl border border-outline-variant/50 p-lg shadow-md flex flex-col md:flex-row gap-md items-center"
+            >
+              <div
+                class="w-32 h-32 shrink-0 rounded-full bg-surface-variant flex items-center justify-center border-4 border-harvest-gold"
+              >
+                <span
+                  class="material-symbols-outlined text-5xl text-outline"
+                  data-icon="face_3"
+                  >face_3</span
+                >
+              </div>
+              <div>
+                <h3
+                  class="font-headline-md text-headline-md font-bold text-on-background"
+                >
+                  Sunita Devi
+                </h3>
+                <p class="text-sm text-secondary font-bold mb-sm">
+                  Transitioned to 100% Organic
+                </p>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant italic mb-md"
+                >
+                  "The expert advice from Dr. Sharma helped me completely
+                  eliminate chemical pesticides in two years."
+                </p>
+                <button
+                  class="text-primary font-bold hover:underline flex items-center gap-xs"
+                >
+                  View Journey
+                  <span
+                    class="material-symbols-outlined text-sm"
+                    data-icon="chevron_right"
+                    >chevron_right</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Footer -->
+        <footer
+          class="mt-auto bg-surface border-t border-outline-variant/50 py-xl px-md md:px-lg text-center md:text-left"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+            <div class="md:col-span-1">
+              <h2
+                class="font-headline-md text-headline-md font-extrabold text-primary mb-sm"
+              >
+                KrishiSetu
+              </h2>
+              <p class="text-sm text-on-surface-variant mb-md">
+                Empowering Indian farmers with digital tools, community support,
+                and market insights.
+              </p>
+              <div class="flex justify-center md:justify-start gap-sm">
+                <a
+                  class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary-container transition-colors"
+                  href="#"
+                  ><span class="material-symbols-outlined" data-icon="language"
+                    >language</span
+                  ></a
+                >
+                <a
+                  class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary-container transition-colors"
+                  href="#"
+                  ><span class="material-symbols-outlined" data-icon="share"
+                    >share</span
+                  ></a
+                >
+              </div>
+            </div>
+            <div>
+              <h4 class="font-bold mb-sm">Features</h4>
+              <ul class="space-y-xs text-sm text-on-surface-variant">
+                <li class="">
+                  <a class="hover:text-primary" href="#">Mandi Prices</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#">Group Buying</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#">Expert AI</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#">Weather Alerts</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-sm">Support</h4>
+              <ul class="space-y-xs text-sm text-on-surface-variant">
+                <li class="">
+                  <a class="hover:text-primary" href="#">Help Center</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#">Contact Us</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#">Safety Center</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#"
+                    >Community Guidelines</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-bold mb-sm">Legal</h4>
+              <ul class="space-y-xs text-sm text-on-surface-variant">
+                <li class="">
+                  <a class="hover:text-primary" href="#">Terms of Service</a>
+                </li>
+                <li class="">
+                  <a class="hover:text-primary" href="#">Privacy Policy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="border-t border-outline-variant/30 mt-lg pt-md text-sm text-on-surface-variant text-center"
+          >
+            © 2023 KrishiSetu. All rights reserved.
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+</html>
