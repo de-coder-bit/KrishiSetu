@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,10 +11,6 @@
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
     <script id="tailwind-config">
@@ -109,13 +104,7 @@
                   fontWeight: "800",
                 },
               ],
-              "body-lg": [
-                "18px",
-                {
-                  lineHeight: "28px",
-                  fontWeight: "400",
-                },
-              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
               "label-sm": [
                 "12px",
                 {
@@ -126,18 +115,9 @@
               ],
               "headline-lg-mobile": [
                 "24px",
-                {
-                  lineHeight: "32px",
-                  fontWeight: "700",
-                },
+                { lineHeight: "32px", fontWeight: "700" },
               ],
-              "body-md": [
-                "16px",
-                {
-                  lineHeight: "24px",
-                  fontWeight: "400",
-                },
-              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
               "label-lg": [
                 "14px",
                 {
@@ -148,17 +128,11 @@
               ],
               "headline-lg": [
                 "28px",
-                {
-                  lineHeight: "36px",
-                  fontWeight: "700",
-                },
+                { lineHeight: "36px", fontWeight: "700" },
               ],
               "headline-md": [
                 "20px",
-                {
-                  lineHeight: "28px",
-                  fontWeight: "600",
-                },
+                { lineHeight: "28px", fontWeight: "600" },
               ],
               "display-md": [
                 "36px",
@@ -192,12 +166,10 @@
           rgba(61, 43, 31, 0.4) 100%
         );
       }
-
       .input-glow:focus-within {
         box-shadow: 0 0 0 4px rgba(227, 180, 72, 0.2);
         border-color: #e3b448;
       }
-
       .btn-depth {
         border-bottom: 2px solid rgba(0, 0, 0, 0.15);
       }
@@ -205,35 +177,46 @@
         border-bottom-width: 0px;
         transform: translateY(2px);
       }
+      .message-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .message-error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 16px;
+        text-align: center;
+      }
     </style>
   </head>
   <body
     class="font-body-md text-on-surface bg-surface min-h-screen flex flex-col antialiased"
   >
-    <!-- Transactional layout: No Global Navigation -->
-    <!-- Main Content Area -->
     <main
       class="flex-grow flex items-center justify-center relative min-h-screen hero-bg"
-      data-alt="A breathtaking cinematic photograph of a vast, rolling agricultural landscape during the golden hour. The rolling hills are lush green and harvest gold, bathed in warm, soft sunlight piercing through low-lying mist. Two tractors and a barn are silhouetted against a pastel-colored sky of pink, orange, and soft blue. The overall mood is serene, fertile, and deeply connected to traditional farming roots with a premium, majestic feel."
       style="
         background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC9D-Oy_PWHR10YcP4MqO8YrLoOc4snwUK92EpCxcl9m9PlyeNLljJQSnLCPQ7ALVaxcSPl4shNHOKvwNYFRz4Pw7mxHxOZMgIe1l_aKtxOHkIhg5WNm1utUE9fSqWQ00nj4ssObU6MwaDXCq1sGbaoq0YfOud8J_LG53ByZWcLqHSpapPokO01WhWpM1V4YdB0w4yqT-J1pLSmEZGKBIszVpgueKiDfgoGWmv37rLGRL-IxSZzucgCfuyKu7mvQGiFQQAxr0A4XINC&quot;);
       "
     >
-      <!-- Dark Overlay for better contrast -->
       <div class="absolute inset-0 hero-overlay"></div>
-      <!-- Glassmorphism Card Container -->
       <div class="relative z-10 w-full max-w-[480px] px-margin-mobile md:px-0">
         <div
           class="glass-card rounded-xl p-lg md:p-xl shadow-[0_12px_32px_-4px_rgba(61,43,31,0.15)] flex flex-col gap-lg"
         >
-          <!-- Header / Branding -->
           <div class="flex flex-col items-center text-center space-y-sm">
             <div
               class="w-16 h-16 bg-surface rounded-full flex items-center justify-center shadow-sm border border-outline-variant/30 mb-sm"
             >
               <span
                 class="material-symbols-outlined text-4xl text-primary"
-                data-icon="agriculture"
                 style="font-variation-settings: &quot;FILL&quot; 1"
                 >agriculture</span
               >
@@ -254,38 +237,38 @@
               </p>
             </div>
           </div>
-          <!-- Sign In Form -->
-          <form class="flex flex-col gap-md mt-sm">
-            <!-- Mobile Number Input -->
+
+          <!-- SIGN IN FORM - CORRECTED -->
+          <form id="loginForm" class="flex flex-col gap-md mt-sm">
+            <!-- Email/Mobile Input -->
             <div class="flex flex-col gap-xs">
               <label
                 class="font-label-lg text-label-lg text-tertiary"
-                for="mobile"
-                >Mobile Number / मोबाइल नंबर</label
+                for="email"
+                >Email Address / ईमेल पता</label
               >
               <div
                 class="relative flex items-center bg-surface border border-outline-variant rounded-lg input-glow transition-all duration-200"
               >
                 <div
-                  class="pl-md pr-sm py-3 flex items-center border-r border-outline-variant/50 text-on-surface-variant font-label-lg"
+                  class="pl-md pr-sm py-3 flex items-center border-r border-outline-variant/50 text-on-surface-variant"
                 >
                   <span
                     class="material-symbols-outlined text-xl mr-1 opacity-70"
-                    data-icon="call"
-                    >call</span
+                    >mail</span
                   >
-                  +91
                 </div>
                 <input
                   class="flex-grow bg-transparent border-none py-3 px-md font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0"
-                  id="mobile"
-                  name="mobile"
-                  pattern="[0-9]{10}"
-                  placeholder="10-digit mobile number"
-                  type="tel"
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  required
                 />
               </div>
             </div>
+
             <!-- Password Input -->
             <div class="flex flex-col gap-xs">
               <div class="flex justify-between items-center">
@@ -306,9 +289,7 @@
                 <div
                   class="pl-md py-3 flex items-center text-on-surface-variant"
                 >
-                  <span
-                    class="material-symbols-outlined text-xl opacity-70"
-                    data-icon="lock"
+                  <span class="material-symbols-outlined text-xl opacity-70"
                     >lock</span
                   >
                 </div>
@@ -316,57 +297,30 @@
                   class="flex-grow bg-transparent border-none py-3 px-3 font-body-md text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0"
                   id="password"
                   name="password"
-                  placeholder="Enter your password"
                   type="password"
+                  placeholder="Enter your password"
+                  required
                 />
-                <button
-                  class="pr-md py-3 flex items-center text-on-surface-variant hover:text-on-surface transition-colors"
-                  type="button"
-                >
-                  <span
-                    class="material-symbols-outlined text-xl"
-                    data-icon="visibility_off"
-                    >visibility_off</span
-                  >
-                </button>
               </div>
             </div>
-            <!-- Actions -->
+
+            <!-- Login Button -->
             <div class="flex flex-col gap-sm mt-sm">
-              <!-- Primary Login Button -->
               <button
                 class="w-full bg-primary-container text-on-primary-fixed font-label-lg text-label-lg py-3 px-md rounded-lg flex items-center justify-center gap-sm btn-depth hover:bg-primary-fixed transition-colors"
                 type="submit"
               >
                 <span>Sign In / प्रवेश करें</span>
-                <span
-                  class="material-symbols-outlined text-xl"
-                  data-icon="arrow_forward"
+                <span class="material-symbols-outlined text-xl"
                   >arrow_forward</span
                 >
               </button>
-              <!-- Divider -->
-              <div class="flex items-center gap-sm my-xs">
-                <div class="h-px bg-outline-variant/40 flex-grow"></div>
-                <span
-                  class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
-                  >OR</span
-                >
-                <div class="h-px bg-outline-variant/40 flex-grow"></div>
-              </div>
-              <!-- Secondary Login Button -->
-              <button
-                class="w-full border-2 border-secondary text-secondary font-label-lg text-label-lg py-3 px-md rounded-lg flex items-center justify-center gap-sm hover:bg-secondary-container/20 transition-colors"
-                type="button"
-              >
-                <span class="material-symbols-outlined text-xl" data-icon="sms"
-                  >sms</span
-                >
-                <span>Login with OTP / ओ.टी.पी से लॉगिन</span>
-              </button>
             </div>
           </form>
-          <!-- Footer Links -->
+
+          <!-- Message Display Div -->
+          <div id="message"></div>
+
           <div class="text-center mt-sm">
             <p class="font-body-md text-body-md text-on-surface-variant">
               Naye kisaan?
@@ -378,14 +332,13 @@
             </p>
           </div>
         </div>
-        <!-- Trust Signals (Outside Card for visual hierarchy) -->
+
         <div class="mt-lg flex items-center justify-center gap-lg px-md">
           <div
             class="flex items-center gap-xs bg-surface/90 backdrop-blur-sm px-3 py-2 rounded-full border border-outline-variant/20 shadow-sm"
           >
             <span
               class="material-symbols-outlined text-secondary text-lg"
-              data-icon="verified_user"
               style="font-variation-settings: &quot;FILL&quot; 1"
               >verified_user</span
             >
@@ -398,7 +351,6 @@
           >
             <span
               class="material-symbols-outlined text-primary text-lg"
-              data-icon="groups"
               style="font-variation-settings: &quot;FILL&quot; 1"
               >groups</span
             >
@@ -409,5 +361,78 @@
         </div>
       </div>
     </main>
+
+    <script>
+      // Get form element
+      const form = document.getElementById("loginForm");
+      const messageDiv = document.getElementById("message");
+
+      // Add submit event listener
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Show loading message
+        messageDiv.innerHTML =
+          '<div class="message-info">⏳ Logging in...</div>';
+
+        // Get values
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Validation
+        if (!email || !password) {
+          messageDiv.innerHTML =
+            '<div class="message-error">❌ Please fill all fields</div>';
+          return;
+        }
+
+        const loginData = { email, password };
+
+        console.log("Sending login request to backend...");
+
+        try {
+          const response = await fetch("http://localhost:5000/api/auth/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(loginData),
+          });
+
+          console.log("Response status:", response.status);
+          const data = await response.json();
+          console.log("Response data:", data);
+
+          if (response.ok && data.success) {
+            // Save token and user data
+            if (data.session && data.session.access_token) {
+              localStorage.setItem("token", data.session.access_token);
+            }
+            localStorage.setItem("user", JSON.stringify(data.user));
+
+            messageDiv.innerHTML = `
+                        <div class="message-success">
+                            ✅ ${data.message}<br>
+                            Welcome ${data.user.name || "User"}!<br>
+                            Redirecting to home...
+                        </div>
+                    `;
+
+            setTimeout(() => {
+              window.location.href = "home.html";
+            }, 2000);
+          } else {
+            messageDiv.innerHTML = `<div class="message-error">❌ ${data.message || "Login failed"}</div>`;
+          }
+        } catch (error) {
+          console.error("Fetch error:", error);
+          messageDiv.innerHTML = `
+                    <div class="message-error">
+                        ❌ Cannot connect to server!<br>
+                        Make sure backend is running on http://localhost:5000<br>
+                        Error: ${error.message}
+                    </div>
+                `;
+        }
+      });
+    </script>
   </body>
 </html>

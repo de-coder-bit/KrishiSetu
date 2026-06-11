@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html class="light" lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,10 +7,6 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -171,6 +166,33 @@
         box-shadow: 0 0 0 4px rgba(227, 180, 72, 0.2);
         outline: none;
       }
+      .message-success {
+        background: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+        padding: 12px;
+        border-radius: 12px;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .message-error {
+        background: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+        padding: 12px;
+        border-radius: 12px;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .message-info {
+        background: #d1ecf1;
+        color: #0c5460;
+        border: 1px solid #bee5eb;
+        padding: 12px;
+        border-radius: 12px;
+        margin-top: 16px;
+        text-align: center;
+      }
     </style>
   </head>
   <body
@@ -179,16 +201,15 @@
     <!-- Background Image with Overlay -->
     <div class="fixed inset-0 z-0">
       <img
-        alt="A cinematic, golden-hour view of rolling agricultural fields with distant tractors and a farm house, conveying warmth, growth, and the rich narrative of Indian farming."
+        alt="A cinematic, golden-hour view of rolling agricultural fields"
         class="w-full h-full object-cover object-center"
-        data-alt="A cinematic, golden-hour view of rolling agricultural fields with distant tractors and a farm house, conveying warmth, growth, and the rich narrative of Indian farming. The scene is bathed in a soft, warm light that highlights the textured, golden wheat and green crops. The mood is serene, fertile, and deeply connected to nature, perfectly matching the premium organic modernism aesthetic."
         src="https://lh3.googleusercontent.com/aida/AP1WRLurLZFmkVUm9xqm5-8cFRmPjdSXrTShGN71O1KmRGUgmtwEH18Nj0lygYzMGn5vkPSDRG9bI4SrFMyyJvGJqYYJLd6qLqU25If5BqDd6XfYrVtYRbNfKBVZ6FRa5_tRWNFzGrdDYixJ8T2tMrOSxs2tKDwrwzFHgg-KVwT7n4nPayvPBy0j107-Og6Xo77sCmaqodItWrFkFK5nWUDI-VIt1il1FcOp3Bh6UcQuakpIQn_WYhG7o7jlmxw"
       />
       <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
     </div>
+
     <!-- Main Content Container -->
     <div class="relative z-10 w-full max-w-[500px]">
-      <!-- Glassmorphism Card -->
       <div class="glass-panel rounded-3xl p-lg md:p-xl flex flex-col gap-lg">
         <!-- Header Section -->
         <div class="text-center flex flex-col gap-sm">
@@ -213,7 +234,8 @@
             >
           </p>
         </div>
-        <!-- Language Toggle (Micro-interaction) -->
+
+        <!-- Language Toggle -->
         <div class="flex justify-end">
           <div class="inline-flex bg-surface-container-high rounded-full p-1">
             <button
@@ -223,13 +245,12 @@
             </button>
           </div>
         </div>
-        <!-- Form -->
-        <form class="flex flex-col gap-md">
+
+        <!-- SIGNUP FORM - CORRECTED -->
+        <form id="signupForm" class="flex flex-col gap-md">
           <!-- Full Name -->
           <div class="flex flex-col gap-xs">
-            <label
-              class="font-label-lg text-label-lg text-tertiary"
-              for="fullName"
+            <label class="font-label-lg text-label-lg text-tertiary" for="name"
               >Pura Naam (Full Name)</label
             >
             <div class="relative">
@@ -239,67 +260,79 @@
               >
               <input
                 class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
-                id="fullName"
+                id="name"
+                name="name"
                 placeholder="Rahul Kumar"
                 type="text"
+                required
               />
             </div>
           </div>
-          <!-- Mobile Number -->
+
+          <!-- Email -->
           <div class="flex flex-col gap-xs">
-            <label
-              class="font-label-lg text-label-lg text-tertiary"
-              for="mobile"
-              >Mobile Number</label
-            >
-            <div class="flex gap-2">
-              <div
-                class="flex-shrink-0 flex items-center justify-center w-14 rounded-xl border border-outline-variant bg-surface-container-low text-on-surface font-body-md text-body-md"
-              >
-                +91
-              </div>
-              <div class="relative flex-grow">
-                <span
-                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-                  >call</span
-                >
-                <input
-                  class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
-                  id="mobile"
-                  placeholder="98765 43210"
-                  type="tel"
-                />
-              </div>
-            </div>
-          </div>
-          <!-- State Selector -->
-          <div class="flex flex-col gap-xs">
-            <label class="font-label-lg text-label-lg text-tertiary" for="state"
-              >Rajya (State)</label
+            <label class="font-label-lg text-label-lg text-tertiary" for="email"
+              >Email Address / ईमेल पता</label
             >
             <div class="relative">
               <span
                 class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
-                >map</span
+                >mail</span
               >
-              <select
-                class="form-input w-full pl-10 pr-10 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md appearance-none transition-all"
-                id="state"
-              >
-                <option disabled="" selected="" value="">
-                  Chunein (Select State)
-                </option>
-                <option value="up">Uttar Pradesh</option>
-                <option value="mp">Madhya Pradesh</option>
-                <option value="pb">Punjab</option>
-                <option value="mh">Maharashtra</option>
-              </select>
-              <span
-                class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none"
-                >expand_more</span
-              >
+              <input
+                class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
+                id="email"
+                name="email"
+                placeholder="rahul@example.com"
+                type="email"
+                required
+              />
             </div>
           </div>
+
+          <!-- Age -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-lg text-label-lg text-tertiary" for="age"
+              >Aayu (Age)</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >cake</span
+              >
+              <input
+                class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
+                id="age"
+                name="age"
+                placeholder="25"
+                type="number"
+                min="18"
+                max="100"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- City -->
+          <div class="flex flex-col gap-xs">
+            <label class="font-label-lg text-label-lg text-tertiary" for="city"
+              >Shahar (City)</label
+            >
+            <div class="relative">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline"
+                >location_on</span
+              >
+              <input
+                class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
+                id="city"
+                name="city"
+                placeholder="Lucknow, Delhi, Patna"
+                type="text"
+              />
+            </div>
+          </div>
+
           <!-- Password -->
           <div class="flex flex-col gap-xs">
             <label
@@ -315,23 +348,30 @@
               <input
                 class="form-input w-full pl-10 pr-10 py-3 rounded-xl border border-outline-variant bg-white/50 text-on-surface font-body-md text-body-md transition-all"
                 id="password"
+                name="password"
                 placeholder="••••••••"
                 type="password"
+                required
               />
               <button
                 class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors"
                 type="button"
+                onclick="togglePassword()"
               >
-                <span class="material-symbols-outlined">visibility_off</span>
+                <span class="material-symbols-outlined" id="passwordToggleIcon"
+                  >visibility_off</span
+                >
               </button>
             </div>
           </div>
+
           <!-- Terms Checkbox -->
           <div class="flex items-start gap-3 mt-sm">
             <input
               class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary-container bg-white/50 cursor-pointer"
               id="terms"
               type="checkbox"
+              required
             />
             <label
               class="font-body-md text-sm text-on-surface-variant leading-tight cursor-pointer"
@@ -344,7 +384,8 @@
               >
             </label>
           </div>
-          <!-- Submit Action -->
+
+          <!-- Submit Button -->
           <button
             class="mt-md w-full bg-primary-container text-on-primary-fixed-variant font-label-lg text-label-lg py-4 rounded-xl shadow-sm hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2 border-b-2 border-on-primary-fixed-variant/20"
             type="submit"
@@ -353,6 +394,10 @@
             <span class="material-symbols-outlined">arrow_forward</span>
           </button>
         </form>
+
+        <!-- Message Display -->
+        <div id="message"></div>
+
         <!-- Trust Badges -->
         <div
           class="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pt-sm border-t border-outline-variant/30"
@@ -377,6 +422,7 @@
             <span class="font-label-sm text-label-sm">10M+ Farmers Joined</span>
           </div>
         </div>
+
         <!-- Footer Link -->
         <div class="text-center mt-xs">
           <p class="font-body-md text-body-md text-on-surface-variant">
@@ -390,5 +436,105 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Toggle password visibility
+      function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const icon = document.getElementById("passwordToggleIcon");
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          icon.textContent = "visibility";
+        } else {
+          passwordInput.type = "password";
+          icon.textContent = "visibility_off";
+        }
+      }
+
+      // Get form element
+      const form = document.getElementById("signupForm");
+      const messageDiv = document.getElementById("message");
+
+      // Add submit event listener
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Check terms
+        const termsChecked = document.getElementById("terms").checked;
+        if (!termsChecked) {
+          messageDiv.innerHTML =
+            '<div class="message-error">❌ Please accept the terms and conditions</div>';
+          return;
+        }
+
+        // Show loading message
+        messageDiv.innerHTML =
+          '<div class="message-info">⏳ Creating your account...</div>';
+
+        // Get values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const age = parseInt(document.getElementById("age").value);
+        const city = document.getElementById("city").value;
+        const password = document.getElementById("password").value;
+
+        // Validation
+        if (!name || !email || !age || !password) {
+          messageDiv.innerHTML =
+            '<div class="message-error">❌ Please fill all required fields</div>';
+          return;
+        }
+
+        if (password.length < 6) {
+          messageDiv.innerHTML =
+            '<div class="message-error">❌ Password must be at least 6 characters</div>';
+          return;
+        }
+
+        const userData = { name, email, age, city, password };
+
+        console.log("Sending signup request to backend...", userData);
+
+        try {
+          const response = await fetch(
+            "http://localhost:5000/api/auth/register",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(userData),
+            },
+          );
+
+          console.log("Response status:", response.status);
+          const data = await response.json();
+          console.log("Response data:", data);
+
+          if (response.ok && data.success) {
+            messageDiv.innerHTML = `
+                        <div class="message-success">
+                            ✅ ${data.message}<br>
+                            Welcome ${data.user.name}!<br>
+                            Redirecting to sign in page...
+                        </div>
+                    `;
+
+            setTimeout(() => {
+              window.location.href = "signin.html";
+            }, 2000);
+          } else {
+            messageDiv.innerHTML = `<div class="message-error">❌ ${data.message || "Signup failed"}</div>`;
+          }
+        } catch (error) {
+          console.error("Fetch error:", error);
+          messageDiv.innerHTML = `
+                    <div class="message-error">
+                        ❌ Cannot connect to server!<br>
+                        Make sure backend is running on http://localhost:5000<br>
+                        Error: ${error.message}
+                    </div>
+                `;
+        }
+      });
+    </script>
   </body>
 </html>

@@ -1479,5 +1479,39 @@
         </div>
       </main>
     </div>
+    <!doctype html>
+    <html>
+      <head>
+        <title>Krishisetu - Home</title>
+      </head>
+      <body>
+        <!-- Tumhara existing HTML content -->
+        <h1>Welcome to Krishisetu</h1>
+
+        <!-- Backend status dikhane ke liye -->
+        <div id="backend-status">Checking connection...</div>
+
+        <script>
+          // Backend se connect karne ka code
+          fetch("http://localhost:5000/")
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("Backend response:", data);
+              document.getElementById("backend-status").innerHTML = `
+                    ✅ Backend Connected! <br>
+                    Message: ${data.message} <br>
+                    Time: ${data.time}
+                `;
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              document.getElementById("backend-status").innerHTML = `
+                    ❌ Backend connection failed! <br>
+                    Make sure server is running on port 5000
+                `;
+            });
+        </script>
+      </body>
+    </html>
   </body>
 </html>
